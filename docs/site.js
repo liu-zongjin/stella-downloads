@@ -2,7 +2,7 @@
 (() => {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduceMotion || !('IntersectionObserver' in window)) return;
-  const elements = document.querySelectorAll('.feature, .section-heading, .boundary-head, .personal-layout, .install-steps, .download-inner');
+  const elements = document.querySelectorAll('.section-heading, .detail-grid article, .sms-story, .court-card, .reading-features article, .mail-copy article, .tool-card, .install-steps, .download-inner');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {

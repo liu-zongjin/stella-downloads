@@ -1,20 +1,15 @@
-## Stella · 让法律工作，有条理地发生。
+## Stella · 让案件与知识，连成工作流
 
-**[浏览公开简介与安装指引 ↗](https://liu-zongjin.github.io/stella-downloads/)**
+**[查看完整功能介绍与安装指引 ↗](https://liu-zongjin.github.io/stella-downloads/)**
 
-### [↓ 直接下载 Stella for Mac](https://github.com/liu-zongjin/stella-downloads/releases/download/v1.0.0-preview3/Stella-macOS-AppleSilicon-v1.0.0-preview3.zip)
+### [↓ 下载 Mac 应用](https://github.com/liu-zongjin/stella-downloads/releases/download/v1.0.0-preview3/Stella-macOS-AppleSilicon-v1.0.0-preview3.zip)
 
-Apple 芯片 Mac · macOS 11.3+ · 解压后将 **Stella.app** 拖入“应用程序”。无需 Python、Node.js 或 GitHub 账号。安装包采用本地签名，尚未经过 Apple 公证；系统阻止打开时，请按“系统设置 → 隐私与安全性”中的官方流程确认来源。
+案件台账、iCloud 司法短信识别、一张网同步与自动化立案；文章收集、智能目录、摘要和笔记批注；多邮箱与发票归集、法答网、计算工具和常用文书，在一个本地工作空间中衔接。
 
-### 这一版
+Apple 芯片 Mac · macOS 11.3+。下载 ZIP，解压后将 **Stella.app** 拖入“应用程序”。无需 Python、Node.js 或 GitHub 账号。当前应用采用本地签名，尚未经过 Apple 公证；首次打开受阻时，按系统设置“隐私与安全性”提供的官方流程确认来源。
 
-- 用户名可编辑、可隐藏；侧边栏问候语默认隐藏，显示时与 Stella 品牌左对齐，品牌位置保持稳定。
-- 授权委托书、法定代表人证明书、业务审批表保持标准名称。可上传自己的律所 Logo，并设置律所名称；文书品牌与 Stella 应用品牌独立，修正预览页眉比例。
-- 所函一键上传和自动审批、文书快速报批、会议室预定、打印机扫描盘保留入口，页面提示“需定制化开发，详情请联系作者”。
-- 官网式下载页提供应用介绍、实景图、安装指引与常见问题，支持手机浏览和减少动态效果。
+本版新增可编辑、可隐藏的用户名设置，侧边栏问候语默认隐藏，显示时与品牌左对齐；支持独立设置文书的律所名称与 Logo，保留授权委托书、法定代表人证明书、业务审批表的标准名称。律所审批、会议及设备接入保留定制入口，可[联系作者](https://github.com/liu-zongjin/stella-downloads/issues/new)。
 
-安装包仅含虚构演示案件与文章，不含作者团队个人资料、真实客户或案件信息、密钥或会话。个人财务“个人中心”不分发。数据保存在本机独立目录 `~/Library/Application Support/StellaPublic`。AI、邮箱、法院和 MCP 等服务需配置自己的账号，相关联网操作会发送对应数据；外部应用按功能需要自行安装。
+短信功能需先同步到 Mac 并授权读取；邮箱、法院与 AI 服务需配置自己的账户。自动化立案辅助填报官网草稿，最终提交由律师确认。使用范围见仓库 LICENSE，第三方组件遵循各自许可。
 
-源码仓库保持私有；本仓库仅提供应用、下载网页、说明及许可证。非商业使用、禁止修改、保留作者署名，第三方组件遵守各自许可。[联系作者或反馈问题 ↗](https://github.com/liu-zongjin/stella-downloads/issues/new)
-
-校验结果见随附 `PUBLIC_VERIFICATION.json`；下载完整性见 `SHA256.txt`。
+下载完整性与验证记录见随附 `SHA256.txt`、`PUBLIC_VERIFICATION.json`。
