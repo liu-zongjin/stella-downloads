@@ -3,7 +3,7 @@
 <p align="center">知识 · 案件 · 文书 · AI 辅助工具，一个本地工作空间。</p>
 <p align="center"><a href="https://liu-zongjin.github.io/stella-downloads/"><b>浏览 Stella 官网式下载页 ↗</b></a>　·　<a href="https://github.com/liu-zongjin/stella-downloads/releases/download/v1.0.0-preview3/Stella-macOS-AppleSilicon-v1.0.0-preview3.zip"><b>直接下载 Mac 应用 ↓</b></a></p>
 
-![公开版演示界面](docs/assets/stella-workspace.webp)
+![公开版演示界面](docs/assets/stella-workspace-showcase.webp)
 
 ### 三步开始
 
@@ -22,7 +22,7 @@
 - **邮箱与发票**：QQ、腾讯企业、网易企业邮箱集中使用；发票扫描筛选、批量导出与月度自动归集。
 - **实务工具**：法答网精选答问、分段利息计算、标准文书生成、案件研究与 AI 辅助。
 
-[浏览完整功能与工作流程 →](https://liu-zongjin.github.io/stella-downloads/)
+[浏览完整功能与工作流程 →](https://liu-zongjin.github.io/stella-downloads/) · [功能更新记录](https://liu-zongjin.github.io/stella-downloads/#updates)
 
 ### 数据与许可
 
