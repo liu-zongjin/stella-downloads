@@ -1,29 +1,30 @@
 {
-  "source_commit": "cc7749cabc2a502e75abf1185315176bfa4a7553",
-  "source_files": 176,
+  "version": "1.0.0-preview3",
+  "source_commit": "bb5afd89f71682f5d811621c3c52355951025c2c",
+  "source_repository_public": false,
   "architecture": "arm64",
   "runtime_data_included": false,
-  "team_defaults_sanitized": true,
-  "raw_backend_source_included": false,
   "credentials_included": false,
-  "fictional_data_created_on_first_run": true,
-  "automated_tests": 950,
-  "targeted_isolation_tests": 12,
-  "browser_engines": [
-    "Chromium",
-    "WebKit"
+  "standard_document_titles_preserved": true,
+  "custom_firm_logo": true,
+  "greeting_default_visible": false,
+  "customization_only_integrations": [
+    "letter-upload-approval",
+    "quick-approval",
+    "meeting-reservation",
+    "scanner-inbox"
   ],
-  "visual_views": 26,
-  "personal_center_distributed": false,
-  "canonical_styles_verified": true,
-  "same_feature_catalog_except_personal_center": true,
-  "raw_backend_source_distributed": false,
-  "old_release_withdrawn": true,
-  "download_url": "https://github.com/liu-zongjin/stella-downloads/releases/download/v1.0.0-preview2/Stella-macOS-AppleSilicon-v1.0.0-preview2.zip",
-  "sha256": "3b12c213e0dcc0866174ff982f5753221fc9da74a4636313667123902d223313",
-  "bytes": 301685932,
-  "zip_valid": true,
-  "signature_valid": true,
-  "downloaded_binary_self_test": true,
-  "frontend_files_verified": 91
+  "validation": {
+    "extended_automated_tests": 953,
+    "targeted_builder_tests": 8,
+    "public_profile_tests": 3,
+    "ui_engines": [
+      "Chromium",
+      "WebKit"
+    ],
+    "feature_page_checks": 16,
+    "word_exports": 4,
+    "code_signature": "adhoc",
+    "private_source_files_unchanged": 191
+  }
 }
