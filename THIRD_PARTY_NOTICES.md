@@ -6,7 +6,7 @@ Stella / APEX 原创部分受根目录 LICENSE 约束。该许可仅覆盖作者
 
 相关第三方材料采用 Elastic License 2.0。完整许可随应用附于：
 
-`Stella Preview.app/Contents/Resources/third_party/fachuan-archive-LICENSE.txt`
+`third_party/fachuan-archive-LICENSE.txt`（在下载的应用 ZIP 根目录中）
 
 可查看 [Elastic 官方许可全文](https://www.elastic.co/licensing/elastic-license)。转发应用时，应保留包内第三方许可文件。
 
