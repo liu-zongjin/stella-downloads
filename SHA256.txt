@@ -1,1 +1,1 @@
-11aba253ec8a339678231b54449e69d41f69ac5a24a39f7989fbe6ec611e793d  Stella-macOS-AppleSilicon-v1.0.0-preview3.zip
+2bbd2ab83bc5f8d704dff9ef817503a2962a645008b3216d4238bfd792496701  Stella-macOS-AppleSilicon-v1.0.0-preview3.zip

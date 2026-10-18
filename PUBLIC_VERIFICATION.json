@@ -1,6 +1,6 @@
 {
   "version": "1.0.0-preview3",
-  "source_commit": "bb5afd89f71682f5d811621c3c52355951025c2c",
+  "source_commit": "f1f0dfd2e86bbab8ca295542632a601bfe91bb50",
   "source_repository_public": false,
   "architecture": "arm64",
   "runtime_data_included": false,
@@ -25,6 +25,7 @@
     "feature_page_checks": 16,
     "word_exports": 4,
     "code_signature": "adhoc",
-    "private_source_files_unchanged": 191
+    "private_source_files_unchanged": 191,
+    "dark_wordmark_contrast": "verified"
   }
 }
