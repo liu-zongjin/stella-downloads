@@ -39,17 +39,18 @@
   sections.forEach(section => navigation.observe(section));
 
   if (motion.matches) return;
-  const elements = document.querySelectorAll('.section-heading, .product-shot, .case-showcase-detail, .reading-stage, .detail-grid article, .sms-story, .court-card, .reading-features article, .mail-visual, .mail-copy article, .tool-card, .updates-intro, .updates-list > .update-entry, .package-details, .install-steps, .download-inner');
+  const elements = document.querySelectorAll('.hero > .eyebrow, .hero h1, .hero-description, .hero-actions, .section-heading > *, .product-shot, .case-showcase-detail, .reading-stage, .detail-grid article, .sms-story, .court-card, .reading-features article, .mail-visual, .mail-copy article, .tool-card, .updates-intro, .updates-list > .update-entry, .package-details, .install-steps, .download-inner');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('revealed');
-        observer.unobserve(entry.target);
+      } else if (entry.boundingClientRect.top > 0) {
+        entry.target.classList.remove('revealed');
       }
     });
-  }, { threshold: 0, rootMargin: '0px 0px -24px 0px' });
-  document.querySelectorAll('.detail-grid, .court-grid, .reading-features, .tool-grid').forEach(group => {
-    [...group.children].forEach((child, index) => child.style.setProperty('--reveal-delay', `${index * 70}ms`));
+  }, { threshold: 0, rootMargin: '0px 0px -12% 0px' });
+  document.querySelectorAll('.section-heading, .detail-grid, .court-grid, .reading-features, .tool-grid').forEach(group => {
+    [...group.children].forEach((child, index) => child.style.setProperty('--reveal-delay', `${index * 110}ms`));
   });
   elements.forEach(element => { element.classList.add('reveal'); observer.observe(element); });
   motion.addEventListener('change', event => {
