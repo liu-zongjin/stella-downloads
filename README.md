@@ -1,17 +1,17 @@
 <p align="center"><img src="docs/assets/stella-brand.svg" alt="Stella 法律操作系统" width="280"></p>
 <h1 align="center">让法律工作，有条理地发生。</h1>
 <p align="center">知识 · 案件 · 文书 · AI 辅助工具，一个本地工作空间。</p>
-<p align="center"><a href="https://liu-zongjin.github.io/stella-downloads/"><b>浏览 Stella 官网式下载页 ↗</b></a>　·　<a href="https://github.com/liu-zongjin/stella-downloads/releases/download/v1.0.0-preview3/Stella-macOS-AppleSilicon-v1.0.0-preview3.zip"><b>直接下载 Mac 应用 ↓</b></a></p>
+<p align="center"><a href="https://liu-zongjin.github.io/stella-downloads/"><b>浏览 Stella 官网式下载页 ↗</b></a>　·　<a href="https://github.com/liu-zongjin/stella-downloads/releases/download/v1.0.0-preview4/Stella-macOS-AppleSilicon-v1.0.0-preview4.zip"><b>直接下载 Mac 应用 ↓</b></a></p>
 
 ![公开版演示界面](docs/assets/stella-workspace-showcase.webp)
 
 ### 三步开始
 
-1. 下载 **Stella-macOS-AppleSilicon-v1.0.0-preview3.zip**，支持 Apple 芯片 Mac、macOS 11.3 或更新。
+1. 下载 **Stella-macOS-AppleSilicon-v1.0.0-preview4.zip**，支持 Apple 芯片 Mac、macOS 11.3 或更新。
 2. 解压，将 **Stella.app** 拖入“应用程序”。无需 Python、Node.js 或 GitHub 账号。
 3. 打开体验虚构演示资料。应用尚未经过 Apple 公证；如系统阻止打开，请按“系统设置 → 隐私与安全性”提供的“仍要打开”流程确认来源。
 
-[发布说明及 SHA-256 校验](https://github.com/liu-zongjin/stella-downloads/releases/tag/v1.0.0-preview3) · [反馈与定制联系](https://github.com/liu-zongjin/stella-downloads/issues/new)
+[发布说明及 SHA-256 校验](https://github.com/liu-zongjin/stella-downloads/releases/tag/v1.0.0-preview4) · [反馈与定制联系](https://github.com/liu-zongjin/stella-downloads/issues/new)
 
 ### 用 Stella 做什么
 

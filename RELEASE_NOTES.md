@@ -1,15 +1,11 @@
-## Stella · 让案件与知识，连成工作流
+# Stella 1.0.0 Preview 4 · 公开体验版
 
-**[查看完整功能介绍与安装指引 ↗](https://liu-zongjin.github.io/stella-downloads/)**
+本次仅清理上一公开版中司法短信默认接收号码的手机号残留。首次安装不预置短信接收号码，由使用者自行填写。
 
-### [↓ 下载 Mac 应用](https://github.com/liu-zongjin/stella-downloads/releases/download/v1.0.0-preview3/Stella-macOS-AppleSilicon-v1.0.0-preview3.zip)
+以官网 Preview 3 原安装包为基准：93 个前端文件完全一致；2,799 个打包模块中仅司法短信模块的默认号码常量改变。文书生成、律所名称与 Logo 设置、会议室及审批定制入口和其他页面保持原样，未使用内部同事版本。
 
-案件台账、iCloud 司法短信识别、一张网同步与自动化立案；文章收集、智能目录、摘要和笔记批注；多邮箱与发票归集、法答网、计算工具和常用文书，在一个本地工作空间中衔接。
-
-Apple 芯片 Mac · macOS 11.3+。下载 ZIP，解压后将 **Stella.app** 拖入“应用程序”。无需 Python、Node.js 或 GitHub 账号。当前应用采用本地签名，尚未经过 Apple 公证；首次打开受阻时，按系统设置“隐私与安全性”提供的官方流程确认来源。
-
-本版新增可编辑、可隐藏的用户名设置，侧边栏问候语默认隐藏，显示时与品牌左对齐；支持独立设置文书的律所名称与 Logo，保留授权委托书、法定代表人证明书、业务审批表的标准名称。律所审批、会议及设备接入保留定制入口，可[联系作者](https://github.com/liu-zongjin/stella-downloads/issues/new)。
-
-短信功能需先同步到 Mac 并授权读取；邮箱、法院与 AI 服务需配置自己的账户。自动化立案辅助填报官网草稿，最终提交由律师确认。使用范围见仓库 LICENSE，第三方组件遵循各自许可。
-
-下载完整性与验证记录见随附 `SHA256.txt`、`PUBLIC_VERIFICATION.json`。
+- Apple 芯片 Mac；macOS 11.3 或更新。解压后将 Stella.app 拖入应用程序。
+- 955 项扩展检查及 12 项构建与公开配置测试通过；安装包重新本地签名，尚未公证。
+- 不包含团队密码、登录会话或钥匙串导出。已有 Mac 上的钥匙串和本地数据不会被安装操作清除。
+- 会议室预定、所函上传审批、文书快速报批、扫描盘仍为公开版定制入口。
+- 源码保持私有；校验值见 SHA256.txt，公开核验摘要见 PUBLIC_VERIFICATION.json。

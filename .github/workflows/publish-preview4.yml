@@ -1,0 +1,56 @@
+name: Publish cleaned public Preview 4
+on:
+  push:
+    branches: [distribute/public-v4-20261019, main]
+    paths: [SHA256.txt, .github/workflows/publish-preview4.yml]
+permissions:
+  contents: write
+concurrency:
+  group: stella-public-preview4
+  cancel-in-progress: false
+jobs:
+  publish:
+    if: github.ref == 'refs/heads/distribute/public-v4-20261019'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Assemble and verify the exact public package
+        run: |
+          mkdir .release
+          for i in 000 001 002 003 004 005 006; do
+            git fetch --depth=1 origin refs/heads/transport/public-v4-clean-$i
+            git show FETCH_HEAD:part > .release/part-$i
+          done
+          cat .release/part-* > Stella-macOS-AppleSilicon-v1.0.0-preview4.zip
+          sha256sum --check SHA256.txt
+          unzip -tq Stella-macOS-AppleSilicon-v1.0.0-preview4.zip
+      - name: Upload and publish verified Preview 4
+        run: |
+          gh release create v1.0.0-preview4 --target distribute/public-v4-20261019 --draft --prerelease --title 'Stella 1.0.0 Preview 4 · 公开体验版' --notes-file RELEASE_NOTES.md
+          gh release upload v1.0.0-preview4 Stella-macOS-AppleSilicon-v1.0.0-preview4.zip SHA256.txt PUBLIC_VERIFICATION.json
+          gh release edit v1.0.0-preview4 --draft=false --prerelease
+          gh release view v1.0.0-preview4 --json url,assets,isDraft
+      - name: Remove temporary transport references
+        run: |
+          for i in 000 001 002 003 004 005 006; do
+            git push origin --delete transport/public-v4-clean-$i
+          done
+  retire_previous_download:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Verify replacement before retiring the previous package
+        run: |
+          test "$(gh release view v1.0.0-preview4 --json isDraft --jq .isDraft)" = false
+          mkdir .verify
+          gh release download v1.0.0-preview4 --pattern SHA256.txt --dir .verify
+          cmp SHA256.txt .verify/SHA256.txt
+          gh release delete-asset v1.0.0-preview3 Stella-macOS-AppleSilicon-v1.0.0-preview3.zip --yes

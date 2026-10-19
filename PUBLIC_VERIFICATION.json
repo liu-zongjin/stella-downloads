@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0-preview3",
+  "version": "1.0.0-preview4",
   "source_commit": "f1f0dfd2e86bbab8ca295542632a601bfe91bb50",
   "source_repository_public": false,
   "architecture": "arm64",
@@ -15,17 +15,43 @@
     "scanner-inbox"
   ],
   "validation": {
-    "extended_automated_tests": 953,
-    "targeted_builder_tests": 8,
-    "public_profile_tests": 3,
-    "ui_engines": [
-      "Chromium",
-      "WebKit"
-    ],
-    "feature_page_checks": 16,
-    "word_exports": 4,
+    "extended_automated_tests": 955,
+    "targeted_builder_and_public_profile_tests": 12,
     "code_signature": "adhoc",
-    "private_source_files_unchanged": 191,
-    "dark_wordmark_contrast": "verified"
-  }
+    "package_parity": {
+      "base_public_sha256": "2bbd2ab83bc5f8d704dff9ef817503a2962a645008b3216d4238bfd792496701",
+      "new_public_sha256": "bf0ab972f5f1260a4f87ed78ac1b7a99f54a5ae70aeed072ce52a0bfc1ce3430",
+      "changed_app_files": [
+        "Stella.app/Contents/_CodeSignature/CodeResources",
+        "Stella.app/Contents/_CodeSignature/CodeDirectory",
+        "Stella.app/Contents/Resources/Server/stella-preview-server",
+        "Stella.app/Contents/Info.plist"
+      ],
+      "changed_frozen_modules": [
+        "backend.judicial_messages"
+      ],
+      "verified_frozen_modules": 2799,
+      "identical_frontend_files": 93,
+      "public_customization_and_document_modules_unchanged": true,
+      "internal_colleague_package_used": false
+    },
+    "isolated_frozen_runtime": {
+      "team_accounts_absent_from_all_backend_modules": true,
+      "frozen_self_test": "passed",
+      "clean_install_saved_accounts": [],
+      "clean_install_recipient_phones": [],
+      "automatic_sms_import_enabled": false,
+      "pages": {
+        "/": 200,
+        "/suohan-generator": 200,
+        "/business-approval-generator": 200,
+        "/document-bundle-generator": 200,
+        "/public-customization": 200
+      },
+      "public_customization_api_boundaries": "passed"
+    }
+  },
+  "base_public_version": "1.0.0-preview3",
+  "public_sms_recipient_defaults_empty": true,
+  "cleanup_source_commit": "1dfb7aa40bd78286997dcb93304cd1757dbc2aff"
 }
