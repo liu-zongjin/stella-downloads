@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><!-- sparkle-sign-warning:
+IMPORTANT: This file was signed by Sparkle. Any modifications to this file requires re-signing this file with generate_appcast or sign_update! The signed signature will be embedded at the end of this file.
+--><rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>Stella</title>
+        <item>
+            <title>1.1.5</title>
+            <pubDate>Wed, 21 Oct 2026 02:17:52 +0800</pubDate>
+            <sparkle:version>2026102110</sparkle:version>
+            <sparkle:shortVersionString>1.1.5</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>12.0</sparkle:minimumSystemVersion>
+            <description sparkle:format="markdown">Stella 1.1.5
+
+修复法答网资源遗漏与只读应用包写入问题；统一 PDF、旧版 Excel 和 OCR 依赖；修复 Windows 中文页面编码。新增实际安装包全部页面与资源校验。
+
+更新保留本机案件、附件、设置和笔记。Intel 与 Apple 芯片分别使用独立更新源。macOS 12 或更新版本。
+</description>
+            <enclosure url="https://github.com/liu-zongjin/stella-downloads/releases/download/v1.1.5-2026102110/Stella-macOS-Intel-v1.1.5-2026102110.zip" length="329096578" type="application/octet-stream" sparkle:edSignature="ArpWCKu+sMRCKqkEFhTznRIe34gxiHkIrq2Zv+rHC+H0KProByyLHw5CCCUmHHkVD5eEvKFLDw1XUonkGykJAA=="></enclosure>
+            <sparkle:deltas>
+                <enclosure url="https://github.com/liu-zongjin/stella-downloads/releases/download/v1.1.5-2026102110/Stella2026102110-2026102102.delta" sparkle:deltaFrom="2026102102" length="2883606" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="941872" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="6Qo9S4GpjwmGaNju82Sowiw9Mdpi87656UYRJj5Auwi5//P+jLq0GH98booO/BsxLUlbg5Z4cLxj3sK7glpVBg=="></enclosure>
+            </sparkle:deltas>
+        </item>
+    </channel>
+</rss><!-- sparkle-signatures:
+edSignature: 7zFgEiQkr7/pe645KASnt2e/mEvmyk5JGuAZUOi+RrjZTRt+fxLXtoXFUC3BWVbmE37Ig/bhwTPWspSXQmuCAg==
+length: 2034
+-->
