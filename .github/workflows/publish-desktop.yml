@@ -1,0 +1,21 @@
+name: Publish verified Stella desktop artifacts
+on:
+  push:
+    branches: [distribute/public-v1.1.5-20261021]
+    paths: [release-manifest.json, .github/workflows/publish-desktop.yml, release-tools/publish.py]
+permissions:
+  contents: write
+concurrency:
+  group: stella-desktop-publication
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Assemble, verify and publish immutable artifacts
+        run: python3 release-tools/publish.py
