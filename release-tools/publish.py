@@ -1,5 +1,5 @@
 """Public artifact transport only. Contains no application sources or signing secrets."""
-import hashlib,json,subprocess,tarfile
+import hashlib,json,subprocess,tarfile,time
 from pathlib import Path
 
 def run(*args,**kwargs):return subprocess.run(args,check=True,**kwargs)
@@ -10,6 +10,13 @@ def checksum(path):
   for block in iter(lambda:source.read(1024*1024),b''):h.update(block)
  return h.hexdigest()
 manifest=json.loads(Path('release-manifest.json').read_text())
+expected_refs={part['ref'] for part in manifest['transport_parts']}
+for attempt in range(45):
+ available={line.split()[1] for line in output('git','ls-remote','origin','refs/heads/transport/stella-115-*').splitlines()}
+ if expected_refs <= available:break
+ print('Waiting for verified artifact transport:',len(available),'/',len(expected_refs),flush=True)
+ time.sleep(20)
+else:raise RuntimeError('Artifact transport did not finish')
 folder=Path('.release');folder.mkdir()
 archive=folder/'artifacts.tar'
 with archive.open('wb') as destination:
