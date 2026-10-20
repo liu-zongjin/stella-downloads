@@ -12,7 +12,7 @@ def checksum(path):
 manifest=json.loads(Path('release-manifest.json').read_text())
 expected_refs={part['ref'] for part in manifest['transport_parts']}
 for attempt in range(45):
- available={line.split()[1] for line in output('git','ls-remote','origin','refs/heads/transport/stella-115-*').splitlines()}
+ available={line.split()[1] for line in output('git','ls-remote','origin','refs/heads/transport/stella-*').splitlines()}
  if expected_refs <= available:break
  print('Waiting for verified artifact transport:',len(available),'/',len(expected_refs),flush=True)
  time.sleep(20)
@@ -21,7 +21,7 @@ folder=Path('.release');folder.mkdir()
 archive=folder/'artifacts.tar'
 with archive.open('wb') as destination:
  for part in manifest['transport_parts']:
-  ref=part['ref'];assert ref.startswith('refs/heads/transport/stella-115-')
+  ref=part['ref'];assert ref.startswith('refs/heads/transport/stella-')
   run('git','fetch','--depth=1','origin',ref)
   path=folder/'part'
   with path.open('wb') as stream:run('git','show','FETCH_HEAD:part',stdout=stream)
@@ -42,18 +42,19 @@ for name,asset in expected.items():
  assert path.stat().st_size==asset['bytes'] and checksum(path)==asset['sha256'],name
 for release in manifest['releases']:
  tag=release['tag']
- assert tag.startswith('v1.1.5-')
+ assert tag.startswith(('v1.1.5-', 'windows-v1.1.5-'))
  existing=subprocess.run(['gh','release','view',tag,'--json','isDraft'],capture_output=True,text=True)
  if existing.returncode:
   run('gh','release','create',tag,'--target','distribute/public-v1.1.5-20261021','--draft','--title',release['title'],'--notes',release['notes'])
  else:assert json.loads(existing.stdout)['isDraft'],'Never replace a published release'
+ release_api=json.loads(output('gh','release','view',tag,'--json','apiUrl'))['apiUrl']
  for asset in release['assets']:
   # Resume a draft only when an existing asset has exactly the intended bytes.
-  data=json.loads(output('gh','api','repos/{owner}/{repo}/releases/tags/'+tag))
+  data=json.loads(output('gh','api',release_api))
   found=next((a for a in data['assets'] if a['name']==asset['name']),None)
   if found:assert found['size']==asset['bytes'] and found.get('digest')=='sha256:'+asset['sha256']
   else:run('gh','release','upload',tag,str(folder/asset['name']))
- data=json.loads(output('gh','api','repos/{owner}/{repo}/releases/tags/'+tag))
+ data=json.loads(output('gh','api',release_api))
  for asset in release['assets']:
   found=next(a for a in data['assets'] if a['name']==asset['name'])
   assert found['size']==asset['bytes'] and found.get('digest')=='sha256:'+asset['sha256']
