@@ -18,4 +18,24 @@ jobs:
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
       - name: Assemble, verify and publish immutable artifacts
-        run: python3 release-tools/publish.py
+        run: |
+          set -o pipefail
+          python3 -u release-tools/publish.py 2>&1 | tee release-publication.log
+      - name: Retain publication diagnostics
+        if: always()
+        shell: python
+        env:
+          PUBLICATION_STATUS: ${{ job.status }}
+        run: |
+          import json, os, subprocess
+          from pathlib import Path
+          def git(*args, data=None):
+              return subprocess.check_output(['git', *args], input=data).decode().strip()
+          entries = []
+          result = json.dumps({'source': os.environ['GITHUB_SHA'], 'status': os.environ['PUBLICATION_STATUS'], 'run': os.environ['GITHUB_RUN_ID']}).encode()
+          for name, content in [('result.json', result), ('publication.log', '\n'.join(Path('release-publication.log').read_text(errors='replace').splitlines()[-120:]).encode())]:
+              blob = git('hash-object', '-w', '--stdin', data=content)
+              entries.append('100644 blob ' + blob + '\t' + name)
+          tree = git('mktree', data=('\n'.join(sorted(entries)) + '\n').encode())
+          commit = git('-c', 'user.name=Stella CI', '-c', 'user.email=ci@example.invalid', 'commit-tree', tree, data=b'Public installer publication diagnostics\n')
+          git('push', 'origin', commit + ':refs/heads/ci/desktop-publication-' + os.environ['GITHUB_RUN_ID'])
