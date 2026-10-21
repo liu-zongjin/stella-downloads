@@ -3,7 +3,7 @@
     {
       "tag": "windows-v1.1.5-2026102111",
       "title": "Stella 1.1.5 · Windows x64 公开体验版",
-      "notes": "Stella 1.1.5 Windows 公开体验版。支持 Windows 10 1809+ / Windows 11 的 Intel、AMD 64 位电脑。\n\n下载 setup.exe，首次运行联网准备业务服务、浏览器、文字识别与文档转换组件；后续更新只下载变化的组件。内置清单签名校验，个人资料独立保存。\n\n修复法答网页面、Windows 中文资源读取和旧版 Word 转换；支持司法短信文本、TXT 和截图确认导入。Mac 另有苹果通讯录/日历、生物识别、Finder 标签、录音及夸克/飞书联动。\n\n已通过实际安装器中文路径安装、完整组件安装、逐页浏览器、OCR、PDF、组件复用更新及测试附件保留检查。CI 为 Windows Server 2022，尚未完成实体 Windows 10/11 桌面实测及真实法院/邮箱业务验收。不支持 Windows ARM、32 位或 Server；安装前请备份重要资料。\n\n附第三方组件来源与许可清单、SHA-256 和验证记录。源码保持私有，签名私钥未上传 CI。",
+      "notes": "Stella 1.1.5 Windows 公开体验版。支持 Windows 10 1809+ / Windows 11 的 Intel、AMD 64 位电脑。\n\n下载 setup.exe，首次运行联网准备业务服务、浏览器、文字识别与文档转换组件；后续更新只下载变化的组件。内置清单签名校验，个人资料独立保存。\n\n修复法答网页面、Windows 中文资源读取和旧版 Word 转换；支持司法短信文本、TXT 和截图确认导入。Mac 另有苹果通讯录/日历、生物识别、Finder 标签、录音及夸克/飞书联动。\n\n已通过实际安装器中文路径安装、完整组件安装、逐页浏览器、OCR、PDF、组件复用更新及测试附件保留检查。CI 为 Windows Server 2022，尚未完成实体 Windows 10/11 桌面实测及真实法院/邮箱业务验收。不支持 Windows ARM、32 位或 Server；安装前请备份重要资料。\n\n附第三方组件来源与许可清单、SHA-256 和验证记录。源码保持私有，签名私钥未上传 CI。\n\n引导器约 20 MB；首次安装组件约 1 GB，请保持网络连接，下载中断可继续。",
       "assets": [
         {
           "name": "FULL-INSTALL-VERIFICATION.json",
