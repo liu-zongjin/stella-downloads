@@ -1,0 +1,50 @@
+Waiting for verified artifact transport: 0 / 26
+Waiting for verified artifact transport: 0 / 26
+Waiting for verified artifact transport: 0 / 26
+Waiting for verified artifact transport: 0 / 26
+Waiting for verified artifact transport: 0 / 26
+Waiting for verified artifact transport: 0 / 26
+Waiting for verified artifact transport: 0 / 26
+Waiting for verified artifact transport: 0 / 26
+Waiting for verified artifact transport: 0 / 26
+Waiting for verified artifact transport: 0 / 26
+Waiting for verified artifact transport: 0 / 26
+Waiting for verified artifact transport: 0 / 26
+Waiting for verified artifact transport: 0 / 26
+Waiting for verified artifact transport: 0 / 26
+Waiting for verified artifact transport: 0 / 26
+Waiting for verified artifact transport: 0 / 26
+Waiting for verified artifact transport: 0 / 26
+Waiting for verified artifact transport: 0 / 26
+Waiting for verified artifact transport: 0 / 26
+Waiting for verified artifact transport: 0 / 26
+Waiting for verified artifact transport: 0 / 26
+Waiting for verified artifact transport: 0 / 26
+Waiting for verified artifact transport: 0 / 26
+Waiting for verified artifact transport: 0 / 26
+Waiting for verified artifact transport: 0 / 26
+Waiting for verified artifact transport: 0 / 26
+Waiting for verified artifact transport: 0 / 26
+Waiting for verified artifact transport: 0 / 26
+Waiting for verified artifact transport: 0 / 26
+Waiting for verified artifact transport: 0 / 26
+Waiting for verified artifact transport: 0 / 26
+Waiting for verified artifact transport: 0 / 26
+Waiting for verified artifact transport: 0 / 26
+Waiting for verified artifact transport: 0 / 26
+Waiting for verified artifact transport: 0 / 26
+Waiting for verified artifact transport: 0 / 26
+Waiting for verified artifact transport: 0 / 26
+Waiting for verified artifact transport: 0 / 26
+Waiting for verified artifact transport: 0 / 26
+Waiting for verified artifact transport: 0 / 26
+Waiting for verified artifact transport: 0 / 26
+Waiting for verified artifact transport: 0 / 26
+Waiting for verified artifact transport: 0 / 26
+Waiting for verified artifact transport: 0 / 26
+Waiting for verified artifact transport: 0 / 26
+Traceback (most recent call last):
+  File "/home/runner/work/stella-downloads/stella-downloads/release-tools/publish.py", line 19, in <module>
+    else:raise RuntimeError('Artifact transport did not finish')
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Artifact transport did not finish
