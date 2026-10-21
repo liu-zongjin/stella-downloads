@@ -21,6 +21,8 @@ Mac 1.1.3 / 1.1.4 可收到对应架构的更新提示，适用时使用签名�
 
 已完成实际安装包页面、法答网、文档处理及匿名资料升级检查。Intel 在 Rosetta 验证，Windows 在 CI 验证；尚未完成实体 Intel Mac、Windows 10/11 桌面及真实外部账号业务复测。
 
+最新校验值和验证记录随各版本 Release 提供；根目录的 SHA256.txt / PUBLIC_VERIFICATION.json 对应历史 Preview 4。
+
 [发布说明及 SHA-256 校验](https://github.com/liu-zongjin/stella-downloads/releases) · [反馈与定制联系](https://github.com/liu-zongjin/stella-downloads/issues/new)
 
 

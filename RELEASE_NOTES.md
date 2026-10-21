@@ -1,3 +1,17 @@
+# Stella 1.1.5 · 2026-10-21
+
+- 法答网恢复页面显示，内置公开问答支持离线检索、个人笔记与 Word 导出。
+- 修复邮箱附件、发票导出保存位置及中文资源读取，改善 PDF、旧版 Excel、OCR 和 Windows 旧 Word 转换。
+- 新增 Intel Mac 下载与独立更新源，补充 Windows 10 1809+ 的 Intel / AMD 64 位兼容支持。
+- 邮箱配置集中管理，自动同步新邮件；开庭提醒将案号和受理机构合并到关联案件。
+- 统一用户名、律所品牌、文号与联系方式设置，增加系统消息及自定义 AI 接口接入指引。
+
+[选择版本与查看安装指引](https://liu-zongjin.github.io/stella-downloads/#download) · [各版本校验与验证记录](https://github.com/liu-zongjin/stella-downloads/releases)
+
+Mac 采用签名增量更新，Windows 复用未变化组件。早期 Preview / 无下载通道的开发版需手动安装一次新版。旧 Mac 应用包内若曾保存邮箱附件或发票导出，请先额外复制旧 Stella.app 留存。Intel 经 Rosetta 验证，Windows 经 CI 验证；实体设备与真实外部账号业务的测试边界见各版发布说明。
+
+---
+
 # Stella 1.0.0 Preview 4 · 公开体验版
 
 本次仅清理上一公开版中司法短信默认接收号码的手机号残留。首次安装不预置短信接收号码，由使用者自行填写。
