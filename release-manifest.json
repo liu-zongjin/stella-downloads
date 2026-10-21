@@ -1,235 +1,193 @@
 {
   "releases": [
     {
-      "tag": "v1.1.5-2026102109",
-      "title": "Stella 1.1.5 · AppleSilicon",
-      "notes": "修复法答网资源遗漏、文档处理依赖与用户数据目录问题。macOS 12+，Apple 芯片版。\n\n包含 DMG 安装包、签名完整更新 ZIP 和对应旧版的增量包。更新保留本机数据。全部页面与静态资源、法答网检索/笔记/Word 导出及匿名资料升级检查通过。Intel 二进制在 Apple 芯片 Mac 的 Rosetta 环境验证，尚未完成实体 Intel 设备复测。应用采用临时签名，未经过 Apple 公证。\n\nWindows 冻结服务检查已通过，正式组件下载通道尚未就绪，因此本次不提供可正式安装的 Windows 引导器。",
+      "tag": "windows-v1.1.5-2026102111",
+      "title": "Stella 1.1.5 · Windows x64 公开体验版",
+      "notes": "Stella 1.1.5 Windows 公开体验版。支持 Windows 10 1809+ / Windows 11 的 Intel、AMD 64 位电脑。\n\n下载 setup.exe，首次运行联网准备业务服务、浏览器、文字识别与文档转换组件；后续更新只下载变化的组件。内置清单签名校验，个人资料独立保存。\n\n修复法答网页面、Windows 中文资源读取和旧版 Word 转换；支持司法短信文本、TXT 和截图确认导入。Mac 另有苹果通讯录/日历、生物识别、Finder 标签、录音及夸克/飞书联动。\n\n已通过实际安装器中文路径安装、完整组件安装、逐页浏览器、OCR、PDF、组件复用更新及测试附件保留检查。CI 为 Windows Server 2022，尚未完成实体 Windows 10/11 桌面实测及真实法院/邮箱业务验收。不支持 Windows ARM、32 位或 Server；安装前请备份重要资料。\n\n附第三方组件来源与许可清单、SHA-256 和验证记录。源码保持私有，签名私钥未上传 CI。",
       "assets": [
         {
-          "name": "Stella-macOS-AppleSilicon-v1.1.5-2026102109.zip",
-          "bytes": 306725470,
-          "sha256": "d2ed892546120b5e06cb56e00fdf3883123b15c8caac9b818d7f0f71bdf9e991"
+          "name": "FULL-INSTALL-VERIFICATION.json",
+          "bytes": 621,
+          "sha256": "0b300bd817a257aeb14b1ce833c323a6a0e8e8562663f5be41e603f27ab9adcc"
         },
         {
-          "name": "Stella2026102109-2026102101.delta",
-          "bytes": 3239802,
-          "sha256": "58c28e80d75c62c0c41dee95b4339d54d0c8113b4485df9d3782ec12eb75c8ad"
+          "name": "RETRIEVAL-VERIFICATION.json",
+          "bytes": 164,
+          "sha256": "0ca3d117ee5a2273164c2e132d5e2e0199065564722a5896b48318584c1ab117"
         },
         {
-          "name": "Stella-macOS-AppleSilicon-1.1.5.dmg",
-          "bytes": 338296418,
-          "sha256": "55dbebdd4f5e331cbf84f9ff1a520565a7edaf117c5a9baeffed7e5f6e3b0b9f"
+          "name": "SHA256-Windows-1.1.5.txt",
+          "bytes": 764,
+          "sha256": "5da658708e4133af8aab6b157f449268fc7e73e1949f018631df9c90db26501a"
         },
         {
-          "name": "SHA256-AppleSilicon-1.1.5.txt",
-          "bytes": 316,
-          "sha256": "4bc195b1260828435ea8b6810c1c4ab1508f1329fd7ef610094475dc27326928"
+          "name": "Stella-Windows-1.1.5-setup.exe",
+          "bytes": 20173299,
+          "sha256": "c8a85da883aec42fbcf834c1625ed4c698eab3e6d38605b5431a2fb5956e5b2c"
         },
         {
-          "name": "VERIFICATION-AppleSilicon-1.1.5.json",
-          "bytes": 743,
-          "sha256": "dcb48130b614dd01adbb46e999d4b4a6d3664dd9cd2762839bbf61cd0674c364"
-        }
-      ]
-    },
-    {
-      "tag": "v1.1.5-2026102110",
-      "title": "Stella 1.1.5 · Intel",
-      "notes": "修复法答网资源遗漏、文档处理依赖与用户数据目录问题。macOS 12+，Intel 芯片版。\n\n包含 DMG 安装包、签名完整更新 ZIP 和对应旧版的增量包。更新保留本机数据。全部页面与静态资源、法答网检索/笔记/Word 导出及匿名资料升级检查通过。Intel 二进制在 Apple 芯片 Mac 的 Rosetta 环境验证，尚未完成实体 Intel 设备复测。应用采用临时签名，未经过 Apple 公证。\n\nWindows 冻结服务检查已通过，正式组件下载通道尚未就绪，因此本次不提供可正式安装的 Windows 引导器。",
-      "assets": [
-        {
-          "name": "Stella-macOS-Intel-v1.1.5-2026102110.zip",
-          "bytes": 329096578,
-          "sha256": "bf41ae0635bc9482c9bd46d50b6b5d91b9758cfe0ee3148677c7764abc23ed19"
+          "name": "UPSTREAM-SOURCES.json",
+          "bytes": 11292,
+          "sha256": "bdd69c0b143fddb5f904995f00316de4b5a0633c5966b41fef7013261dade3b4"
         },
         {
-          "name": "Stella2026102110-2026102102.delta",
-          "bytes": 2883606,
-          "sha256": "76221ea314b03fe359a5855b268aa533ea3073d756b650d33a2a797ee220a2ab"
+          "name": "browser.zip",
+          "bytes": 207764592,
+          "sha256": "ebc37ecb5cfb5b468ad096949ac22227a735182e7e317653c027d4d40bd7a5fd"
         },
         {
-          "name": "Stella-macOS-Intel-1.1.5.dmg",
-          "bytes": 365415367,
-          "sha256": "34915a1d4dede89548f1589760b9a35eaa389b1e92970384c3c1b26898cdf3a1"
+          "name": "catalog.json",
+          "bytes": 3293325,
+          "sha256": "1cb7461fdcae30f168b649d567a96c11d97a08dfdd408ea01dd9affcd9877cfc"
         },
         {
-          "name": "SHA256-Intel-1.1.5.txt",
-          "bytes": 302,
-          "sha256": "32fefaa307d0bb2cfebddad649dd6526177a19bdf429ca30c8bc472a32b371ff"
+          "name": "converter.zip",
+          "bytes": 510834121,
+          "sha256": "e6023aaf1ba62603b444f301662068af80bec10ce6b38aaf70d704b6680f9344"
         },
         {
-          "name": "VERIFICATION-Intel-1.1.5.json",
-          "bytes": 744,
-          "sha256": "1ce5e58f3e0c8ab9ddfdd38399cc8c95f4dfef67fb023bb8b5e6cea30de570d6"
+          "name": "ocr.zip",
+          "bytes": 50222396,
+          "sha256": "b13d0da3349953f80d604a5059d01c79469337532250ea234a80a7b86879ef3e"
+        },
+        {
+          "name": "server.zip",
+          "bytes": 265223471,
+          "sha256": "bfa4525e8b968dd9936163605c56db7d6355d6f3ae9689b00ef526f0012647a0"
         }
       ]
     }
   ],
   "transport_parts": [
     {
-      "ref": "refs/heads/transport/stella-115-000",
+      "ref": "refs/heads/transport/stella-win115-000",
       "bytes": 41943040,
-      "sha256": "15f7306c25955cb01a420d23a550be8ff4b4150b0500a1ce0f9df65b91d7a757"
+      "sha256": "437f9941e4e5c8a5135f511347e5348eeff7b15ac9354414b6992a30c818fee4"
     },
     {
-      "ref": "refs/heads/transport/stella-115-001",
+      "ref": "refs/heads/transport/stella-win115-001",
       "bytes": 41943040,
-      "sha256": "fcd69e12d8ea84f2b1f47d2e035c7ffd64dae602feb5bd70eda5afaf7d68a87d"
+      "sha256": "db49e2bf13c392d4c298bd63bb6ddaad107c5c17e8b44db0e28d0da47c199c77"
     },
     {
-      "ref": "refs/heads/transport/stella-115-002",
+      "ref": "refs/heads/transport/stella-win115-002",
       "bytes": 41943040,
-      "sha256": "c379a9d060dcdd94acd9785e34fa938f0bffbc0d3b8ff2a4c9ff170065f24508"
+      "sha256": "1524800a254a6731404259b89155eece49239f594ca79ec943ee6eb1148ab7ac"
     },
     {
-      "ref": "refs/heads/transport/stella-115-003",
+      "ref": "refs/heads/transport/stella-win115-003",
       "bytes": 41943040,
-      "sha256": "4e761602b92b74f61959377ea5c5b504f70d5c9ffe96bfab6411a7722d7074ce"
+      "sha256": "bacbd7aa7af3e6f46d2233c1f9a14294284d58d0a6e0f768e578bfb3eaa078db"
     },
     {
-      "ref": "refs/heads/transport/stella-115-004",
+      "ref": "refs/heads/transport/stella-win115-004",
       "bytes": 41943040,
-      "sha256": "799ad0254c6b2dfead75e54800ac5fb4d37f279add0ca13701ead6790768bf1a"
+      "sha256": "948d8ed5c7355388f5b0286f60a61cc580b5178924f8c04133dbbf9332cf1c1f"
     },
     {
-      "ref": "refs/heads/transport/stella-115-005",
+      "ref": "refs/heads/transport/stella-win115-005",
       "bytes": 41943040,
-      "sha256": "1ad03a0f6eb5cfd04f92a9010fddae06052490ee32a336d2cc4345469d055e47"
+      "sha256": "a22f61b2f1cc4cd3d0d55f5005cad5956f590516280b9a217a48a1d49c484273"
     },
     {
-      "ref": "refs/heads/transport/stella-115-006",
+      "ref": "refs/heads/transport/stella-win115-006",
       "bytes": 41943040,
-      "sha256": "93a0ac3d8f83f961a0549a7c64883c24261976dc4acfdcb23d8a960aa2c291f6"
+      "sha256": "061c8d94c1193d9eafbb3a96aa75efb63b3b16529fc03008c63a5d1cf5ed0411"
     },
     {
-      "ref": "refs/heads/transport/stella-115-007",
+      "ref": "refs/heads/transport/stella-win115-007",
       "bytes": 41943040,
-      "sha256": "1169dc355fc5a10810228280512240e922ef156f21dc0a336dbe31e0b8a9f56e"
+      "sha256": "9a5108601c021812a5b54fc42d4201bb151a87da553e0a84d2ae4dea4a1cc7a3"
     },
     {
-      "ref": "refs/heads/transport/stella-115-008",
+      "ref": "refs/heads/transport/stella-win115-008",
       "bytes": 41943040,
-      "sha256": "e129f6f80e6f9ee9a46e9b28914f5b4acd0f14cbf7246b24ce5d0c19ff73edf2"
+      "sha256": "3622777e26bdf1c6e9753ee18df0f699f16a361549283ed48501c315de36e6c0"
     },
     {
-      "ref": "refs/heads/transport/stella-115-009",
+      "ref": "refs/heads/transport/stella-win115-009",
       "bytes": 41943040,
-      "sha256": "c68d86db09dbd7e7648cb7e83e459bb8f6e114ece7421790744979534181215b"
+      "sha256": "264214ddbfe6db66b27fcecee4f5bd7a21e2d5b0211dd050cd81fa2244c07f30"
     },
     {
-      "ref": "refs/heads/transport/stella-115-010",
+      "ref": "refs/heads/transport/stella-win115-010",
       "bytes": 41943040,
-      "sha256": "87b327ef6838d9f4a4f0e0648fc4a4101ffd0a32cabdfd61a3c09a69ecbdeec6"
+      "sha256": "3075af4f8e710d59aa384e682cfb8d35ed0d3d6fd817d3681e60067d400a97b7"
     },
     {
-      "ref": "refs/heads/transport/stella-115-011",
+      "ref": "refs/heads/transport/stella-win115-011",
       "bytes": 41943040,
-      "sha256": "586fbe0fcd9a6ddf00ff6332c4e602a71d9705a88580db3675f2a34c8a3e74d1"
+      "sha256": "667c263db51acbfe2c9b6074797cfb70293089b6148571fd1510e2585682bf82"
     },
     {
-      "ref": "refs/heads/transport/stella-115-012",
+      "ref": "refs/heads/transport/stella-win115-012",
       "bytes": 41943040,
-      "sha256": "06c850f6110998eb0745234f7b5443977d6eaaeacba2a287beada8a22a6b7bd3"
+      "sha256": "94c7c491d56c6a86e3368b3193ac40101bcd6d5a7cb78c97b6f7d0343fb95628"
     },
     {
-      "ref": "refs/heads/transport/stella-115-013",
+      "ref": "refs/heads/transport/stella-win115-013",
       "bytes": 41943040,
-      "sha256": "47221c9abbf2f664221493aa100b35df04988d15b8eb8403912d1d112ab923b7"
+      "sha256": "3f1e630a026094a631dde16ab9de6eea34224e3d28be27bf52f1f6e82fdb3337"
     },
     {
-      "ref": "refs/heads/transport/stella-115-014",
+      "ref": "refs/heads/transport/stella-win115-014",
       "bytes": 41943040,
-      "sha256": "3d344596cb6ba2c5ca590d3c91a55e4532a57f192de382bba6eb1dfed38e37f2"
+      "sha256": "b600486b25eb021d47232343bad78f5758783376abf90069b1deb445d6bcb4ac"
     },
     {
-      "ref": "refs/heads/transport/stella-115-015",
+      "ref": "refs/heads/transport/stella-win115-015",
       "bytes": 41943040,
-      "sha256": "f582862cae3c157c362fba27072b718e9e6b46f4ce9c632963f175d1932d4041"
+      "sha256": "5ecbd18dcafcff521c84bd6714816bdf67add83b23c85c994f6291e242e5b803"
     },
     {
-      "ref": "refs/heads/transport/stella-115-016",
+      "ref": "refs/heads/transport/stella-win115-016",
       "bytes": 41943040,
-      "sha256": "496fba79465f1b611e3427c1f20490938749215087c3bed6dbd4451bbf1ac9b7"
+      "sha256": "10c0a688914589c9b7b219cd32f987f089a96237c04fd621c490fa34e05feb1b"
     },
     {
-      "ref": "refs/heads/transport/stella-115-017",
+      "ref": "refs/heads/transport/stella-win115-017",
       "bytes": 41943040,
-      "sha256": "9cd951c096a117fba9ec2067c417019536da4d73a8d13239467a5b76c22c9c0d"
+      "sha256": "34be2bfc89c502954160baac25972ebfddbbed692707b513d265b6b115a6f3f2"
     },
     {
-      "ref": "refs/heads/transport/stella-115-018",
+      "ref": "refs/heads/transport/stella-win115-018",
       "bytes": 41943040,
-      "sha256": "29e04af45cd247ee2f38c81c0ae519afd5d6113c64ee2a2f20d31b8642c85696"
+      "sha256": "5acdca54b664b627d2b7a4b17c399f1fe8e03338f6df649c4617a65ad621eac1"
     },
     {
-      "ref": "refs/heads/transport/stella-115-019",
+      "ref": "refs/heads/transport/stella-win115-019",
       "bytes": 41943040,
-      "sha256": "532e9ca91ee113ea8c945bb05d01b07a0227ec1e6411325355fb06fbaf7e9d94"
+      "sha256": "27d9017d9c4f76fc730418f3d1268107a8eb13d04a5d2c8c749e2a5142b5b558"
     },
     {
-      "ref": "refs/heads/transport/stella-115-020",
+      "ref": "refs/heads/transport/stella-win115-020",
       "bytes": 41943040,
-      "sha256": "6fde671d589d9e92ef8197e934e1f03e221c7abee1f37d126e84811a0f45081d"
+      "sha256": "9daa562d1d357e96a1384693ca478815ab5a7ae0d50f19aa929578fb34843f13"
     },
     {
-      "ref": "refs/heads/transport/stella-115-021",
+      "ref": "refs/heads/transport/stella-win115-021",
       "bytes": 41943040,
-      "sha256": "f502af9bd7482d9a680415d94589c403c3b8f3f536db91655deb58b1d06219f1"
+      "sha256": "6739b06b1f0962a4ca06dc9c29be8f0689024f36c5750eda7f952c6fab21b1d8"
     },
     {
-      "ref": "refs/heads/transport/stella-115-022",
+      "ref": "refs/heads/transport/stella-win115-022",
       "bytes": 41943040,
-      "sha256": "62022e02925dd9c5c625c61fb6e375095e67881cb2fc122b32a99f2a342c420a"
+      "sha256": "cb38edfefd1cef429f8ca4a07e0e7075f4d08ba7469dd179a62ccec4a4bda9e1"
     },
     {
-      "ref": "refs/heads/transport/stella-115-023",
+      "ref": "refs/heads/transport/stella-win115-023",
       "bytes": 41943040,
-      "sha256": "e5d26145e79ec3617356a6cf5861d816ef7af3373abaab51fe7eccc2df3f7c6f"
+      "sha256": "05115c97be8c82532d35a3c9cbdcc04f2d5b01aa768a3ab3cf3bc42f0869efe7"
     },
     {
-      "ref": "refs/heads/transport/stella-115-024",
+      "ref": "refs/heads/transport/stella-win115-024",
       "bytes": 41943040,
-      "sha256": "a0a42b4a2ed69710b5b011f1d5991ac1ee3dabc7b5e4f19a154f140bcdf01aec"
+      "sha256": "05b0fd66b7ec246e3dabd03398aca76ba4a3ffa4f390d3ca5a49b09c27e33c65"
     },
     {
-      "ref": "refs/heads/transport/stella-115-025",
-      "bytes": 41943040,
-      "sha256": "cb88a387b51c913eb889541e3c9f9db2bda97a2be1956eab6b9b28ac4058f0db"
-    },
-    {
-      "ref": "refs/heads/transport/stella-115-026",
-      "bytes": 41943040,
-      "sha256": "fc65bba8f80057f613483b4dfdbdc6c695d13e8c1e979ecd94634f1deb2aa918"
-    },
-    {
-      "ref": "refs/heads/transport/stella-115-027",
-      "bytes": 41943040,
-      "sha256": "b4638e70bae043a8a12759c911cad7e7ec1e4a715f54259dac3f010749422584"
-    },
-    {
-      "ref": "refs/heads/transport/stella-115-028",
-      "bytes": 41943040,
-      "sha256": "4e9f573c13511f26fd94ba6f8121d52ab21c48193f34f5d1a13463ddb0edd5d8"
-    },
-    {
-      "ref": "refs/heads/transport/stella-115-029",
-      "bytes": 41943040,
-      "sha256": "312f04bc5858f75569fca0d1e213a0f0ad57ef20ea8bf9865fceceba0370e18c"
-    },
-    {
-      "ref": "refs/heads/transport/stella-115-030",
-      "bytes": 41943040,
-      "sha256": "c460d4bc54158e804843a16f4265db38cc52f6a1a57bc649cd8decaaf302b786"
-    },
-    {
-      "ref": "refs/heads/transport/stella-115-031",
-      "bytes": 41943040,
-      "sha256": "acece465ced7e7953539918a49cf3674db7616888377a4d3b5725aa8aa627533"
-    },
-    {
-      "ref": "refs/heads/transport/stella-115-032",
-      "bytes": 3502080,
-      "sha256": "57e70c2eb8597708138aa5f42e03640d7be83289cf25e80c1a9754148b6446f5"
+      "ref": "refs/heads/transport/stella-win115-025",
+      "bytes": 8970240,
+      "sha256": "bab86ec7ea7dcd5f71156bc9db34c2588ad1fc31fdbea67deb0a886df15e2353"
     }
   ]
 }
