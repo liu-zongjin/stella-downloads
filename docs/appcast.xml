@@ -14,7 +14,7 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
 
 修复法答网资源遗漏与只读应用包写入问题；统一 PDF、旧版 Excel 和 OCR 依赖；修复 Windows 中文页面编码。新增实际安装包全部页面与资源校验。
 
-更新保留本机案件、附件、设置和笔记。Intel 与 Apple 芯片分别使用独立更新源。macOS 12 或更新版本。
+常规资料目录和数据库沿用原位置。升级前请备份重要资料；旧版本若在应用包内保存过邮箱附件、发票导出，请额外复制一份旧 Stella.app 到其他目录留存，再升级。Intel 与 Apple 芯片分别使用独立更新源。macOS 12 或更新版本。
 ]]></description>
             <enclosure url="https://github.com/liu-zongjin/stella-downloads/releases/download/v1.1.5-2026102109/Stella-macOS-AppleSilicon-v1.1.5-2026102109.zip" length="306725470" type="application/octet-stream" sparkle:edSignature="jXNwO2Zbk0Juo1Pe5tBQx8+boNJNfUbHXqxs7GGhEm9pj9jaRu5ZRxBAGC6gZ7vUeQ9bQngHad1kp9t+iXvBDA=="></enclosure>
             <sparkle:deltas>
@@ -23,6 +23,6 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
         </item>
     </channel>
 </rss><!-- sparkle-signatures:
-edSignature: zqBr1w+cZ0oW/sqQX1I0jX+unk1oLGuHsYc4h/kxIgRj3xkDyinNRDagou8HsDTBvBNpOcl0Yo5SED0HU9spBw==
-length: 2115
+edSignature: z5wjyzJyzYuY2oEkkV5P1SqX4t/rJkRNnzbJJMqzsrhKnTt6uODbSAP5qkCCAWXUqNixJfr86EySGc28aEI2Bg==
+length: 2280
 -->
