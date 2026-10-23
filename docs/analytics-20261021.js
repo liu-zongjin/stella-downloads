@@ -64,8 +64,9 @@ document.addEventListener('click',event=>{
   if(disabled())return;
   const anchor=event.target.closest?.('a[href]');if(!anchor)return;
   let url;try{url=new URL(anchor.href,location.href);}catch{return;}
-  if(anchor.hasAttribute('data-quark-offline')&&url.hostname==='pan.quark.cn'&&/^\/s\/[a-z0-9]+\/?$/i.test(url.pathname)){
-    send('download',anchor.closest('section[id]')?.id||'download','windows');return;
+  if((anchor.hasAttribute('data-quark-download')||anchor.hasAttribute('data-quark-offline'))&&url.hostname==='pan.quark.cn'&&/^\/s\/[a-z0-9]+\/?$/i.test(url.pathname)){
+    const target=anchor.dataset.downloadTarget||(anchor.hasAttribute('data-quark-offline')?'windows':'');
+    if(['arm','intel','windows'].includes(target))send('download',anchor.closest('section[id]')?.id||'download',target);return;
   }
   if(url.hostname!=='github.com'||!url.pathname.startsWith('/liu-zongjin/stella-downloads/releases/download/'))return;
   const file=url.pathname.split('/').pop();
