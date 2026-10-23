@@ -5,13 +5,13 @@
 
 ![公开版演示界面](docs/assets/stella-workspace-showcase.webp)
 
-### 下载 Stella 1.1.5
+### 下载 Stella：Mac 1.1.5 / Windows 1.1.6
 
 | 版本 | 系统要求 | 安装文件 |
 | --- | --- | --- |
 | Apple 芯片 Mac | macOS 12+ | [DMG 安装包](https://github.com/liu-zongjin/stella-downloads/releases/download/v1.1.5-2026102109/Stella-macOS-AppleSilicon-1.1.5.dmg) |
 | Intel 芯片 Mac | macOS 12+ | [DMG 安装包](https://github.com/liu-zongjin/stella-downloads/releases/download/v1.1.5-2026102110/Stella-macOS-Intel-1.1.5.dmg) |
-| Windows 公开体验版 | Windows 10 1809+ / 11，Intel / AMD 64 位 | [引导安装器](https://github.com/liu-zongjin/stella-downloads/releases/download/windows-v1.1.5-2026102111/Stella-Windows-1.1.5-setup.exe) |
+| Windows 公开体验版 | Windows 10 1809+ / 11，Intel / AMD 64 位 | [引导安装器](https://github.com/liu-zongjin/stella-downloads/releases/download/windows-v1.1.6-2026102301/Stella-Windows-1.1.6-setup.exe) |
 
 Mac 打开 DMG 后，将 Stella.app 拖入“应用程序”。应用尚未经过 Apple 公证，首次打开时请按官网的安全验证指引确认来源。Windows 运行引导安装器，首次联网准备浏览器、OCR、文档转换及业务组件；暂不支持 ARM、32 位和 Windows Server。
 
@@ -43,4 +43,6 @@ Mac 1.1.3 / 1.1.4 可收到对应架构的更新提示，适用时使用签名�
 
 AI、邮箱、法院与 MCP 等服务使用你自己的账号；联网操作会向相应服务发送相关数据。Windows 引导器会准备浏览器、OCR 与文档转换组件；Mac 的外部应用按功能指引配置。
 
-**本仓库公开分发应用，应用源码保持私有。** 使用条件见 [LICENSE](LICENSE)：非商业使用、禁止修改、保留作者署名。第三方组件遵守[各自许可](THIRD_PARTY_NOTICES.md)。GitHub 自动提供的“Source code”压缩包仅包含本分发仓库的网页和说明，不含应用源码。
+Windows 1.1.6 的原创源码按 AGPL-3.0-only 提供，[对应源码](https://github.com/liu-zongjin/apex-legal-os/tree/e54fc0ba92a3f210156f477feac4111582c26e23)与安装包内附许可一致；第三方材料仍遵守各自许可。历史安装包请以包内许可为准，本仓库旧 LICENSE 不限制新 Windows 包随附 AGPL 已授予的权利。GitHub 自动生成的分发仓库源码压缩包只含网站和分发说明，应用源码请使用上面的对应链接。
+
+Windows 1.1.6 显示真实下载、校验与启动进度，减少重复读盘，并加入低速重连和安全备用源机制。匿名统计须明确同意，首次同意立即发送，此后每六小时最多尝试一次，重启和断网不会重置间隔。工具栏“匿名统计”可随时关闭。已有 Windows 用户请下载并覆盖安装新版引导器，以获得安装进度改进和新的统计发送器；只更新业务组件不会替换旧引导器，原有资料独立保留。

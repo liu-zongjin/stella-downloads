@@ -1,7 +1,7 @@
-name: Publish verified Stella desktop artifacts
+name: Publish verified Stella Windows 1.1.6 artifacts
 on:
   push:
-    branches: [distribute/public-v1.1.5-20261021]
+    branches: [distribute/windows-v1.1.6-2026102301]
     paths: [release-manifest.json, .github/workflows/publish-desktop.yml, release-tools/publish.py]
 permissions:
   contents: write

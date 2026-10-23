@@ -42,10 +42,10 @@ for name,asset in expected.items():
  assert path.stat().st_size==asset['bytes'] and checksum(path)==asset['sha256'],name
 for release in manifest['releases']:
  tag=release['tag']
- assert tag.startswith(('v1.1.5-', 'windows-v1.1.5-'))
+ assert tag == 'windows-v1.1.6-2026102301'
  existing=subprocess.run(['gh','release','view',tag,'--json','isDraft'],capture_output=True,text=True)
  if existing.returncode:
-  run('gh','release','create',tag,'--target','distribute/public-v1.1.5-20261021','--draft','--title',release['title'],'--notes',release['notes'])
+  run('gh','release','create',tag,'--target','distribute/windows-v1.1.6-2026102301','--draft','--title',release['title'],'--notes',release['notes'])
  else:assert json.loads(existing.stdout)['isDraft'],'Never replace a published release'
  release_api=json.loads(output('gh','release','view',tag,'--json','apiUrl'))['apiUrl']
  for asset in release['assets']:
