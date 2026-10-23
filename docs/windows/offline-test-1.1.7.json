@@ -1,0 +1,15 @@
+{
+  "version": "1.1.7",
+  "build": 2026102302,
+  "test_only": true,
+  "source": "cee0a68ea9f46ae7a35df610a43a5375008f8c3e",
+  "bytes": 1073927369,
+  "public_update_feed_replaced": false,
+  "ci_run": 39972432981,
+  "local_archive_filename": "Stella-Windows-1.1.7-test.1-offline.zip",
+  "local_archive_sha256": "33eba880166f734fb70d9426e35e41899b34abdd203e3783f58e19882a77175b",
+  "format": "shared_directory",
+  "file_checksums": "SHA256-Offline-Files-1.1.7.txt",
+  "share_url": "https://pan.quark.cn/s/571f64830402",
+  "files": 13
+}

@@ -46,5 +46,7 @@
   else if (kind === 'windows-old') note = 'Windows 版要求 Windows 10 1809 或更新版本，请先升级系统。';
   else if (kind === 'windows-unknown') note = '已识别 Windows，请在系统设置中确认是 Intel / AMD 64 位后选择 Windows 引导器。';
   document.querySelectorAll('[data-device-note]').forEach(element => { element.textContent = note; });
+  const offlineShortcut = document.querySelector('[data-windows-offline-shortcut]');
+  if (offlineShortcut) offlineShortcut.hidden = !kind.startsWith('windows');
   document.documentElement.dataset.downloadRecommendation = kind;
 })();

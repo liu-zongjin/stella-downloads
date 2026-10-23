@@ -64,6 +64,9 @@ document.addEventListener('click',event=>{
   if(disabled())return;
   const anchor=event.target.closest?.('a[href]');if(!anchor)return;
   let url;try{url=new URL(anchor.href,location.href);}catch{return;}
+  if(anchor.hasAttribute('data-quark-offline')&&url.hostname==='pan.quark.cn'&&/^\/s\/[a-z0-9]+\/?$/i.test(url.pathname)){
+    send('download',anchor.closest('section[id]')?.id||'download','windows');return;
+  }
   if(url.hostname!=='github.com'||!url.pathname.startsWith('/liu-zongjin/stella-downloads/releases/download/'))return;
   const file=url.pathname.split('/').pop();
   const target=/^Stella.*(?:AppleSilicon).*\.(?:dmg|zip)$/i.test(file)?'arm':/^Stella.*Intel.*\.(?:dmg|zip)$/i.test(file)?'intel':/^Stella-Windows.*\.exe$/i.test(file)?'windows':'';
