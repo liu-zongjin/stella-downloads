@@ -1,6 +1,6 @@
 const {test}=require('node:test'),assert=require('node:assert/strict'),vm=require('node:vm'),fs=require('node:fs');
 const source=fs.readFileSync(require('node:path').join(__dirname,'../docs/analytics-20261021.js'),'utf8');
-function setup({dnt=false,blocked=false}={}){
+function setup({dnt=false,blocked=false,path="/stella-downloads/",hash="#updates"}={}){
  const calls=[],handlers={},buttons={},saved=new Map(),session=new Map();
  const store=map=>({getItem:k=>map.get(k)||null,setItem:(k,v)=>map.set(k,v),removeItem:k=>map.delete(k)});
  const button={textContent:'',setAttribute(){},addEventListener:(name,fn)=>buttons[name]=fn};
@@ -8,8 +8,8 @@ function setup({dnt=false,blocked=false}={}){
  const window={document,doNotTrack:null,innerHeight:900,addEventListener(){}};
  if(blocked){Object.defineProperty(window,'localStorage',{get(){throw Error('blocked');}});Object.defineProperty(window,'sessionStorage',{get(){throw Error('blocked');}});}
  else{window.localStorage=store(saved);window.sessionStorage=store(session);}
- vm.runInNewContext(source,{window,document,navigator:{doNotTrack:dnt?'1':'0'},location:{hash:'#updates',hostname:'liu-zongjin.github.io',href:'https://liu-zongjin.github.io/stella-downloads/#updates'},crypto:require('node:crypto').webcrypto,fetch:async(url,options)=>{calls.push({url,...options,event:JSON.parse(options.body)});return {};},AbortSignal,URL,Date,Set,JSON});
- const click=()=>handlers.click({target:{closest:()=>({href:'https://github.com/liu-zongjin/stella-downloads/releases/download/v1/Stella-macOS-Intel-1.1.5.dmg',closest:()=>({id:'download'})})}});
+ vm.runInNewContext(source,{window,document,navigator:{doNotTrack:dnt?'1':'0'},location:{hash,pathname:path,hostname:'liu-zongjin.github.io',href:'https://liu-zongjin.github.io'+path+hash},crypto:require('node:crypto').webcrypto,fetch:async(url,options)=>{calls.push({url,...options,event:JSON.parse(options.body)});return {};},AbortSignal,URL,Date,Set,JSON});
+ const click=(href='https://github.com/liu-zongjin/stella-downloads/releases/download/v1/Stella-macOS-Intel-1.1.5.dmg',target='')=>handlers.click({target:{closest:()=>({href,dataset:{downloadTarget:target},hasAttribute:name=>name==='data-quark-download'&&!!target,closest:()=>({id:'download'})})}});
  return {calls,buttons,handlers,click,button,saved,document};
 }
 test('pageview includes deep landing, only source hostname, no queries; download captures target',()=>{
@@ -30,4 +30,18 @@ test('storage blocking cannot break the site and opt-out works in memory',()=>{
 });
 test('hidden pages do not emit events',()=>{
  const state=setup();state.document.hidden=true;state.click();assert.equal(state.calls.length,1);
+});
+
+test('independent download guide records its own landing and channels without query data',()=>{
+ const state=setup({path:'/stella-downloads/download.html',hash:'#windows'});
+ assert.equal(state.calls[0].event.section,'download-guide');
+ state.click('https://pan.quark.cn/s/abc123?private=ignored','windows');
+ state.click('https://github.com/liu-zongjin/stella-downloads/releases/download/v1/Stella-Windows-1.1.7-test.1-offline-complete.zip');
+ state.click('https://github.com/liu-zongjin/stella-downloads/releases/download/v1/Stella-Windows-1.1.6-setup.exe');
+ assert.deepEqual(state.calls.slice(1).map(c=>[c.event.section,c.event.target,c.event.channel]),[
+  ['download-guide','windows','quark'],['download-guide','windows','github'],['download-guide','windows','github']]);
+ assert.ok(!JSON.stringify(state.calls).includes('private'));
+ state.click('https://github.com/liu-zongjin/stella-downloads/releases/download/v1/browser-component.zip');
+ state.click('https://github.com/liu-zongjin/stella-downloads/releases/download/v1/Stella-Windows-backend.zip');
+ assert.equal(state.calls.length,4);
 });
