@@ -1,0 +1,18 @@
+name: Verify and publish Stella 1.1.8 final releases
+on:
+  push:
+    branches: [distribute/stella-1.1.8-windows-final-20261028]
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m pip install cryptography
+      - name: Verify candidate, signed catalog, full offline archive and all release assets
+        run: python3 -u release-tools/stage-windows-118.py
