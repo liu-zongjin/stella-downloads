@@ -5,6 +5,10 @@
 
 ![公开版演示界面](docs/assets/stella-workspace-showcase.webp)
 
+### 观看功能介绍
+
+[在线观看 Stella 介绍片 · 3 分 24 秒](https://liu-zongjin.github.io/stella-downloads/watch.html)
+
 ### 下载 Stella：Mac 1.1.5 / Windows 1.1.6
 
 | 版本 | 系统要求 | 安装文件 |

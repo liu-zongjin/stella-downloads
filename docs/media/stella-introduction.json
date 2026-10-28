@@ -1,0 +1,12 @@
+{
+  "source_sha256": "6faf3b0990267eb03589d77978e4e3b99d3d126ab7e11ec5498e0da61a623876",
+  "web_sha256": "d2ac2a7233c5e3e4e3c2495f1ed1cabf6fcea4b76125fede74a5044d709475ac",
+  "duration_seconds": 204.35,
+  "width": 2560,
+  "height": 1440,
+  "fps": 60,
+  "codec": "H.264 / AAC",
+  "web_bytes": 63601221,
+  "page": "https://liu-zongjin.github.io/stella-downloads/watch.html",
+  "video": "https://liu-zongjin.github.io/stella-downloads/media/stella-introduction-20261028.mp4"
+}

@@ -1,0 +1,5 @@
+Stella 法律操作系统功能介绍
+作者：刘宗锦、徐若楠、庄承源
+机械键盘录音：Mechvibes / CherryMX Blue ABS keycaps
+来源：https://github.com/hainguyents13/mechvibes/tree/main/src/audio/cherrymx-blue-abs
+许可及版权原文：mechvibes-license.txt
