@@ -1,8 +1,28 @@
-<?xml version="1.0" standalone="yes"?><!-- sparkle-sign-warning:
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><!-- sparkle-sign-warning:
 IMPORTANT: This file was signed by Sparkle. Any modifications to this file requires re-signing this file with generate_appcast or sign_update! The signed signature will be embedded at the end of this file.
 --><rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
     <channel>
         <title>Stella</title>
+        <item>
+            <title>1.1.8</title>
+            <pubDate>Wed, 28 Oct 2026 17:23:13 +0800</pubDate>
+            <sparkle:version>2026102804</sparkle:version>
+            <sparkle:shortVersionString>1.1.8</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>12.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <description sparkle:format="markdown"># Stella 1.1.8
+
+- 新建案件可选择本地材料进行 AI 智能识别，确认并修改信息后带入立案流程。
+- 修复新建对方当事人档案时的错误。
+- 改进 AI 文档阅读、请求预算与对话可靠性，支持在 AI 接口管理中配置智能立案。
+- 知识文章支持电子表格和表格编辑，完善系列案件、待办与提醒体验。
+- Mac 匿名统计需用户同意，首次同意后发送，之后每六小时最多一次。
+</description>
+            <enclosure url="https://github.com/liu-zongjin/stella-downloads/releases/download/v1.1.8-2026102804/Stella-macOS-AppleSilicon-v1.1.8-2026102804.zip" length="305073706" type="application/octet-stream" sparkle:edSignature="Jrb0wBYyTU02kn2MjCcOlaj6Ox+Uemb1HflCdxwvNfqZGIdTz/kbDC+kkBr/6P8Eb0/TqD4vDv3yqqQb82Z8Aw=="></enclosure>
+            <sparkle:deltas>
+                <enclosure url="https://github.com/liu-zongjin/stella-downloads/releases/download/v1.1.8-2026102804/Stella2026102804-2026102109.delta" sparkle:deltaFrom="2026102109" length="5392950" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="941872" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="UVnISessmTlRq11rmWWTrzi2ky5Mi2sL+j/A7nmpp2HkA7/cFWLVTJ0XbMULH4P1Hw86zL6hbyiPtyXOaGVwCQ=="></enclosure>
+            </sparkle:deltas>
+        </item>
         <item>
             <title>1.1.5</title>
             <pubDate>Wed, 21 Oct 2026 02:17:51 +0800</pubDate>
@@ -10,12 +30,12 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
             <sparkle:shortVersionString>1.1.5</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>12.0</sparkle:minimumSystemVersion>
             <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
-            <description sparkle:format="markdown"><![CDATA[Stella 1.1.5
+            <description sparkle:format="markdown">Stella 1.1.5
 
 修复法答网资源遗漏与只读应用包写入问题；统一 PDF、旧版 Excel 和 OCR 依赖；修复 Windows 中文页面编码。新增实际安装包全部页面与资源校验。
 
-常规资料目录和数据库沿用原位置。升级前请备份重要资料；旧版本若在应用包内保存过邮箱附件、发票导出，请额外复制一份旧 Stella.app 到其他目录留存，再升级。Intel 与 Apple 芯片分别使用独立更新源。macOS 12 或更新版本。
-]]></description>
+更新保留本机案件、附件、设置和笔记。Intel 与 Apple 芯片分别使用独立更新源。macOS 12 或更新版本。
+</description>
             <enclosure url="https://github.com/liu-zongjin/stella-downloads/releases/download/v1.1.5-2026102109/Stella-macOS-AppleSilicon-v1.1.5-2026102109.zip" length="306725470" type="application/octet-stream" sparkle:edSignature="jXNwO2Zbk0Juo1Pe5tBQx8+boNJNfUbHXqxs7GGhEm9pj9jaRu5ZRxBAGC6gZ7vUeQ9bQngHad1kp9t+iXvBDA=="></enclosure>
             <sparkle:deltas>
                 <enclosure url="https://github.com/liu-zongjin/stella-downloads/releases/download/v1.1.5-2026102109/Stella2026102109-2026102101.delta" sparkle:deltaFrom="2026102101" length="3239802" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="941872" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="PSUJcnU5A6YmSIzzMeOTXUSGbx2VdWANklNAcqFymAslqx7+n/syCYooFOHFPNtbXZ8FuSrPzY4R/Vc/cWwyDw=="></enclosure>
@@ -23,6 +43,6 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
         </item>
     </channel>
 </rss><!-- sparkle-signatures:
-edSignature: z5wjyzJyzYuY2oEkkV5P1SqX4t/rJkRNnzbJJMqzsrhKnTt6uODbSAP5qkCCAWXUqNixJfr86EySGc28aEI2Bg==
-length: 2280
+edSignature: PGAlepUxjIEIzqS8faYzw742zxNlEBjej+PtIGetn5Uh5v0MHs8LilAbmp3KMsWzcwgrrpBLmfGtNyA9rA71Aw==
+length: 3929
 -->

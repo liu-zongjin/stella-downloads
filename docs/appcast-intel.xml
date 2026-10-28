@@ -4,6 +4,25 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
     <channel>
         <title>Stella</title>
         <item>
+            <title>1.1.8</title>
+            <pubDate>Wed, 28 Oct 2026 17:23:14 +0800</pubDate>
+            <sparkle:version>2026102805</sparkle:version>
+            <sparkle:shortVersionString>1.1.8</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>12.0</sparkle:minimumSystemVersion>
+            <description sparkle:format="markdown"># Stella 1.1.8
+
+- 新建案件可选择本地材料进行 AI 智能识别，确认并修改信息后带入立案流程。
+- 修复新建对方当事人档案时的错误。
+- 改进 AI 文档阅读、请求预算与对话可靠性，支持在 AI 接口管理中配置智能立案。
+- 知识文章支持电子表格和表格编辑，完善系列案件、待办与提醒体验。
+- Mac 匿名统计需用户同意，首次同意后发送，之后每六小时最多一次。
+</description>
+            <enclosure url="https://github.com/liu-zongjin/stella-downloads/releases/download/v1.1.8-2026102805/Stella-macOS-Intel-v1.1.8-2026102805.zip" length="331797327" type="application/octet-stream" sparkle:edSignature="KDCxUNfX27l+BiDsD1/bVRcwHfmZgQWwA4lFTG1hpzd3ALEGvTs109jN5NLLtCGYXhiZv84WPm7UVD2Umb1qBA=="></enclosure>
+            <sparkle:deltas>
+                <enclosure url="https://github.com/liu-zongjin/stella-downloads/releases/download/v1.1.8-2026102805/Stella2026102805-2026102110.delta" sparkle:deltaFrom="2026102110" length="4871126" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="941872" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="F/lBH3wb1/K/Tdv9absp+5kQfT63bYcpd80ddCcCPjeFEocMZ8GldBneWG0wMI/GV4x0ErwUMJk8MPDrOVWJAg=="></enclosure>
+            </sparkle:deltas>
+        </item>
+        <item>
             <title>1.1.5</title>
             <pubDate>Wed, 21 Oct 2026 02:17:52 +0800</pubDate>
             <sparkle:version>2026102110</sparkle:version>
@@ -13,7 +32,7 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
 
 修复法答网资源遗漏与只读应用包写入问题；统一 PDF、旧版 Excel 和 OCR 依赖；修复 Windows 中文页面编码。新增实际安装包全部页面与资源校验。
 
-常规资料目录和数据库沿用原位置。升级前请备份重要资料；旧版本若在应用包内保存过邮箱附件、发票导出，请额外复制一份旧 Stella.app 到其他目录留存，再升级。Intel 与 Apple 芯片分别使用独立更新源。macOS 12 或更新版本。
+更新保留本机案件、附件、设置和笔记。Intel 与 Apple 芯片分别使用独立更新源。macOS 12 或更新版本。
 </description>
             <enclosure url="https://github.com/liu-zongjin/stella-downloads/releases/download/v1.1.5-2026102110/Stella-macOS-Intel-v1.1.5-2026102110.zip" length="329096578" type="application/octet-stream" sparkle:edSignature="ArpWCKu+sMRCKqkEFhTznRIe34gxiHkIrq2Zv+rHC+H0KProByyLHw5CCCUmHHkVD5eEvKFLDw1XUonkGykJAA=="></enclosure>
             <sparkle:deltas>
@@ -22,6 +41,6 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
         </item>
     </channel>
 </rss><!-- sparkle-signatures:
-edSignature: ppjefeZ6xxdbfIAjudpY4k6lDt9d54Nxs5cWK6P1pBTbEvNmfMH+qfqZtBSH0NndaQ5xXcONALRqw3q5wpZ8Bg==
-length: 2199
+edSignature: B+ChLnqx8n6guyGkwOoNSyZOYzOZd55iXQMDTMDC7oJdoDiLLFFUXq/s75h6bVMZTXK9jz1ybQDHS701hA82Aw==
+length: 3757
 -->
