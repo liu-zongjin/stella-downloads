@@ -1,0 +1,17 @@
+name: Stage verified Stella 1.1.8 Mac assets
+on:
+  push:
+    branches: [distribute/stella-1.1.8-20261028]
+permissions:
+  contents: write
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify transport and stage release drafts
+        run: python3 -u release-tools/stage-mac-118.py

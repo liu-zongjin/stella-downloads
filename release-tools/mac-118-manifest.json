@@ -1,0 +1,256 @@
+[
+  {
+    "tag": "v1.1.8-2026102804",
+    "name": "Stella-macOS-AppleSilicon-1.1.8-2026102804.dmg",
+    "sha256": "9b92e8be4983fbc639f2e293dda7c2a3a33e6a9886550a26f9debece524c0092",
+    "bytes": 337661221,
+    "parts": [
+      {
+        "ref": "refs/heads/transport/stella-118-arm-00-000",
+        "sha256": "439a04a6d43ef941ec7a1d90414566a24fc18a10cc50446c60325751f1a9d678",
+        "bytes": 41943040
+      },
+      {
+        "ref": "refs/heads/transport/stella-118-arm-00-001",
+        "sha256": "d2e1007aad1c0b686e9d5a18691ef5aa5a85b5493637cccf17ac080a553b68a1",
+        "bytes": 41943040
+      },
+      {
+        "ref": "refs/heads/transport/stella-118-arm-00-002",
+        "sha256": "3fd2164386589ad7afa06299708b5ac880d36576a6852837a15b2d39d234c857",
+        "bytes": 41943040
+      },
+      {
+        "ref": "refs/heads/transport/stella-118-arm-00-003",
+        "sha256": "94d45ae506cd490a53e5e5d1c9c6129ef35aecc56bade54659d0150f53e14129",
+        "bytes": 41943040
+      },
+      {
+        "ref": "refs/heads/transport/stella-118-arm-00-004",
+        "sha256": "66fd573635dca325c5792b3a22be0deeaa6f3dea59c50636d512cbc7f622c8b9",
+        "bytes": 41943040
+      },
+      {
+        "ref": "refs/heads/transport/stella-118-arm-00-005",
+        "sha256": "9554fb4796d0d25cfb4ddb470b83e0a8eea17d9a1b8d4a9d8287f6acf0382f3b",
+        "bytes": 41943040
+      },
+      {
+        "ref": "refs/heads/transport/stella-118-arm-00-006",
+        "sha256": "574861598978097463d0300a98c263c0ee890fdf049acfb52c0a59a4cd773b90",
+        "bytes": 41943040
+      },
+      {
+        "ref": "refs/heads/transport/stella-118-arm-00-007",
+        "sha256": "bfd0287a0324f37bcbfaa262950ba9189e02002e1c94841a7cfd85c6f1d1600b",
+        "bytes": 41943040
+      },
+      {
+        "ref": "refs/heads/transport/stella-118-arm-00-008",
+        "sha256": "e3f91aae527febc8c137e5f19bb9260b566ab492740acf5654519b00b52d9209",
+        "bytes": 2116901
+      }
+    ]
+  },
+  {
+    "tag": "v1.1.8-2026102804",
+    "name": "SHA256-AppleSilicon-1.1.8.txt",
+    "sha256": "e386ab8ab0ca35ce21d9cac9a526809b50fe19c2d2fe11b82e14720bc95c3272",
+    "bytes": 113,
+    "parts": [
+      {
+        "ref": "refs/heads/transport/stella-118-arm-01-000",
+        "sha256": "e386ab8ab0ca35ce21d9cac9a526809b50fe19c2d2fe11b82e14720bc95c3272",
+        "bytes": 113
+      }
+    ]
+  },
+  {
+    "tag": "v1.1.8-2026102804",
+    "name": "Stella-macOS-AppleSilicon-v1.1.8-2026102804.zip",
+    "sha256": "5ba1ff34cc685f979726677b276e2532d138d7bc710402c922aa435a14df777a",
+    "bytes": 305073706,
+    "parts": [
+      {
+        "ref": "refs/heads/transport/stella-118-arm-02-000",
+        "sha256": "0a96e81de0c9fd862c375d1b6867f973404b14ca0e97fad2bf9bc524295ae5d1",
+        "bytes": 41943040
+      },
+      {
+        "ref": "refs/heads/transport/stella-118-arm-02-001",
+        "sha256": "0012909d71a370407fc59425694ffcf252043d59c177c2ef269eff09c21ff95d",
+        "bytes": 41943040
+      },
+      {
+        "ref": "refs/heads/transport/stella-118-arm-02-002",
+        "sha256": "df01e85710aa3b0e302ffdb12edf31d30c38a0d2740a5b6c3390657188222d99",
+        "bytes": 41943040
+      },
+      {
+        "ref": "refs/heads/transport/stella-118-arm-02-003",
+        "sha256": "24f1332ef4c498639a7b2a95c14eb978c5b96f04de6ef708411131fb94b36f74",
+        "bytes": 41943040
+      },
+      {
+        "ref": "refs/heads/transport/stella-118-arm-02-004",
+        "sha256": "f28830a38c6817795e8385d1ca851720cf7bcc20314aa4e811f9a4d6985df7f9",
+        "bytes": 41943040
+      },
+      {
+        "ref": "refs/heads/transport/stella-118-arm-02-005",
+        "sha256": "e512a4f427cc4dd16cdb255519b3a9396fa19653b1919c48d462126aa082dbdc",
+        "bytes": 41943040
+      },
+      {
+        "ref": "refs/heads/transport/stella-118-arm-02-006",
+        "sha256": "07b246256d4b98c4dac867209c8e100aff81fba290106ce3a02206c70c646104",
+        "bytes": 41943040
+      },
+      {
+        "ref": "refs/heads/transport/stella-118-arm-02-007",
+        "sha256": "9ef03a073b3b1b086682a5309ae0cdd75273a0bff2b2070f6e2ea814a54976db",
+        "bytes": 11472426
+      }
+    ]
+  },
+  {
+    "tag": "v1.1.8-2026102804",
+    "name": "Stella2026102804-2026102109.delta",
+    "sha256": "9c08b4e4442f1111b51d1f2926943597e0347ede365d3ebe37691c969c7fbedb",
+    "bytes": 5392950,
+    "parts": [
+      {
+        "ref": "refs/heads/transport/stella-118-arm-03-000",
+        "sha256": "9c08b4e4442f1111b51d1f2926943597e0347ede365d3ebe37691c969c7fbedb",
+        "bytes": 5392950
+      }
+    ]
+  },
+  {
+    "tag": "v1.1.8-2026102805",
+    "name": "Stella-macOS-Intel-1.1.8-2026102805.dmg",
+    "sha256": "61dfa004749256ed040d6734e1f9ca2da163d535fafdeb5740de8bdb7067d636",
+    "bytes": 367886194,
+    "parts": [
+      {
+        "ref": "refs/heads/transport/stella-118-intel-04-000",
+        "sha256": "cebcfee54eea6575f006a4f8d038fbedbe20e0a0b5f43116fec72dfaf27ea70e",
+        "bytes": 41943040
+      },
+      {
+        "ref": "refs/heads/transport/stella-118-intel-04-001",
+        "sha256": "dc26925ba779c406d4af260c0b7b3833fa34746160a2870d9afaed6c981fbdde",
+        "bytes": 41943040
+      },
+      {
+        "ref": "refs/heads/transport/stella-118-intel-04-002",
+        "sha256": "136569938c541e051af56e55815fa898b0564ed751a8d2d9cf144a32383b949c",
+        "bytes": 41943040
+      },
+      {
+        "ref": "refs/heads/transport/stella-118-intel-04-003",
+        "sha256": "74f04d03f3639d2c6b13a35376388b16629f7e9529bd34d1a32f58b4c0993bfe",
+        "bytes": 41943040
+      },
+      {
+        "ref": "refs/heads/transport/stella-118-intel-04-004",
+        "sha256": "f54b772c9140777d22aa9ba74ff7da37272c76d75ea0c391878eabf3b4b19f94",
+        "bytes": 41943040
+      },
+      {
+        "ref": "refs/heads/transport/stella-118-intel-04-005",
+        "sha256": "3d02139768927796830f40e9ff6e4eb3839c2b28061fa4f9d08a3b366d8d3c1b",
+        "bytes": 41943040
+      },
+      {
+        "ref": "refs/heads/transport/stella-118-intel-04-006",
+        "sha256": "2d9e3e1b86cd6dbef28f36d6e0355620435bae2db20d2b02710eb87e9caa62c1",
+        "bytes": 41943040
+      },
+      {
+        "ref": "refs/heads/transport/stella-118-intel-04-007",
+        "sha256": "0a6ada0de6e238deb6ee195c7415fc991bcf7d1a6bb8003a7e4c6bfcf5c7625d",
+        "bytes": 41943040
+      },
+      {
+        "ref": "refs/heads/transport/stella-118-intel-04-008",
+        "sha256": "03297e2db4737700a3ef8869f2379c091ab571efd872a26af7f3771044a0c4c4",
+        "bytes": 32341874
+      }
+    ]
+  },
+  {
+    "tag": "v1.1.8-2026102805",
+    "name": "SHA256-Intel-1.1.8.txt",
+    "sha256": "ca8d60623f8bb63e7911146cf521e9b800472a2650fc8d09c7f2a7ba3affa802",
+    "bytes": 106,
+    "parts": [
+      {
+        "ref": "refs/heads/transport/stella-118-intel-05-000",
+        "sha256": "ca8d60623f8bb63e7911146cf521e9b800472a2650fc8d09c7f2a7ba3affa802",
+        "bytes": 106
+      }
+    ]
+  },
+  {
+    "tag": "v1.1.8-2026102805",
+    "name": "Stella-macOS-Intel-v1.1.8-2026102805.zip",
+    "sha256": "545b5a0de7ff22f6b87e2e96cf3c5d41dbeea75b6457daa0880a28cfc3bb9d32",
+    "bytes": 331797327,
+    "parts": [
+      {
+        "ref": "refs/heads/transport/stella-118-intel-06-000",
+        "sha256": "858107e56d5547988ac58975b28fd40482bb1b6fd807b401370e03f978ad4a38",
+        "bytes": 41943040
+      },
+      {
+        "ref": "refs/heads/transport/stella-118-intel-06-001",
+        "sha256": "68d6e0312e64e60562e10fb092bb6cd2ee84091f44985f05b6813c01bfb4ed97",
+        "bytes": 41943040
+      },
+      {
+        "ref": "refs/heads/transport/stella-118-intel-06-002",
+        "sha256": "92928e7495b888169469972fb562e7f1f877fdaf34404054f5fe6c60c436d643",
+        "bytes": 41943040
+      },
+      {
+        "ref": "refs/heads/transport/stella-118-intel-06-003",
+        "sha256": "60d0b859ca6b087762a7724dbebabe669a12c00acdd40668b5b69926ddcfa13c",
+        "bytes": 41943040
+      },
+      {
+        "ref": "refs/heads/transport/stella-118-intel-06-004",
+        "sha256": "a37af09ccf614b93bed88ae840f39d354d02509c2865bc9fead2343db235a525",
+        "bytes": 41943040
+      },
+      {
+        "ref": "refs/heads/transport/stella-118-intel-06-005",
+        "sha256": "38b5004233682e35719192c7d5f1703e638a9e3184ca36f9a89279ad273b1611",
+        "bytes": 41943040
+      },
+      {
+        "ref": "refs/heads/transport/stella-118-intel-06-006",
+        "sha256": "5a0153ae540a3bf22d1cbfc493a202caa706835169e7852aee3e87ed8cbd5e5a",
+        "bytes": 41943040
+      },
+      {
+        "ref": "refs/heads/transport/stella-118-intel-06-007",
+        "sha256": "c827bd74e8317d402d94a6b5eeae017612a3dba4fac30dbfc521652f69b0bdbd",
+        "bytes": 38196047
+      }
+    ]
+  },
+  {
+    "tag": "v1.1.8-2026102805",
+    "name": "Stella2026102805-2026102110.delta",
+    "sha256": "dcc8f32cafda1a2c46774f056e47de99f0520eb07559bbfcd53845a971348abc",
+    "bytes": 4871126,
+    "parts": [
+      {
+        "ref": "refs/heads/transport/stella-118-intel-07-000",
+        "sha256": "dcc8f32cafda1a2c46774f056e47de99f0520eb07559bbfcd53845a971348abc",
+        "bytes": 4871126
+      }
+    ]
+  }
+]
