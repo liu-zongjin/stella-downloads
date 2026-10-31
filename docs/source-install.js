@@ -6,7 +6,7 @@
       try {
         if (navigator.clipboard && window.isSecureContext) await navigator.clipboard.writeText(field.value);
         else { field.focus(); field.select(); if (!document.execCommand('copy')) throw new Error('copy'); }
-        status.textContent = '已复制，请粘贴到 AI Agent。';
+        status.textContent = '已复制，请粘贴到这台电脑上的 AI 助手对话框。';
       } catch (_) { field.focus(); field.select(); status.textContent = '请选择并手动复制上方指令。'; }
     });
   });
