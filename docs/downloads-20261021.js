@@ -39,8 +39,18 @@
     card.classList.add('is-recommended');
     card.querySelector('.platform-tag').textContent += ' · 为你推荐';
     const labels = {arm: 'Apple 芯片 Mac 版', intel: 'Intel Mac 版', windows: 'Windows 离线安装包'};
-    note = '推荐 ' + labels[kind] + ' · ' + (kind === 'windows' ? '1.1.7 测试版' : '1.1.5') + ' · ' + (kind === 'windows' ? 'Windows 10 1809+ / Windows 11 · Intel / AMD 64 位' : 'macOS 12+');
-    document.querySelectorAll('[data-download]').forEach(button => { button.href = link.href; button.textContent = '下载与安装 · ' + labels[kind] + ' ↗'; });
+    // Read the version and requirements from the current platform card so the
+    // recommendation cannot drift from the download page after a release.
+    const detail = (card.querySelector('p')?.textContent || '').trim().replace(/\s+/g, ' ');
+    note = '推荐 ' + labels[kind] + ' · ' + (kind === 'windows' ? detail.replace(/仍在开发中\s*·\s*/, '') : detail);
+    document.querySelectorAll('[data-download]').forEach(button => {
+      button.href = link.href;
+      const label = document.createTextNode('下载与安装 · ' + labels[kind] + ' ');
+      const arrow = document.createElement('span');
+      arrow.setAttribute('aria-hidden', 'true');
+      arrow.textContent = '↗';
+      button.replaceChildren(label, arrow);
+    });
   } else if (kind === 'mac') note = '请在「关于本机」确认芯片，再选择 Apple 芯片版或 Intel 版。';
   else if (kind === 'windows-arm' || kind === 'windows-32') note = 'Windows 版适用于 Intel / AMD 64 位电脑；ARM 和 32 位系统暂不支持。';
   else if (kind === 'windows-old') note = 'Windows 版要求 Windows 10 1809 或更新版本，请先升级系统。';
