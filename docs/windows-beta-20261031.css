@@ -1,0 +1,15 @@
+@charset "UTF-8";
+/* Windows 测试版说明：仅在 Windows 设备上显示，遵循下载页既有卡片规范 */
+.beta-notice{margin:30px 0 0;padding:26px 30px;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:inset 3px 0 0 var(--red)}
+.beta-notice .eyebrow{display:block}
+.beta-notice h2{font:500 clamp(20px,2.6vw,25px)/1.4 "Songti SC",serif;letter-spacing:-.2px;margin:10px 0 14px}
+.beta-notice ul{margin:0;padding-left:20px;font-size:14px;color:var(--muted);line-height:1.7}
+.beta-notice li+li{margin-top:7px}
+.beta-notice strong{color:var(--ink);font-weight:600}
+.beta-notice-link{margin:16px 0 0;padding-top:14px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.beta-notice-link a{text-underline-offset:4px}
+.beta-inline{margin:22px 0 24px;padding:16px 20px;background:var(--paper);border:1px solid var(--line);border-radius:6px;font-size:13px;line-height:1.7}
+.beta-inline p{margin:0 0 6px;color:var(--ink)}
+.beta-inline ul{margin:0;padding-left:20px;color:var(--muted)}
+.beta-inline li+li{margin-top:3px}
+@media(max-width:650px){.beta-notice{padding:20px 18px;margin-top:24px}.beta-notice h2{margin:8px 0 12px}.beta-inline{padding:14px 16px}}
