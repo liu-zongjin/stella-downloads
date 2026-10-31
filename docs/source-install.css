@@ -1,1 +1,22 @@
- .source-agent{padding:28px 32px;margin:0 0 38px;background:#fff;border:1px solid var(--line);border-radius:10px}.source-intro h2{font:500 clamp(22px,3vw,29px)/1.35 "Songti SC",serif;margin:10px 0}.source-intro p,.source-card p,.source-footnote{color:var(--muted);font-size:13px}.source-note{max-width:840px}.source-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}.source-card{border:1px solid var(--line);border-radius:8px;padding:18px}.source-card h3{margin:0;font-size:18px}.source-card p{margin:4px 0 12px}.source-card textarea{width:100%;min-height:138px;resize:vertical;padding:12px;border:1px solid var(--line);border-radius:5px;background:var(--paper);color:var(--ink);font:13px/1.65 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}.source-copy{margin-top:12px;padding:10px 14px;border:0;border-radius:5px;background:var(--red);color:white;font:600 13px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;cursor:pointer}.source-copy-status{display:block;color:var(--muted);font-size:12px;min-height:1.7em;margin-top:5px}.source-footnote{margin:12px 0 0}@media(max-width:650px){.source-agent{padding:22px 18px}.source-cards{grid-template-columns:1fr}}
+@charset "UTF-8";
+.source-agent{margin:0 0 38px;padding:34px 36px;background:#fff;border:1px solid var(--line);border-radius:10px}
+.source-intro h2{font:500 clamp(23px,3vw,30px)/1.35 "Songti SC",serif;letter-spacing:-.5px;margin:12px 0 14px}
+.source-lead{margin:0;font-size:14px;line-height:1.85;color:var(--muted);max-width:700px}
+.source-def{margin-top:24px;padding-top:22px;border-top:1px solid var(--line)}
+.source-def p{margin:0;font-size:13px;line-height:1.85;color:var(--muted);max-width:760px}
+.source-def strong{color:var(--ink);font-weight:600}
+.source-chips{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0 0}
+.source-chips a{font-size:12px;color:#6f665c;background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:5px 13px;text-decoration:none;transition:border-color .15s,color .15s}
+.source-chips a:hover{border-color:var(--red);color:var(--red)}
+.source-chips a span{font-size:10px;color:#a8a09a;transition:color .15s}
+.source-chips a:hover span{color:var(--red)}
+.source-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:26px}
+.source-card{display:flex;flex-direction:column;background:var(--paper);border:1px solid #ebe8e1;border-radius:8px;padding:20px}
+.source-card h3{font:500 20px/1.3 "Songti SC",serif;margin:0}
+.source-card>p{margin:6px 0 14px;font-size:12px;color:var(--muted)}
+.source-card textarea{flex:1;width:100%;min-height:150px;resize:vertical;padding:14px;border:1px solid var(--line);border-radius:6px;background:#fff;color:#4c4944;font:12.5px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+.source-copy{align-self:flex-start;margin-top:14px;padding:11px 20px;border:0;border-radius:5px;background:var(--red);color:#fff;font:600 13px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;cursor:pointer}
+.source-copy:hover{filter:brightness(.94)}
+.source-copy-status{display:block;color:var(--muted);font-size:12px;min-height:1.6em;margin-top:8px}
+.source-footnote{margin:22px 0 0;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}
+@media(max-width:650px){.source-agent{padding:24px 18px}.source-cards{grid-template-columns:1fr}.source-chips a{font-size:11px;padding:5px 11px}}
