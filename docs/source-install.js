@@ -5,9 +5,9 @@
       const status = button.parentElement.querySelector('.source-copy-status');
       try {
         if (navigator.clipboard && window.isSecureContext) await navigator.clipboard.writeText(field.value);
-        else { field.focus(); field.select(); if (!document.execCommand('copy')) throw new Error('copy'); }
+        else { field.closest('details').open = true; field.focus(); field.select(); if (!document.execCommand('copy')) throw new Error('copy'); }
         status.textContent = '已复制，请粘贴到这台电脑上的 AI 助手对话框。';
-      } catch (_) { field.focus(); field.select(); status.textContent = '请选择并手动复制上方指令。'; }
+      } catch (_) { field.closest('details').open = true; field.focus(); field.select(); status.textContent = '请在展开的指令中全选并手动复制。'; }
     });
   });
 })();
