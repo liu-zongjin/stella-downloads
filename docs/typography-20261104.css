@@ -1,0 +1,3 @@
+/* Keep short final lines from distracting from the surrounding text. */
+p, li, summary { text-wrap: pretty; }
+.source-lead { max-width: none; }
