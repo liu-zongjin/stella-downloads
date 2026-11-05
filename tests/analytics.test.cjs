@@ -1,7 +1,8 @@
 const {test}=require('node:test'),assert=require('node:assert/strict'),vm=require('node:vm'),fs=require('node:fs');
 const source=fs.readFileSync(require('node:path').join(__dirname,'../docs/analytics-20261031.js'),'utf8');
-function setup({dnt=false,blocked=false,path="/stella-downloads/",hash="#updates"}={}){
- const calls=[],handlers={},buttons={},saved=new Map(),session=new Map();
+function setup({dnt=false,blocked=false,path="/stella-downloads/",hash="#updates",statuses=[]}={}){
+ let now=Date.now();class TestDate extends Date{static now(){return now;}}
+ const calls=[],timers=[],handlers={},buttons={},saved=new Map(),session=new Map();
  const store=map=>({getItem:k=>map.get(k)||null,setItem:(k,v)=>map.set(k,v),removeItem:k=>map.delete(k)});
  const button={textContent:'',setAttribute(){},addEventListener:(name,fn)=>buttons[name]=fn};
  const player={listeners:{},addEventListener(name,fn){this.listeners[name]=fn;}};
@@ -10,19 +11,19 @@ function setup({dnt=false,blocked=false,path="/stella-downloads/",hash="#updates
  const window={document,doNotTrack:null,innerHeight:900,addEventListener(){}};
  if(blocked){Object.defineProperty(window,'localStorage',{get(){throw Error('blocked');}});Object.defineProperty(window,'sessionStorage',{get(){throw Error('blocked');}});}
  else{window.localStorage=store(saved);window.sessionStorage=store(session);}
- vm.runInNewContext(source,{window,document,navigator:{doNotTrack:dnt?'1':'0'},location:{hash,pathname:path,hostname:'liu-zongjin.github.io',href:'https://liu-zongjin.github.io'+path+hash},crypto:require('node:crypto').webcrypto,fetch:async(url,options)=>{calls.push({url,...options,event:JSON.parse(options.body)});return {};},AbortSignal,URL,Date,Set,JSON});
+ vm.runInNewContext(source,{setTimeout:fn=>{timers.push(fn);return timers.length;},clearTimeout:()=>{},window,document,navigator:{doNotTrack:dnt?'1':'0'},location:{hash,pathname:path,hostname:'liu-zongjin.github.io',href:'https://liu-zongjin.github.io'+path+hash},crypto:require('node:crypto').webcrypto,fetch:async(url,options)=>{calls.push({url,...options,event:JSON.parse(options.body)});return {status:statuses.shift()||204};},AbortSignal,URL,Date:TestDate,Set,JSON});
  const emit=targets=>handlers.click({target:{closest:selector=>targets[selector]||null}});
  const click=(href='https://github.com/liu-zongjin/stella-downloads/releases/download/v1/Stella-macOS-Intel-1.1.5.dmg',target='')=>{
    const anchor={href,dataset:{downloadTarget:target},hasAttribute:name=>name==='data-quark-download'&&!!target,closest:selector=>selector==='section[id]'?{id:'download'}:null};
    emit({'a[href]':anchor});
  };
  const copy=platform=>emit({'[data-copy-prompt]':{dataset:{copyPrompt:'source-prompt-'+platform}}});
- const tab=value=>emit({'[data-tab]':{dataset:{tab:value}}});
+ const tab=value=>handlers['stella:platform-changed']({detail:value});
  const chapter=value=>emit({'.chapter[data-seek]':{querySelector:()=>({textContent:value})}});
  const assistant=href=>emit({'.source-chips a[href]':{href}});
- const hashLink=hash=>emit({'a[href="#arm"],a[href="#intel"],a[href="#windows"]':{getAttribute:()=>hash}});
+ const hashLink=hash=>tab(hash.slice(1));
  const play=()=>player.listeners.play?.();
- return {calls,buttons,handlers,click,copy,tab,chapter,assistant,hashLink,play,button,saved,document};
+ return {advance:ms=>{now+=ms;timers.shift()?.();},calls,buttons,handlers,click,copy,tab,chapter,assistant,hashLink,play,button,saved,document};
 }
 const interactionKeys='detail,event_id,kind,page,session_id,visitor_id';
 test('pageview includes deep landing, only source hostname, no queries; download captures target',()=>{
@@ -89,4 +90,21 @@ test('opt-out and hidden tabs also suppress interaction events',()=>{
  assert.equal(state.calls.length,3);assert.equal(state.calls[2].event.kind,'copy');
  state.document.hidden=true;state.tab('intel');
  assert.equal(state.calls.length,3);
+});
+
+test('copy success is separate from attempts and survives immediate page hiding',()=>{
+ const state=setup({path:'/stella-downloads/download.html',hash:''});
+ state.copy('mac');state.document.hidden=true;state.handlers['stella:copy-success']({detail:'mac'});
+ assert.deepEqual(state.calls.slice(1).map(c=>c.event.kind),['copy','copy_success']);
+});
+
+test('transient delivery failures retry the same event at most three times',async()=>{
+ const state=setup({statuses:[503,503,503]});
+ const flush=()=>new Promise(setImmediate);
+ await flush();state.advance(5000);await flush();state.advance(30000);await flush();state.advance(30000);await flush();
+ assert.equal(state.calls.length,3);assert.equal(new Set(state.calls.map(c=>c.event.event_id)).size,1);
+});
+test('opting out clears failed delivery retries',async()=>{
+ const state=setup({statuses:[503]});await new Promise(setImmediate);
+ state.buttons.click();state.advance(30000);await new Promise(setImmediate);assert.equal(state.calls.length,1);
 });

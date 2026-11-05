@@ -32,21 +32,40 @@ function getSession(){
 }
 let referrer='';
 try{const url=new URL(document.referrer);if(['https:','http:'].includes(url.protocol)&&url.hostname!==location.hostname)referrer=url.hostname.toLowerCase();}catch{}
+// Bounded memory queue: retries reuse the event UUID so D1 stores one event.
+const pending=new Map();
+let retryTimer=null;
+function clearPending(){if(retryTimer)clearTimeout(retryTimer);retryTimer=null;pending.clear();}
+function schedule(){
+  if(retryTimer||disabled()||!pending.size)return;
+  const ready=[...pending.values()].filter(item=>!item.sending);
+  if(!ready.length)return;
+  retryTimer=setTimeout(()=>{retryTimer=null;for(const item of pending.values())if(!item.sending&&item.due<=Date.now())transmit(item);schedule();},Math.max(1000,Math.min(...ready.map(item=>item.due-Date.now()))));
+}
+function transmit(item){
+  if(disabled()||!pending.has(item.id))return;
+  item.sending=true;item.attempts++;
+  fetch(endpoint,{method:'POST',mode:'cors',credentials:'omit',referrerPolicy:'no-referrer',headers:{'Content-Type':'application/json'},body:item.body,keepalive:true,signal:typeof AbortSignal!=='undefined'&&typeof AbortSignal.timeout==='function'?AbortSignal.timeout(8000):undefined})
+    .then(response=>{if(response.status!==204)throw new Error('unacknowledged');pending.delete(item.id);})
+    .catch(()=>{if(item.attempts>=3)pending.delete(item.id);else item.due=Date.now()+(item.attempts===1?5000:30000);})
+    .finally(()=>{item.sending=false;schedule();});
+}
+function enqueue(event){
+  if(disabled()||pending.size>=40)return;
+  try{
+    if(!UUID.test(visitor)){visitor=crypto.randomUUID();storageWrite(local,'stella.website.visitor',visitor);}
+    const id=crypto.randomUUID(),item={id,body:JSON.stringify({event_id:id,visitor_id:visitor,session_id:getSession(),...event}),attempts:0,due:0,sending:false};
+    pending.set(id,item);transmit(item);
+  }catch{/* Statistics cannot block page actions. */}
+}
 function send(kind,section='home',target='',channel=''){
   section=sectionName(section);
-  if(disabled()||document.hidden)return;
-  try{
-    const body=JSON.stringify({event_id:crypto.randomUUID(),visitor_id:visitor,session_id:getSession(),kind,section:sections.has(section)?section:'home',target,referrer,...(kind==='download'?{channel}:{})});
-    fetch(endpoint,{method:'POST',mode:'cors',credentials:'omit',referrerPolicy:'no-referrer',headers:{'Content-Type':'application/json'},body,keepalive:true,signal:typeof AbortSignal!=='undefined' && typeof AbortSignal.timeout==='function'?AbortSignal.timeout(8000):undefined}).catch(()=>{});
-  }catch{/* Analytics failure must never block the website or downloads. */}
+  if(document.hidden)return;
+  enqueue({kind,section:sections.has(section)?section:'home',target,referrer,...(kind==='download'?{channel}:{})});
 }
 function sendInteraction(kind,detail){
-  if(page==='home'||disabled()||document.hidden||!detail)return;
-  if(!UUID.test(visitor))visitor=crypto.randomUUID();
-  try{
-    const body=JSON.stringify({event_id:crypto.randomUUID(),visitor_id:visitor,session_id:getSession(),kind,page,detail});
-    fetch(endpoint,{method:'POST',mode:'cors',credentials:'omit',referrerPolicy:'no-referrer',headers:{'Content-Type':'application/json'},body,keepalive:true,signal:typeof AbortSignal!=='undefined' && typeof AbortSignal.timeout==='function'?AbortSignal.timeout(8000):undefined}).catch(()=>{});
-  }catch{/* Interaction analytics must never block the page. */}
+  if(page==='home'||!detail||(document.hidden&&kind!=='copy_success'))return;
+  enqueue({kind,page,detail});
 }
 function visibleSections(){
   if(!observer || disabled() || document.hidden)return;
@@ -72,13 +91,13 @@ function assistantName(anchor){
   const match=assistantHosts.find(([domain])=>host===domain||host.endsWith('.'+domain));
   return match?match[1]:'';
 }
-let lastTab=(()=>{const value=(new URL(location.href).searchParams.get('platform')||location.hash.slice(1)||'').toLowerCase();return ['arm','intel','windows'].includes(value)?value:'';})();
+let lastTab=(()=>{const value=(new URL(location.href).searchParams.get('platform')||location.hash.slice(1)||document.querySelector('[data-tab][aria-selected="true"]')?.dataset.tab||'').toLowerCase();return ['arm','intel','windows'].includes(value)?value:'';})();
 toggle?.addEventListener('click',()=>{
   if(respectPrivacy()){updateToggle();return;}
   const optout=!disabled();storageWrite(local,'stella.website.optout',optout?'1':'0');
   // Keep opt-out effective even when persistent storage is blocked.
   memoryOptout=optout;
-  if(optout){try{local?.removeItem('stella.website.visitor');session?.removeItem('stella.website.session');}catch{}visitor=null;sessionId='';}
+  if(optout){clearPending();try{local?.removeItem('stella.website.visitor');session?.removeItem('stella.website.session');}catch{}visitor=null;sessionId='';}
   else{seen.clear();pvSent=false;lastTab='';start();}updateToggle();
 });
 document.addEventListener('click',event=>{
@@ -89,10 +108,6 @@ document.addEventListener('click',event=>{
     if(/mac$/i.test(id))sendInteraction('copy','mac');
     else if(/windows$/i.test(id))sendInteraction('copy','windows');
   }
-  const tab=event.target.closest?.('[data-tab]');
-  const hashTab=tab||(downloadGuide?event.target.closest?.('a[href="#arm"],a[href="#intel"],a[href="#windows"]'):null);
-  const tabValue=tab?tab.dataset.tab:(hashTab?(hashTab.getAttribute('href')||'').slice(1):'');
-  if(tabValue&&['arm','intel','windows'].includes(tabValue)&&tabValue!==lastTab){lastTab=tabValue;sendInteraction('tab',tabValue);}
   const chapter=event.target.closest?.('.chapter[data-seek]');
   if(chapter&&watchPage){
     const value=(chapter.querySelector('span')?.textContent||'').trim();
@@ -111,12 +126,16 @@ document.addEventListener('click',event=>{
   const target=/^Stella.*(?:AppleSilicon).*\.(?:dmg|zip)$/i.test(file)?'arm':/^Stella.*Intel.*\.(?:dmg|zip)$/i.test(file)?'intel':/^Stella-Windows.*(?:-setup\.exe|-offline(?:-complete)?\.zip)$/i.test(file)?'windows':'';
   if(target)send('download',anchor.closest('section[id]')?.id||'download',target,'github');
 },true);
+document.addEventListener('stella:copy-success',event=>{if(['mac','windows'].includes(event.detail))sendInteraction('copy_success',event.detail);});
+document.addEventListener('stella:platform-changed',event=>{if(['arm','intel','windows'].includes(event.detail)&&lastTab!==event.detail){lastTab=event.detail;sendInteraction('tab',event.detail);}});
+window.addEventListener('pageshow',event=>{if(event.persisted){pvSent=false;seen.clear();start();}});
+window.addEventListener('online',()=>{for(const item of pending.values())item.due=0;schedule();});
 const player=document.querySelector('video#player');
 if(player&&watchPage){
   let playSent=false;
-  player.addEventListener('play',()=>{if(playSent)return;playSent=true;sendInteraction('video','play');});
+  player.addEventListener('play',()=>{if(playSent||disabled()||document.hidden)return;playSent=true;sendInteraction('video','play');});
 }
 document.addEventListener('visibilitychange',()=>{if(!document.hidden&&!disabled())start();});
-window.addEventListener('storage',event=>{if(event.key==='stella.website.optout'){memoryOptout=event.newValue==='1';if(memoryOptout){visitor=null;sessionId='';seen.clear();pvSent=false;}updateToggle();if(!disabled())start();}});
+window.addEventListener('storage',event=>{if(event.key==='stella.website.optout'){memoryOptout=event.newValue==='1';if(memoryOptout){clearPending();visitor=null;sessionId='';seen.clear();pvSent=false;}updateToggle();if(!disabled())start();}});
 updateToggle();if(!disabled())start();
 })();
