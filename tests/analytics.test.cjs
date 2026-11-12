@@ -70,9 +70,9 @@ test('source install copies, platform tabs and assistant links are recorded as a
  const state=setup({path:'/stella-downloads/download.html',hash:''});
  state.copy('mac');state.copy('windows');
  state.tab('intel');state.tab('intel');state.tab('windows');
- state.assistant('https://www.workbuddy.cn/');state.assistant('https://www.trae.cn/');state.assistant('https://example.com/private');
+ state.assistant('https://www.workbuddy.cn/');state.assistant('https://www.deepseek.com/harness/');state.assistant('https://www.trae.cn/');state.assistant('https://example.com/private');
  const interactions=state.calls.filter(c=>c.event.kind!=='pageview');
- assert.deepEqual(interactions.map(c=>[c.event.kind,c.event.detail]),[['copy','mac'],['copy','windows'],['tab','intel'],['tab','windows'],['assistant','workbuddy'],['assistant','trae']]);
+ assert.deepEqual(interactions.map(c=>[c.event.kind,c.event.detail]),[['copy','mac'],['copy','windows'],['tab','intel'],['tab','windows'],['assistant','workbuddy'],['assistant','deepseek'],['assistant','trae']]);
  assert.ok(interactions.every(c=>Object.keys(c.event).sort().join(',')===interactionKeys));
  assert.ok(!JSON.stringify(interactions).includes('private'));
 });

@@ -85,7 +85,7 @@ function start(){
     for(const el of document.querySelectorAll('section[id],#platform-downloads'))if(sections.has(el.id))observer.observe(el);
   }
 }
-const assistantHosts=[['workbuddy.cn','workbuddy'],['doubao.com','doubao'],['qwenwork.cn','qwen'],['lingma.aliyun.com','lingma'],['trae.cn','trae']];
+const assistantHosts=[['workbuddy.cn','workbuddy'],['deepseek.com','deepseek'],['doubao.com','doubao'],['qwenwork.cn','qwen'],['lingma.aliyun.com','lingma'],['trae.cn','trae']];
 function assistantName(anchor){
   let host='';try{host=new URL(anchor.href,location.href).hostname.toLowerCase();}catch{return '';}
   const match=assistantHosts.find(([domain])=>host===domain||host.endsWith('.'+domain));
