@@ -10,8 +10,13 @@
     const tabs = Array.from(car.querySelectorAll('[data-wb-target]'));
     const play = car.querySelector('[data-wb-toggle]');
     const bar = car.querySelector('.wb-progress i');
-    const DURATION = 5000;
-    let index = 0, timer = null, manuallyPaused = reduceMotion, hovering = false;
+    const imageLink = car.querySelector('[data-wb-image]');
+    const enlarge = car.querySelector('[data-wb-enlarge]');
+    const duration = 2000;
+    car.style.setProperty('--wb-duration', `${duration}ms`);
+    let index = 0;
+    let timer;
+    let paused = reduceMotion;
 
     function resetBar() {
       if (!bar) return;
@@ -19,25 +24,33 @@
       void bar.offsetWidth;
       bar.style.animation = '';
     }
-    function sync() {
-      const idle = manuallyPaused || hovering;
-      clearInterval(timer);
-      timer = null;
-      if (!idle && !reduceMotion) timer = setInterval(() => show(index + 1), DURATION);
+    function schedule() {
+      clearTimeout(timer);
+      const idle = paused || document.hidden;
+      resetBar();
       car.classList.toggle('is-paused', idle);
-      if (play) {
-        play.textContent = manuallyPaused ? '▶' : '❚❚';
-        play.setAttribute('aria-label', manuallyPaused ? '继续自动切换' : '暂停自动切换');
-        play.setAttribute('aria-pressed', String(!manuallyPaused));
-      }
+      if (!idle) timer = setTimeout(() => show(index + 1), duration);
     }
+
+    function updatePlayback() {
+      play.textContent = paused ? '▶' : '❚❚';
+      play.setAttribute('aria-label', paused ? '继续自动切换' : '暂停自动切换');
+      play.setAttribute('aria-pressed', String(!paused));
+      schedule();
+    }
+
     function show(next) {
       index = (next + slides.length) % slides.length;
-      const key = slides[index].dataset.wbSlide;
+      const current = slides[index];
+      const key = current.dataset.wbSlide;
+      const image = current.querySelector('img');
+      imageLink.href = image.src;
+      enlarge.href = image.src;
       slides.forEach(s => {
         const on = s.dataset.wbSlide === key;
         s.classList.toggle('is-active', on);
         s.setAttribute('aria-hidden', String(!on));
+        s.inert = !on;
       });
       tabs.forEach(t => {
         const on = t.dataset.wbTarget === key;
@@ -45,18 +58,19 @@
         t.setAttribute('aria-selected', String(on));
         t.tabIndex = on ? 0 : -1;
       });
-      resetBar();
-      sync();
+      schedule();
     }
 
     tabs.forEach((t, i) => t.addEventListener('click', () => show(i)));
-    if (play) play.addEventListener('click', () => { manuallyPaused = !manuallyPaused; resetBar(); sync(); });
-    car.addEventListener('mouseenter', () => { hovering = true; sync(); });
-    car.addEventListener('mouseleave', () => { hovering = false; sync(); });
+    play.addEventListener('click', () => {
+      paused = !paused;
+      updatePlayback();
+    });
     car.querySelector('.wb-tabs')?.addEventListener('keydown', e => {
       if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
       e.preventDefault();
-      show(index + (e.key === 'ArrowRight' ? 1 : -1));
+      const focusedTab = tabs.indexOf(e.target);
+      show(focusedTab + (e.key === 'ArrowRight' ? 1 : -1));
       tabs[index].focus();
     });
     let startX = null;
@@ -67,10 +81,8 @@
       if (Math.abs(dx) > 45) show(index + (dx < 0 ? 1 : -1));
       startX = null;
     }, { passive: true });
-    document.addEventListener('visibilitychange', () => {
-      if (document.hidden) { clearInterval(timer); timer = null; } else sync();
-    });
-    sync();
+    document.addEventListener('visibilitychange', schedule);
+    updatePlayback();
   }
 
   /* 2. 更多板块：点击切换实机截图与说明 */
