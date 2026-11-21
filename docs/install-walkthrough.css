@@ -1,0 +1,94 @@
+.walkthrough { margin-block: 26px 32px; }
+.walk-fallback { padding: clamp(18px, 3vw, 34px); border-block: 1px solid var(--line); }
+.walk-fallback h3,
+.walk-lead h3 { margin: 0 0 6px; font: 550 clamp(1.35rem, 2.6vw, 2.15rem)/1.35 "Songti SC", serif; }
+.walk-fallback > p { color: var(--muted); }
+.walk-fallback ol { margin: 18px 0 0; padding-left: 22px; }
+.walk-fallback li + li { margin-top: 12px; }
+
+.is-scroll-walk {
+  min-height: calc(100vh + clamp(670px, 125vh, 1250px));
+  min-height: calc(100svh + clamp(670px, 125svh, 1250px));
+}
+
+.walk-stage {
+  position: sticky;
+  top: calc(var(--header-compact, 0px) + 18px);
+  padding: clamp(19px, 3vw, 39px);
+  border: 1px solid #353a43;
+  border-radius: 15px;
+  color: #f8f4ee;
+  background: #252a31;
+  box-shadow: 0 24px 58px -28px #272a3390;
+}
+
+.walk-stage[hidden], .walk-fallback[hidden], .walk-scene[hidden] { display: none; }
+
+.walk-lead {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 10px 20px;
+  margin-bottom: 16px;
+}
+
+.walk-lead > div > p { margin: 0 0 5px; color: #f2bda9; font-size: .875rem; }
+.walk-lead > span { color: #e0c9be; font-size: .875rem; white-space: nowrap; }
+.walk-layout { display: grid; grid-template-columns: minmax(132px, 1fr) minmax(0, 4fr); gap: 16px; }
+.walk-nav { display: grid; align-content: start; gap: 5px; margin: 0; padding: 0; list-style: none; }
+.walk-nav li { border-radius: 7px; padding: 9px; color: #ddd9d5; font-size: .9rem; }
+.walk-nav li.is-current { background: #414650; color: #fff; }
+.walk-nav small { display: block; margin-top: 3px; color: #ded3cf; font-size: .8rem; }
+
+.walk-player { min-width: 0; border: 1px solid #c9bfb6; border-radius: 9px; overflow: hidden; background: #f8f3eb; color: #242321; }
+.walk-top { display: flex; justify-content: space-between; padding: 8px 15px; background: #eae1d9; color: #4d443e; font-size: .8125rem; }
+.walk-meter { height: 3px; background: #e6d9cb; }
+.walk-meter i { display: block; height: 100%; background: #9d4c41; transform: scaleX(0); transform-origin: left; }
+.walk-screen { min-height: clamp(274px, 46vh, 383px); padding: clamp(14px, 2.2vw, 28px); }
+.walk-scene h4 { margin: 0 0 8px; font: 650 clamp(1rem, 1.9vw, 1.5rem)/1.42 system-ui,sans-serif; }
+.walk-scene p { margin: 0 0 13px; color: #574f47; font-size: .9rem; }
+.walk-platforms { display: flex; gap: 8px; }
+.walk-platforms span,
+.walk-clipboard,
+.walk-compose,
+.walk-process,
+.walk-result {
+  padding: 8px 12px;
+  border: 1px solid #ddd1c8;
+  border-radius: 7px;
+  background: #fffdf9;
+}
+
+.walk-platforms span:first-child { border-color: #a5736a; }
+.walk-clipboard { display: flex; justify-content: space-between; gap: 10px; margin-top: 10px; transform: scale(calc(1 - var(--walk-press, 0) * .018)); }
+.walk-clipboard span, .walk-result > span { color: #345941; }
+.walk-chat { display: grid; gap: 8px; }
+.walk-chat-message { justify-self: end; max-width: 85%; padding: 7px 10px; border-radius: 8px; background: #eadbd4; line-height: 1.5; }
+.walk-compose { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 8px; }
+.walk-compose > span,
+.walk-compose > strong { grid-area: 1 / 1; font-size: .9rem; }
+.walk-compose > span { color: #63594e; }
+.walk-compose > b { grid-area: 1 / 2; background: #e9e0d9; padding: 4px 8px; border-radius: 4px; font-size: .875rem; }
+.walk-compose > b.is-sent { background: #365743; color: #fff; }
+.walk-process { list-style: none; margin: 0; }
+.walk-process li { padding: 3px 0; }
+.walk-process li::before { display: inline-block; width: 22px; content: "○"; color: #6f6257; }
+.walk-process li.is-done::before { content: "✓"; color: #345941; font-weight: 700; }
+.walk-result { display: flex; align-items: center; gap: 12px; }
+.walk-result small { display: block; color: #574f47; }
+.walk-result > span { margin-left: auto; }
+
+@media (max-width: 780px) {
+  .walk-stage { padding: 16px; }
+  .walk-layout { gap: 10px; }
+  .walk-nav li { padding: 7px; }
+}
+.walk-fallback-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}

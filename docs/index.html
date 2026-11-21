@@ -18,17 +18,23 @@
 .hero-actions{width:min(356px,100%);min-width:0;display:flex;flex-direction:column;align-items:stretch;gap:0;padding:2px 0 0}.hero-actions .button{width:100%;justify-content:space-between;padding:15px 18px;font-size:13px}.hero-actions .button>span{margin-left:0;font-size:18px}.hero-ai-link{display:flex;width:100%;align-items:center;justify-content:space-between;gap:12px;margin-top:8px;padding:6px 18px;color:#9b1d27;font-size:12px;font-weight:500;text-decoration:none}.hero-ai-link:hover{color:#781920;text-decoration:underline;text-underline-offset:3px}.hero-ai-link:focus-visible{outline:2px solid #9b1d27;outline-offset:3px}.hero-actions .download-meta{margin:12px 18px 0;font-size:11px;line-height:1.7;color:var(--muted)}.hero-quiet-links{display:flex;justify-content:space-between;gap:14px;border-top:1px solid var(--line);padding:12px 18px 0;margin-top:15px}.hero-quiet-links .quiet-link{display:inline-flex;align-items:center;gap:6px;margin:0;font-size:11px}.hero-quiet-links .quiet-link span{margin-left:0}@media(max-width:900px){.hero-bottom{display:block}.hero-actions{width:100%;max-width:420px;margin-top:26px;padding:0}.desktop-break{display:none}}@media(max-width:720px){.hero-actions{margin-top:23px}.hero-quiet-links{flex-wrap:wrap;gap:8px 16px}}
 </style>
 <link rel="stylesheet" href="typography-20261104.css">
-<link rel="stylesheet" href="tour-20261108.css?v=workspace-4">
-<script src="tour-20261108.js?v=workspace-4" defer></script>
+<link rel="stylesheet" href="scroll-story.css?v=6">
+<link rel="stylesheet" href="delivery-story.css?v=5">
+<script src="scroll-story.js?v=8" defer></script>
+<link rel="stylesheet" href="home-workbench-story.css?v=6">
+<script defer src="scroll-preview.js?v=2"></script>
+<script src="home-workbench-story.js?v=3" defer></script>
 <link rel="stylesheet" href="inline-install.css?v=20261111">
 <script defer src="inline-install.js?v=20261111"></script>
+<link rel="stylesheet" href="install-walkthrough.css?v=1">
+<script defer src="install-walkthrough.js?v=scroll-2"></script>
 </head>
 <body>
 <a class="skip-link" href="#main">跳至主要内容</a>
 <header class="site-header">
 <div class="header-inner">
   <a class="wordmark" href="#" aria-label="Stella 首页"><img src="assets/stella-brand.svg" alt="Stella 法律操作系统" width="990" height="378" style="height:auto;object-fit:contain"></a>
-  <nav aria-label="主导航"><a href="#cases">案件管理</a><a href="#knowledge">知识与阅读</a><a href="#office">邮箱与工具</a><a href="#tour">更多板块</a><a href="#install">安装指引</a><a href="#updates">更新日志</a></nav>
+  <nav aria-label="主导航"><a href="#cases">案件管理</a><a href="#knowledge">知识与阅读</a><a href="#office">邮箱与发票</a><a href="#tour">研究与工具</a><a href="#install">安装指引</a><a href="#updates">更新日志</a></nav>
   <a class="header-download" href="#install">下载 Stella <span aria-hidden="true">↗</span></a>
 </div>
 </header>
@@ -37,76 +43,387 @@
   <div class="eyebrow"><span class="status-dot" aria-hidden="true"></span> 法律人的本地工作空间 <span class="edition">公开体验版 · macOS</span></div>
   <h1>让法律工作，<br><span class="hero-second">有条理地发生<span class="period">。</span></span></h1>
   <div class="hero-bottom"><p class="hero-description">从法院短信到案件台账，从一篇文章到可复用的知识。<br>Stella 把办案、阅读、邮件与日常工具连接起来，<br class="desktop-break">让重复的整理交给系统，让判断留给你。</p>
-  <div class="hero-actions"><a class="button primary" data-download href="#install">查看安装指引 <span aria-hidden="true">↗</span></a><p class="download-meta" data-device-note>Mac 与 Windows · 使用 AI 助手安装</p><a class="hero-ai-link" href="#install"><span>复制指令，让 AI 帮你安装</span><span aria-hidden="true">↗</span></a><div class="hero-quiet-links"><a class="quiet-link" href="watch.html"><span aria-hidden="true">▷</span>观看介绍片 · 3 分 24 秒</a></div></div></div>
-  <div class="workspace-showcase" id="workspace">
-    <div class="wb-carousel" data-wb-carousel aria-roledescription="轮播" aria-label="首页工作台实机演示">
-      <a class="wb-stage" data-wb-image href="assets/stella-workspace-showcase.webp" target="_blank" rel="noopener">
-        <figure class="wb-slide is-active" data-wb-slide="knowledge" aria-hidden="false">
-          <img class="workspace-image" src="assets/stella-workspace-showcase.webp" width="1600" height="1050" alt="法律知识工作台实机界面：金色夕照与海岸悬崖背景，知识沉淀与检索、今日工作快报与提醒中心" fetchpriority="high">
-        </figure>
-        <figure class="wb-slide" data-wb-slide="case" aria-hidden="true" inert>
-          <img class="workspace-image" src="assets/stella-workspace-case.webp" width="1600" height="1050" alt="案件管理工作台实机界面：日出星芒与云海雪峰背景，案件统筹与推进、案件概览与提醒中心">
-        </figure>
-      </a>
-      <div class="wb-controls">
-        <div class="wb-tabs" role="tablist" aria-label="切换首页工作台">
-          <button class="wb-tab is-active" type="button" role="tab" aria-selected="true" data-wb-target="knowledge">法律知识工作台</button>
-          <button class="wb-tab" type="button" role="tab" aria-selected="false" tabindex="-1" data-wb-target="case">案件管理工作台</button>
-        </div>
-        <div class="wb-auto">
-          <span class="wb-progress" aria-hidden="true"><i></i></span>
-          <button class="wb-play" type="button" data-wb-toggle aria-label="暂停自动切换" aria-pressed="true">❚❚</button>
+  <div class="hero-actions"><a class="button primary" data-download href="#install">查看安装指引 <span aria-hidden="true">↗</span></a><p class="download-meta" data-device-note>Mac 与 Windows · 使用 AI 助手安装</p><a class="hero-ai-link" href="#install-instructions"><span>复制指令，让 AI 帮你安装</span><span aria-hidden="true">↗</span></a><div class="hero-quiet-links"><a class="quiet-link" href="watch.html"><span aria-hidden="true">▷</span>观看介绍片 · 3 分 24 秒</a><a class="quiet-link" href="#delivery">一张网送达演示</a><a class="quiet-link" href="#product-story">浏览产品</a></div></div></div>
+  <div class="workspace-showcase" id="workspace" data-workbench-story>
+    <figure class="wb-pinned">
+      <div class="wb-viewport">
+        <div class="wb-window">
+          <iframe src="workbench-canvas.html?v=6" title="Stella 法律知识工作台与案件管理工作台" tabindex="-1"></iframe>
         </div>
       </div>
-      <div class="wb-caption">
-        <span>界面中的内容为演示资料</span>
-        <a href="assets/stella-workspace-showcase.webp" target="_blank" rel="noopener" data-wb-enlarge>查看原图 <span aria-hidden="true">↗</span></a>
+      <div class="wb-switch" role="group" aria-label="切换演示中的工作台" hidden>
+        <button type="button" data-wb-view="knowledge" aria-pressed="true">法律知识工作台</button>
+        <button type="button" data-wb-view="case" aria-pressed="false">案件管理工作台</button>
+      </div>
+      <div class="wb-story-meter" aria-hidden="true"><i></i></div>
+    </figure>
+  </div>
+</section>
+<section class="scroll-story" id="product-story" aria-labelledby="story-title">
+  <div class="wrap">
+    <div class="story-intro-slot">
+      <div class="story-intro">
+        <div class="story-intro-inner">
+          <h2 id="story-title">产品导览</h2>
+          <nav class="story-nav" aria-label="产品导览章节">
+            <a href="#delivery">一张网送达</a>
+            <a href="#cases">案件管理</a>
+            <a href="#knowledge">知识与阅读</a>
+            <a href="#fada">法答网</a>
+            <a href="#office">邮箱与发票</a>
+            <a href="#tour">研究与实务工具</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <div class="story-layout" data-scroll-story>
+      <div class="story-visual" hidden>
+        <div class="story-visual-bar">
+          <div class="story-visual-caption">
+            <span data-story-caption></span>
+            <span data-story-kind></span>
+          </div>
+          <div class="story-visual-actions">
+            <a class="story-image-link" data-story-original target="_blank" rel="noopener" aria-label="查看原图（新标签页）">查看原图</a>
+            <button type="button" class="story-view" data-story-view aria-pressed="false">固定全图</button>
+          </div>
+        </div>
+        <div class="story-screen" aria-hidden="true"></div>
+        <div class="story-focus-note" data-story-note aria-hidden="true"></div>
+        <div class="story-progress" aria-hidden="true"></div>
+      </div>
+
+      <div class="story-track">
+        <section id="delivery" aria-labelledby="delivery-title">
+          <article class="story-scene delivery-scene" id="story-court" data-story-delivery>
+            <div class="scene-copy delivery-copy">
+              <header class="delivery-intro">
+                <p class="story-kicker">一张网电子送达</p>
+                <h3 id="delivery-title">手机号核验后，<br>送达文书自动归案。</h3>
+                <p>从 iPhone 收到电子送达短信，到文书落进本地案件文件夹。向下滚动看一次完整的成功流程。</p>
+              </header>
+              <ol class="delivery-steps">
+                <li id="delivery-receive" data-delivery-step>
+                  <h4>手机收到送达短信</h4>
+                  <p>法院通过 12368 发来电子送达通知，短信中包含法院、案号和文书查阅链接。</p>
+                </li>
+                <li id="delivery-sync" data-delivery-step="sync">
+                  <h4>自动同步到司法短信</h4>
+                  <p>手机短信经 iCloud 同步到 Mac「信息」。开启自动扫描后，Stella 会读取新通知，将其导入「司法短信」列表。</p>
+                </li>
+                <li id="delivery-match" data-delivery-step>
+                  <h4>识别内容，匹配案件</h4>
+                  <p>提取法院、案号和通知事项，再用案号匹配本地已有的案件。</p>
+                </li>
+                <li id="delivery-verify" data-delivery-step="verify">
+                  <h4>完成收件手机号核验</h4>
+                  <p>遇到要求手机号核验的送达页，Stella 会使用已配置的收件号码尝试核验。</p>
+                </li>
+                <li id="delivery-download" data-delivery-step>
+                  <h4>从送达链接获取文书</h4>
+                  <p>核验通过后，从短信里的送达链接提取可下载的文书附件。</p>
+                </li>
+                <li id="delivery-archive" data-delivery-step>
+                  <h4>归入本地案件</h4>
+                  <p>文书下载后自动归入已匹配案件的文件夹，打开案件就能继续处理。</p>
+                </li>
+              </ol>
+              <details class="story-details delivery-requirements">
+                <summary>自动归档需要哪些条件？</summary>
+                <p>需开启 iPhone 到 Mac 的 iCloud 信息同步，授权 Stella 读取「信息」、启用自动扫描，并设置识别服务和收件手机号。导入时间取决于 iCloud 同步和 Stella 的扫描间隔。示例中的案件已绑定可用的本地文件夹。</p>
+                <p>无法匹配案件、核验失败或需要本人登录时，按 Stella 的提示处理。法院账户同步和立案辅助也需要本人按应用提示核对。</p>
+              </details>
+            </div>
+
+            <figure class="story-figure">
+              <div class="story-art delivery-board">
+                <div class="delivery-phone">
+                  <div class="delivery-phone-screen">
+                    <div class="delivery-phone-top"><span>15:50</span><span aria-hidden="true">••• <i></i></span></div>
+                    <div class="delivery-sender">
+                      <span class="delivery-sender-avatar" aria-hidden="true">法</span>
+                      <div><strong>12368</strong><small>法院通知</small></div>
+                    </div>
+                    <p class="delivery-sms-time">11 月 9 日 · 下午 3:50</p>
+                    <div class="delivery-sms">
+                      <p>【示例市明川区人民法院】林某您好，请查收（2026）示0102民初0128号案件中您的送达文书。点击链接查阅：</p>
+                      <span class="delivery-sms-link">https://delivery.example/notice/<wbr>demo-0128</span>
+                      <span class="delivery-example-link">演示链接</span>
+                    </div>
+                    <div class="delivery-phone-bottom">
+                      <span>短信会话</span>
+                      <span class="delivery-sync">已同步到 Mac「信息」</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="delivery-workbench">
+                  <div class="delivery-window-bar">
+                    <span class="delivery-window-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                    <strong>Stella <span>/ 案件管理</span></strong>
+                  </div>
+                  <div class="delivery-morph" aria-hidden="true">
+                    <span>收到通知</span><span>同步短信</span><span>匹配案件</span><span>手机号核验</span><span>下载文书</span><span>已归档</span>
+                  </div>
+                  <div class="delivery-models">
+                    <div class="delivery-model" data-delivery-caption="手机收到 12368 的电子送达通知。短信中附有文书查阅链接。">
+                      <p class="delivery-label">送达短信</p>
+                      <h4>新的电子送达通知</h4>
+                      <div class="delivery-message-row">
+                        <span class="delivery-file-icon delivery-msg-icon" aria-hidden="true">信</span>
+                        <div><strong>12368 · 电子送达</strong><small>通知已到达 iPhone，等待同步</small></div>
+                        <span class="delivery-tag delivery-tag-neutral">已接收</span>
+                      </div>
+                    </div>
+                    <div class="delivery-model delivery-sync-model" data-delivery-caption="iCloud 将短信同步到 Mac「信息」，Stella 自动扫描并导入司法短信列表。">
+                      <p class="delivery-label">iCloud 信息同步</p>
+                      <h4>司法短信</h4>
+                      <ol class="delivery-sync-path" aria-label="短信同步路径">
+                        <li>iPhone</li><li>Mac「信息」</li><li>Stella</li>
+                      </ol>
+                      <div class="delivery-message-row delivery-sync-new">
+                        <span class="delivery-file-icon delivery-msg-icon" aria-hidden="true">信</span>
+                        <div><strong>12368 · 电子送达</strong><small>示例市明川区人民法院 · 15:50</small></div>
+                        <span class="delivery-tag">新增</span>
+                      </div>
+                    </div>
+                    <div class="delivery-model" data-delivery-caption="识别出案号后，Stella 找到相符的本地案件。">
+                      <p class="delivery-label">短信识别结果</p>
+                      <h4>已匹配本地案件</h4>
+                      <dl class="delivery-fields">
+                        <div><dt>案号</dt><dd>（2026）示0102民初0128号</dd></div>
+                        <div><dt>事项</dt><dd>电子送达</dd></div>
+                        <div><dt>法院</dt><dd>示例市明川区人民法院</dd></div>
+                        <div class="delivery-matched-case"><dt>匹配案件</dt><dd>设备采购合同纠纷</dd></div>
+                      </dl>
+                    </div>
+                    <div class="delivery-model" data-delivery-caption="送达页需要手机号核验，Stella 使用已配置的收件号码。">
+                      <p class="delivery-label">送达页 · 收件手机号核验</p>
+                      <h4>核对收件手机号</h4>
+                      <div class="delivery-verify-card">
+                        <span>已配置的收件号码</span>
+                        <strong>••• •••• ••••</strong>
+                        <div class="delivery-meter" aria-hidden="true"><i></i></div>
+                        <div class="delivery-verification-state">
+                          <span class="delivery-verifying">正在核验</span>
+                          <span class="delivery-verified">✓ 核验通过</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="delivery-model" data-delivery-caption="核验通过后，文书通过送达链接下载。">
+                      <p class="delivery-label">送达链接附件</p>
+                      <h4>提取并下载文书</h4>
+                      <div class="delivery-message-row">
+                        <span class="delivery-file-icon">PDF</span>
+                        <div><strong>传票.pdf</strong><small>来自该条短信的电子送达链接</small></div>
+                      </div>
+                      <div class="delivery-meter" aria-hidden="true"><i></i></div>
+                    </div>
+                    <div class="delivery-model" data-delivery-caption="下载的传票已落到匹配案件的本地文件夹。">
+                      <p class="delivery-label">本地案件文件夹</p>
+                      <h4>设备采购合同纠纷</h4>
+                      <div class="delivery-folder">
+                        <div class="delivery-folder-head"><i aria-hidden="true"></i><strong>电子送达文书</strong></div>
+                        <div class="delivery-message-row">
+                          <span class="delivery-file-icon">PDF</span>
+                          <div><strong>传票.pdf</strong><small>（2026）示0102民初0128号 · 来自司法短信</small></div>
+                          <span class="delivery-tag">已保存</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <ol class="delivery-route" aria-hidden="true"><li>短信</li><li>同步</li><li>匹配</li><li>核验</li><li>下载</li><li>归档</li></ol>
+                </div>
+              </div>
+              <figcaption>从一条短信到本地归档 <span>流程演示 · 虚构资料</span></figcaption>
+            </figure>
+          </article>
+        </section>
+        <section id="cases" aria-labelledby="cases-title">
+          <article class="story-scene" id="story-cases">
+            <div class="scene-copy">
+              <p class="story-kicker">案件管理</p>
+              <h3 id="cases-title">案件在这里，<br>进展也在这里。</h3>
+              <p>把普通案件、系列案件、开庭、待办、保全和诉讼期限放在同一个台账。从这里进入案件，继续处理材料和庭前事项。</p>
+              <p>支持 Excel 批量导入、更新和回退。各类期限可分别记录和提醒，案件日历可同步 Apple 日历，委托人可同步 iCloud 联系人。</p>
+              <a class="story-image-link" href="assets/stella-cases-showcase.webp" target="_blank" rel="noopener" aria-label="查看原图：案件台账（新标签页）">查看原图</a>
+            </div>
+            <figure class="story-figure">
+              <div class="story-art"><img src="assets/stella-cases-showcase.webp" width="1600" height="1050" loading="lazy" decoding="async" alt="案件台账实机界面，显示普通案件、系列案件和关联的待办、开庭、保全与期限"></div>
+              <figcaption>案件台账 <span>实机界面 · 演示资料</span><small class="story-figure-note">紫色标签标出系列案件，同类案件在台账里分组。</small></figcaption>
+            </figure>
+          </article>
+
+          <article class="story-scene" id="story-case-detail">
+            <div class="scene-copy">
+              <p class="story-kicker">案件详情</p>
+              <h3>一份案件，串起材料和待办。</h3>
+              <p>以设备采购争议为例，委托人、对方当事人、材料文件夹、庭前待办和保全记录都已关联。「一张网」同步与关联动态也在同一页。</p>
+              <p>案件可绑定本地文件夹，直接浏览、预览、整理材料，也可以对选定的案件材料发起 AI 问答。</p>
+              <details class="story-details">
+                <summary>一张网同步与立案辅助</summary>
+                <p>登录本人的人民法院在线服务账户后，可同步待办、消息、电子送达、案件和立案预约，并按案号关联本地案件。支持预览、下载和归档附件。</p>
+                <p>立案辅助可识别本地材料，协助填写立案草稿和安排附件上传。身份核验、验证码、电子签名及最终提交由律师本人完成。</p>
+              </details>
+              <a class="story-image-link" href="assets/stella-case-detail-showcase.webp" target="_blank" rel="noopener" aria-label="查看原图：案件详情（新标签页）">查看原图</a>
+            </div>
+            <figure class="story-figure" data-focus="43 39" data-zoom="1.16">
+              <div class="story-art"><img src="assets/stella-case-detail-showcase.webp" width="1216" height="1050" loading="lazy" decoding="async" alt="案件详情实机界面，显示待办事项、开庭提醒、财产保全和同步记录"></div>
+              <figcaption>案件详情 <span>实机界面 · 演示资料</span><small class="story-figure-note">同一案件的待办、开庭和保全记录集中在详情页。</small></figcaption>
+            </figure>
+          </article>
+
+          <article class="story-scene" id="story-case-stats">
+            <div class="scene-copy">
+              <p class="story-kicker">案件可视化</p>
+              <h3>从单个案件，退一步看全局。</h3>
+              <p>在办与已结案件、案由分布、诉讼阶段和近期提醒汇总成图表。切换统计口径后，仍可回到具体案件继续处理。</p>
+              <a class="story-image-link" href="assets/stella-case-stats.webp" target="_blank" rel="noopener" aria-label="查看原图：案件可视化（新标签页）">查看原图</a>
+            </div>
+            <figure class="story-figure">
+              <div class="story-art"><img src="assets/stella-case-stats.webp" width="1600" height="900" loading="lazy" decoding="async" alt="案件可视化实机界面，显示案件状态、案由分布、诉讼阶段和近期提醒"></div>
+              <figcaption>案件可视化 <span>实机界面 · 演示资料</span><small class="story-figure-note">近期提醒和案件统计并列，先看到手上的紧要事项。</small></figcaption>
+            </figure>
+          </article>
+        </section>
+
+        <section id="knowledge" aria-labelledby="knowledge-title">
+          <article class="story-scene" id="story-reading">
+            <div class="scene-copy">
+              <p class="story-kicker">知识与阅读</p>
+              <h3 id="knowledge-title">原文和批注，<br>随时对照。</h3>
+              <p>把网页、公众号文章、文档和学习记录汇入知识库。通过智能目录跳到对应段落，先看摘要，再贴着原文留下笔记。检索到批注后，可以跳回原文位置。</p>
+              <details class="story-details">
+                <summary>从收录、整理到范围问答</summary>
+                <p>收录来源还包括国家法规库、会议录音与飞书链接。知识可按自定义库、标签组、专业领域和作者整理，全文检索覆盖标题、摘要、正文与笔记，并高亮命中位置。</p>
+                <p>可对一篇文章、一组标签、一个目录或案件文件提问。知识中心组织法律问题、规则结论与原文依据，供后续检索和核验。</p>
+              </details>
+              <a class="story-image-link" href="assets/stella-reading-showcase.webp" target="_blank" rel="noopener" aria-label="查看原图：文章阅读工作台（新标签页）">查看原图</a>
+            </div>
+            <figure class="story-figure" data-focus="73 49" data-zoom="1.27">
+              <div class="story-art"><img src="assets/stella-reading-showcase.webp" width="1600" height="1050" loading="lazy" decoding="async" alt="文章阅读工作台实机界面，显示智能目录、摘要、正文和原文批注"></div>
+              <figcaption>文章阅读工作台 <span>实机界面 · 演示资料</span><small class="story-figure-note">右栏批注对应正文里的标记，可沿标记回看原文。</small></figcaption>
+            </figure>
+          </article>
+        </section>
+
+        <section id="fada" aria-labelledby="fada-title">
+          <article class="story-scene" id="story-fada">
+            <div class="scene-copy">
+              <p class="story-kicker">法答网精选答问</p>
+              <h3 id="fada-title">从精选答问，<br>查到原文依据。</h3>
+              <p>检索最高人民法院公开的精选答问，按批次、专题、程序与法律依据筛选。先看核心结论，再展开答疑原文核对。</p>
+              <p>可记录个人笔记、就所选答问范围发起问答、保存为 Word，也可检查新批次。</p>
+              <a class="story-image-link" href="assets/stella-fada-showcase.webp" target="_blank" rel="noopener" aria-label="查看原图：法答网精选答问（新标签页）">查看原图</a>
+            </div>
+            <figure class="story-figure">
+              <div class="story-art"><img src="assets/stella-fada-showcase.webp" width="2940" height="1846" loading="lazy" decoding="async" alt="Stella 效率中心的法答网精选答问实机界面，显示全文搜索、专题卡片、核心结论、原文与知识筛选"></div>
+              <figcaption>法答网精选答问 <span>实机界面 · 公开答问</span><small class="story-figure-note">顶部搜索、右侧筛选，答问卡片上可以展开原文。</small></figcaption>
+            </figure>
+          </article>
+        </section>
+
+        <section id="office" aria-labelledby="office-title">
+          <article class="story-scene" id="story-mail" data-story-flow>
+            <div class="scene-copy">
+              <p class="story-kicker">邮箱与发票</p>
+              <h3 id="office-title">从处理邮件，到归集票据。</h3>
+              <p>接入 QQ 邮箱、腾讯企业邮箱与网易企业邮箱，在同一工作空间阅读、搜索和发送邮件，预览和下载附件。</p>
+              <p>按邮箱、时间和关键词查找 PDF、OFD、XML 等票据，核对开票时间、金额和来源邮件，筛除已导出记录后批量打包。</p>
+              <p>可按月扫描上一个自然月，生成本机 ZIP。历史记录保留导出结果，方便检查失败状态和补查。</p>
+            </div>
+            <figure class="story-figure">
+              <div class="story-art story-diagram">
+                <div class="story-message">
+                  <strong>收件箱</strong>
+                  <p>项目往来与材料 <span>附件</span></p>
+                  <p>电子发票交付通知 <span>PDF · XML</span></p>
+                  <p>本月差旅电子票据 <span>OFD</span></p>
+                </div>
+                <ol class="story-flow">
+                  <li><strong>扫描票据</strong><span>按邮箱、时间与关键词筛选</span></li>
+                  <li><strong>核对明细</strong><span>核对日期、金额与来源邮件</span></li>
+                  <li><strong>归集到本机</strong><span>批量导出 ZIP，保留导出历史</span></li>
+                </ol>
+              </div>
+              <figcaption>从收件箱到发票归集 <span>功能流程示意</span></figcaption>
+            </figure>
+          </article>
+        </section>
+
+        <section id="tour" aria-labelledby="tour-title">
+          <article class="story-scene" id="story-research">
+            <div class="scene-copy">
+              <p class="story-kicker">法律研究</p>
+              <h3 id="tour-title">从一次检索，到持续跟进。</h3>
+              <p>按时间、来源、领域和关键词检索，把需要跟进的议题设为长期监测。同一入口还提供企业尽调和每日法律情报简报。</p>
+              <a class="story-image-link" href="assets/stella-explore.webp" target="_blank" rel="noopener" aria-label="查看原图：探索与情报（新标签页）">查看原图</a>
+            </div>
+            <figure class="story-figure">
+              <div class="story-art"><img src="assets/stella-explore.webp" width="1600" height="900" loading="lazy" decoding="async" alt="探索与情报实机界面，显示法律检索任务、来源分布和持续监测入口"></div>
+              <figcaption>探索与情报 <span>实机界面 · 演示资料</span><small class="story-figure-note">法律检索、企业尽调和持续监测在同一页，各有入口。</small></figcaption>
+            </figure>
+          </article>
+
+          <article class="story-scene" id="story-calculation">
+            <div class="scene-copy">
+              <p class="story-kicker">计算工具</p>
+              <h3>利息算得清楚，依据也能复核。</h3>
+              <p>支持固定利率、LPR 倍数和 BP 加点，按日期和利率变动分段计算。可粘贴判决文字来辅助识别本金和期限，并导出保留计算公式的 Excel。</p>
+              <a class="story-image-link" href="assets/stella-interest.webp" target="_blank" rel="noopener" aria-label="查看原图：分段利息计算（新标签页）">查看原图</a>
+            </div>
+            <figure class="story-figure" data-focus="51 63" data-zoom="1.20">
+              <div class="story-art"><img src="assets/stella-interest.webp" width="1600" height="900" loading="lazy" decoding="async" alt="计算工具实机界面，显示利率参数、文字识别填充和历史计算记录"></div>
+              <figcaption>分段利息计算 <span>实机界面 · 演示资料</span><small class="story-figure-note">按时间段设置利率依据，保留每段计算参数供复核。</small></figcaption>
+            </figure>
+          </article>
+
+          <article class="story-scene" id="story-documents">
+            <div class="scene-copy">
+              <p class="story-kicker">文书生成</p>
+              <h3>常用文书，边填边看。</h3>
+              <p>所函、授权委托书、法定代表人证明书、业务审批表与文书合集集中生成。填入法院、委托人、代理律师与案由即可预览所函，支持设置自己的律所名称与标识。</p>
+              <a class="story-image-link" href="assets/stella-suohan.webp" target="_blank" rel="noopener" aria-label="查看原图：所函生成与预览（新标签页）">查看原图</a>
+            </div>
+            <figure class="story-figure" data-focus="65 50" data-zoom="1.14">
+              <div class="story-art"><img src="assets/stella-suohan.webp" width="1600" height="900" loading="lazy" decoding="async" alt="所函生成实机界面，左侧填写案件与当事人信息，右侧实时预览所函"></div>
+              <figcaption>所函生成与预览 <span>实机界面 · 演示资料</span><small class="story-figure-note">左侧填写案件信息，右侧查看实时生成的所函。</small></figcaption>
+            </figure>
+          </article>
+
+          <article class="story-scene" id="story-settings">
+            <div class="scene-copy">
+              <p class="story-kicker">工作台设置</p>
+              <h3>把首页调成自己的工作台。</h3>
+              <p>案件和知识两个工作台可以分别设置背景、蒙版、快捷按钮和展示内容，也能调整自动轮播与配色。设置保存在本机。</p>
+              <p class="story-note">工作空间也提供录音转写、AI 与 MCP 接入和案卷归档。</p>
+              <a class="story-image-link" href="assets/stella-settings.webp" target="_blank" rel="noopener" aria-label="查看原图：外观与体验设置（新标签页）">查看原图</a>
+            </div>
+            <figure class="story-figure">
+              <div class="story-art"><img src="assets/stella-settings.webp" width="1600" height="900" loading="lazy" decoding="async" alt="外观与体验设置实机界面，显示工作台内容、背景图库、蒙版透明度和轮播选项"></div>
+              <figcaption>外观与体验设置 <span>实机界面 · 演示资料</span><small class="story-figure-note">背景图库位于外观设置，案件和知识工作台可分别选择。</small></figcaption>
+            </figure>
+          </article>
+        </section>
       </div>
     </div>
   </div>
-  <div class="principles"><p><span class="tiny-icon" aria-hidden="true">⌘</span> 案件全流程</p><p><span class="tiny-icon" aria-hidden="true">◉</span> 知识深度整理</p><p><span class="tiny-icon" aria-hidden="true">↗</span> 办公自动归集</p></div>
 </section>
-<section class="work-section wrap" id="cases" aria-labelledby="cases-title">
-<div class="section-heading"><p class="eyebrow section-number">01 / 案件管理</p><h2 id="cases-title">案件在这里，<br>进展也在这里。</h2><p class="section-description">把案件档案、开庭、待办、保全和诉讼期限放在同一个工作台。<br>法院通知与本地材料顺着案件汇合，重要节点不再四处寻找。</p></div>
-<div class="product-shot"><a class="showcase-image-link" href="assets/stella-cases-showcase.webp" target="_blank" rel="noopener"><img src="assets/stella-cases-showcase.webp" alt="Stella 案件管理台账：案件列表、系列案件分组、开庭、待办、保全与期限一览" loading="lazy" width="1600" height="1050" style="height:auto;object-fit:contain"></a><span class="shot-label">案件管理 / 应用实景 · 9 个演示案件，含系列案件分组与关联待办、开庭、保全、期限<a href="assets/stella-cases-showcase.webp" target="_blank" rel="noopener">查看大图 ↗</a></span></div>
-<div class="case-showcase-detail"><a class="showcase-image-link" href="assets/stella-case-detail-showcase.webp" target="_blank" rel="noopener"><img src="assets/stella-case-detail-showcase.webp" loading="lazy" alt="案件详情：待办事项、开庭提醒、财产保全、数据日志，以及一张网同步与关联动态" width="1216" height="1050" style="height:auto;object-fit:contain"></a><div><span class="feature-index">ONE CASE / CONNECTED WORK</span><h3>不只是一行案件名称，<br>更是一组有联系的工作。</h3><p>以设备采购争议为例：委托人与对方当事人、案号和法院、材料文件夹、庭前待办、开庭提醒及保全记录都已关联。「一张网」同步记录与关联动态也在同一页，进入详情就能沿着同一件事继续处理。</p></div></div>
-<div class="detail-grid"><article><span class="feature-index">CASE WORKSPACE</span><h3>一份案件，串起全部日常。</h3><p>普通案件与系列案件统一管理，Excel 批量导入、更新和回退。将本地文件夹绑定到案件，直接浏览、预览、整理文件，并对案件材料发起 AI 问答。</p></article><article><span class="feature-index">DATES & CONTACTS</span><h3>让期限和提醒跟上进展。</h3><p>开庭、保全、上诉与异议期各有记录和提醒；案件日历可同步 Apple 日历，委托人可同步 iCloud 联系人。联系人、备忘和文件始终围绕同一个案件。</p></article></div>
-<div class="sms-story"><div class="story-copy"><p class="eyebrow section-number">MAC 专属联动</p><h3>一条法院短信，<br>成为下一步行动。</h3><p>iPhone 短信经 iCloud 同步到 Mac「信息」后，Stella 可识别司法通知，提取案号、法院、时间与事项，匹配本地案件。</p><p>符合自动处理条件时，生成关联待办、开庭或期限记录，并尝试下载送达文书；可归档的材料进入案件文件夹，需登录或核验的环节再由你接手。</p><p class="feature-note">需在 Mac 开启短信同步并授予读取权限，配置识别服务。识别或匹配不确定时，进入待确认流程。</p></div><div class="sms-flow" aria-label="短信到案件的工作流程示意"><div class="message-sample"><span>信息 · 司法通知</span><p>您有一份新的电子送达文书，<br>请查收并关注相关期限。</p><small>流程示意</small></div><i class="flow-connector" aria-hidden="true"></i><div class="flow-node"><b>01</b><div><strong>识别通知与案号</strong><small>提取法院、时间、事项与文书链接</small></div><span>✦</span></div><div class="flow-node"><b>02</b><div><strong>关联本地案件</strong><small>已有案件匹配，待办与期限归位</small></div><span>↗</span></div><div class="flow-node"><b>03</b><div><strong>下载文书，接续处理</strong><small>支持的送达链接自动尝试下载与归档</small></div><span>↓</span></div></div></div>
-<div class="court-grid"><article class="court-card"><span class="feature-index">COURT ONLINE</span><h3>「一张网」的消息，<br>回到你的办案工作台。</h3><p>同步人民法院在线服务的待办、消息、电子送达、我的案件与立案预约。按案号关联本地案件，筛选未读与重要记录；附件可预览、下载并归档到关联案件。</p><div class="court-chips"><span>待办</span><span>消息</span><span>电子送达</span><span>我的案件</span><span>立案预约</span></div><p class="feature-note">使用本人的法院账户登录；同步与下载状态可查看记录。</p></article><article class="court-card filing-card"><span class="feature-index">FILING ASSISTANT</span><h3>自动化立案，<br>从材料走到官网草稿。</h3><p>扫描本地立案文件夹，识别当事人、案由、诉请与附件分类。核对后辅助填写官网草稿、安排材料上传，将重复填表变成有步骤的任务。</p><ol class="filing-steps"><li><b>1</b>扫描材料</li><li><b>2</b>核对信息</li><li><b>3</b>官网执行</li><li><b>4</b>提交前确认</li></ol><p class="feature-note">最终提交、身份核验、验证码和电子签名由律师本人完成。</p></article></div>
+<section class="inline-install wrap" id="install" aria-label="安装指引">
+<section class="walkthrough" aria-label="安装演示" data-walkthrough>
+  <div class="walk-fallback">
+    <h3>从一条指令，到打开 Stella</h3>
+    <p>以下是安装流程。实际指令可在下方按电脑系统复制。</p>
+    <ol>
+      <li><strong>复制安装指令。</strong>选择 Mac 或 Windows。</li>
+      <li><strong>粘贴并发送。</strong>打开本机 AI 助手的工作或智能体模式。</li>
+      <li><strong>查看安装进度。</strong>按需要确认权限或依赖安装。</li>
+      <li><strong>验证并打开。</strong>确认助手已在你的电脑上完成安装验证。</li>
+    </ol>
+  </div>
 </section>
-<section class="knowledge-section" id="knowledge"><div class="wrap"><div class="section-heading"><p class="eyebrow section-number">02 / 知识与阅读</p><h2>不止收藏文章，<br>更要留下自己的理解。</h2><p class="section-description">把网页、公众号文章、文档和学习记录汇入知识库。<br>从收集、整理、阅读到检索，让每次积累都能再次派上用场。</p></div>
-<div class="collect-strip" aria-label="知识收录来源"><span>网页 / 公众号</span><span>PDF · Word · Excel</span><span>国家法规库</span><span>会议录音</span><span>飞书链接收集</span><strong>→ 你的知识库</strong></div>
-<div class="reading-stage"><div class="reading-top"><span>READ / THINK / KEEP</span><span>智能目录 · 智能摘要 · 原文批注</span></div><a class="showcase-image-link" href="assets/stella-reading-showcase.webp" target="_blank" rel="noopener"><img src="assets/stella-reading-showcase.webp" alt="Stella 文章阅读工作台，包含目录、摘要、正文和笔记区域" loading="lazy" width="1600" height="1050" style="height:auto;object-fit:contain"></a><div class="reading-caption"><span>完整文章、内容摘要与 3 条原文批注，来自同一个实际阅读工作区。</span><a href="assets/stella-reading-showcase.webp" target="_blank" rel="noopener">查看大图 ↗</a></div></div>
-<div class="reading-features"><article><b>01</b><h3>智能目录，沿着结构读。</h3><p>识别正文标题层级，长文目录独立展示，点击直达相应段落；章节中的重复小标题也保留上下文。</p></article><article><b>02</b><h3>智能摘要，先把握要点。</h3><p>根据正文提炼摘要，快速决定从哪里开始读。需要时重新生成或手动修订，让摘要跟上你的理解。</p></article><article><b>03</b><h3>笔记批注，贴着原文留。</h3><p>选中文字记录批注，阅读时随手写下思考。笔记可检索，也能跳回原文位置，观点与依据保持联系。</p></article></div>
-<div class="knowledge-bottom"><article><h3>按你的专业方式整理。</h3><p>自定义库、标签组、专业领域与作者多维组织。全文检索覆盖标题、摘要、正文与笔记，命中位置直接高亮；飞书收集的链接可在下次启动时继续收录。</p></article><article><h3>带着范围，继续追问。</h3><p>对单篇文章、一组标签、一个目录或案件文件提问。知识中心进一步组织“法律问题—规则结论—原文依据”，让整理后的经验可检索、可核验、可复用。</p></article></div></div></section>
-<section class="work-section wrap" id="office"><div class="section-heading"><p class="eyebrow section-number">03 / 邮箱与发票</p><h2>信件有来处，<br>票据有归处。</h2><p class="section-description">把常用邮箱带进同一个工作空间。<br>从收发邮件到整理附件、归集发票，少一些在窗口之间来回切换。</p></div>
-<div class="mail-layout"><div class="mail-visual" aria-label="邮箱与发票归集流程示意"><div class="provider-row"><span>QQ 邮箱</span><span>腾讯企业邮箱</span><span>网易企业邮箱</span></div><div class="mail-window"><div class="mail-sidebar"><b>邮箱</b><span class="active">收件箱</span><span>已发送</span><span>草稿</span></div><div class="mail-list"><div><i></i><strong>项目往来与材料</strong><span>附件</span></div><div><i></i><strong>电子发票交付通知</strong><span>PDF · XML</span></div><div><i></i><strong>本月差旅电子票据</strong><span>OFD</span></div></div></div><div class="invoice-summary"><span>发票中心</span><strong>扫描 → 筛选 → 核对 → 归集</strong><small>功能流程示意</small></div></div><div class="mail-copy"><article><h3>多种邮箱，一个工作台。</h3><p>接入 QQ 邮箱、腾讯企业邮箱与网易企业邮箱，在各账户中阅读、搜索和发送邮件。富文本写信、联系人联想、附件预览与下载，覆盖常见收发场景。</p></article><article><h3>发票，不必逐封翻找。</h3><p>按邮箱、时间和关键词扫描票据，识别 PDF、OFD、XML 等常见材料，核对开票时间、金额与来源邮件；筛除已导出记录，批量打包下载。</p></article><article><h3>每月归集，按计划完成。</h3><p>设置月度自动归集任务，按计划扫描上一个自然月并生成本机 ZIP。保留导出历史，遇到超时或识别问题可查看状态，继续补查。</p></article></div></div></section>
-<section class="tools-section"><div class="wrap"><div class="section-heading"><p class="eyebrow section-number">04 / 研究与实务工具</p><h2>那些每天要用的工具，<br>也在伸手可及处。</h2><p class="section-description">查一个权威答问，算一段利息，生成一套文书。<br>围绕法律工作，把高频的小事做得更顺手。</p></div><div class="tool-grid"><article class="tool-card"><div class="tool-glyph" aria-hidden="true">答</div><span class="feature-index">FADA / REFERENCE</span><h3>法答网精选答问</h3><p>检索最高人民法院公开的精选答问，按批次、专题与法律依据定位。提炼核心结论、记录个人笔记，支持范围问答和 Word 导出，并监测新批次。</p><div class="tool-tags"><span>权威公开答问</span><span>多维筛选</span><span>原文与笔记</span></div></article><article class="tool-card"><div class="tool-glyph calculation" aria-hidden="true">∑</div><span class="feature-index">CALCULATE / EXPORT</span><h3>计算工具</h3><p>支持固定利率、LPR 倍数与上浮 BP，按日期和利率变动分段计算。粘贴判决文字辅助识别本金与期限，导出带公式的 Excel，保留计算明细与历史。</p><div class="tool-tags"><span>分段利息</span><span>参数识别</span><span>公式可复核</span></div></article><article class="tool-card"><div class="tool-glyph" aria-hidden="true">文</div><span class="feature-index">DOCUMENTS / PRACTICE</span><h3>常用文书，成套生成</h3><p>所函、授权委托书、法定代表人证明书、业务审批表与文书合集集中生成，边填边预览。使用自己的律所名称与 Logo，导出后继续处理。</p><div class="tool-tags"><span>实时预览</span><span>文书合集</span><span>自定义律所标识</span></div></article></div><div class="more-tools"><p>还有更多工作方式，等你接入。</p><span>案件研究</span><span>法律雷达与晨报</span><span>会议录音转写</span><span>AI 与 MCP</span><span>案卷归档</span></div></div></section>
-<section class="tour-section wrap" id="tour" aria-labelledby="tour-title">
-<div class="section-heading"><p class="eyebrow section-number">MORE / 更多板块</p><h2 id="tour-title">同一个空间里，<br>还有这些日常。</h2><p class="section-description">从界面外观到案件统计，从计算到文书。<br>点一点左边的条目，看看它们实际长什么样。</p></div>
-<div class="tour-shell" data-tour>
-<div class="tour-nav" role="tablist" aria-label="更多板块导览">
-<button class="tour-tab is-active" type="button" role="tab" aria-selected="true" data-tour-target="settings" data-index="SETTINGS / PERSONAL" data-title="把首页，调成自己的样子。" data-copy="两个工作台可以分别设置背景、蒙版与快捷按钮；展示内容、自动轮播和主题配色也在这里调整，设置只保存在本机。" data-tags="内置背景|双工作台|自动轮播"><span class="tour-tab-num">01</span><span><strong>设置与外观</strong><small>首页工作台 · 背景与轮播</small></span><i aria-hidden="true">↗</i></button>
-<button class="tour-tab" type="button" role="tab" aria-selected="false" tabindex="-1" data-tour-target="stats" data-index="CASES / INSIGHT" data-title="一眼看清，手上的案件全貌。" data-copy="在办与已结案件、案由分布、诉讼阶段和近期提醒汇总成图表；点击标签还能切换统计口径，回到具体案件继续处理。" data-tags="案件状态|案由分布|近期提醒"><span class="tour-tab-num">02</span><span><strong>案件可视化</strong><small>状态 · 分布 · 提醒</small></span><i aria-hidden="true">↗</i></button>
-<button class="tour-tab" type="button" role="tab" aria-selected="false" tabindex="-1" data-tour-target="interest" data-index="CALCULATE / EXPORT" data-title="算得清楚，也经得起复核。" data-copy="按日期与利率变动分段计算，支持 LPR 倍数与 BP 加点；粘贴判决文字辅助识别参数，导出保留计算公式的 Excel。" data-tags="LPR 基准|分段计息|公式可复核"><span class="tour-tab-num">03</span><span><strong>计算工具</strong><small>分段利息 · 公式导出</small></span><i aria-hidden="true">↗</i></button>
-<button class="tour-tab" type="button" role="tab" aria-selected="false" tabindex="-1" data-tour-target="suohan" data-index="DOCUMENTS / PREVIEW" data-title="常用文书，边填边看。" data-copy="法院、委托人、代理律师与案由填入后，右侧实时生成所函预览；律所名称与 Logo 可以在设置里自定义。" data-tags="所函|实时预览|自定义标识"><span class="tour-tab-num">04</span><span><strong>文书生成</strong><small>所函 · 实时预览</small></span><i aria-hidden="true">↗</i></button>
-<button class="tour-tab" type="button" role="tab" aria-selected="false" tabindex="-1" data-tour-target="explore" data-index="DISCOVER / MONITOR" data-title="让新规则，主动来到眼前。" data-copy="按时间、来源、领域与关键词做一次法律检索，把结果沉淀为长期监测；企业尽调与每日法律情报简报也在同一入口。" data-tags="法律检索|企业尽调|持续监测"><span class="tour-tab-num">05</span><span><strong>探索与情报</strong><small>检索 · 尽调 · 监测</small></span><i aria-hidden="true">↗</i></button>
-<button class="tour-auto" type="button" data-tour-toggle aria-pressed="false"><span aria-hidden="true">↻</span><em data-tour-toggle-label>自动导览</em></button>
-</div>
-<div class="tour-view">
-<div class="tour-frames">
-<figure class="tour-frame is-active" data-tour-panel="settings" aria-hidden="false"><a href="assets/stella-settings.webp" target="_blank" rel="noopener"><img src="assets/stella-settings.webp" width="1600" height="900" loading="lazy" alt="设置 · 外观与体验：首页工作台的展示内容、内置背景图库、蒙版透明度与自动轮播"></a></figure>
-<figure class="tour-frame" data-tour-panel="stats" aria-hidden="true"><a href="assets/stella-case-stats.webp" target="_blank" rel="noopener"><img src="assets/stella-case-stats.webp" width="1600" height="900" loading="lazy" alt="案件管理可视化：案件状态与完整度、案由分布、诉讼阶段和近期提醒"></a></figure>
-<figure class="tour-frame" data-tour-panel="interest" aria-hidden="true"><a href="assets/stella-interest.webp" target="_blank" rel="noopener"><img src="assets/stella-interest.webp" width="1600" height="900" loading="lazy" alt="计算工具：利息计算参数、LPR 基准与 BP 加点、文字识别填充与历史记录"></a></figure>
-<figure class="tour-frame" data-tour-panel="suohan" aria-hidden="true"><a href="assets/stella-suohan.webp" target="_blank" rel="noopener"><img src="assets/stella-suohan.webp" width="1600" height="900" loading="lazy" alt="所函生成工具：左侧填写案件与当事人信息，右侧实时预览所函文书"></a></figure>
-<figure class="tour-frame" data-tour-panel="explore" aria-hidden="true"><a href="assets/stella-explore.webp" target="_blank" rel="noopener"><img src="assets/stella-explore.webp" width="1600" height="900" loading="lazy" alt="探索：法律检索任务、来源与领域统计、企业尽调、持续监测与每日法律情报简报"></a></figure>
-</div>
-<div class="tour-caption"><div class="tour-copy"><span class="feature-index" data-tour-index>SETTINGS / PERSONAL</span><h3 data-tour-title>把首页，调成自己的样子。</h3><p data-tour-copy>两个工作台可以分别设置背景、蒙版与快捷按钮；展示内容、自动轮播和主题配色也在这里调整，设置只保存在本机。</p></div><div class="tour-tags" data-tour-tags><span>内置背景</span><span>双工作台</span><span>自动轮播</span></div></div>
-<div class="tour-dots" aria-label="切换板块"><button type="button" class="is-active" data-tour-dot aria-label="第 1 个板块：设置与外观"></button><button type="button" data-tour-dot aria-label="第 2 个板块：案件可视化"></button><button type="button" data-tour-dot aria-label="第 3 个板块：计算工具"></button><button type="button" data-tour-dot aria-label="第 4 个板块：文书生成"></button><button type="button" data-tour-dot aria-label="第 5 个板块：探索与情报"></button></div>
-</div>
-</div>
-</section>
-<section class="inline-install wrap" id="install" aria-label="安装指引"><iframe class="inline-install-frame" src="download.html?embedded=1&amp;v=20261119" title="Stella 安装指引" loading="lazy" scrolling="no"></iframe><p class="inline-install-fallback"><a href="download.html">在独立页面打开安装指引 ↗</a></p></section>
+<div id="install-instructions"><iframe class="inline-install-frame" src="download.html?embedded=1&amp;v=20261122" title="Stella 安装指引" loading="lazy" scrolling="no"></iframe><p class="inline-install-fallback"><a href="download.html">在独立页面打开安装指引 ↗</a></p></div></section>
 <section class="updates-section wrap" id="updates" aria-labelledby="updates-title"><div class="updates-intro"><p class="eyebrow section-number">更新日志</p><h2 id="updates-title">Stella，<br>继续向前。</h2><p>依据已合并的项目更新记录，<br>整理新增功能与体验改进。</p><span class="updates-scope">按功能实际加入或升级时间归纳</span></div><div class="updates-list"><article class="update-entry"><span class="update-date">2026-11-17</span><div><h3>系列案件与窄窗口体验</h3><ul><li>修复系列主表保存、列设置和切换系列时的状态问题，改善子案编辑、自动编号与批量归档的可靠性。</li><li>优化 AI 输入区、案件文件、提醒卡片与发票操作栏在窄窗口中的排版，减少按钮遮挡和文字挤压。</li></ul></div></article>
 <article class="update-entry"><span class="update-date">2026-11-16</span><div><h3>法答网与案件编辑</h3><ul><li>法答网接入统一 AI 增强工作区，支持模型、思考档位、Skill、历史会话等功能，并保留所选答问范围。</li><li>调整法答网检索区和专题卡片布局，修复系列子案联系人以及案件提醒编辑中的数据问题。</li></ul></div></article>
 <article class="update-entry"><span class="update-date">2026-11-14—15</span><div><h3>首页提醒与 AI 设置</h3><ul><li>首页提醒中心可按事项分组查看近期提醒，工作台背景支持悬浮预览，刷新后保留设置页面位置。</li><li>AI 增强支持保存常用配置搭配，调整思考深度；未单独配置的功能跟随全局默认模型。</li><li>文章标签可搜索已有标签，过长的邮件收件人列表可展开查看，下载中心可打开关联案件文件夹。</li></ul></div></article>
@@ -117,9 +434,9 @@
 <article class="update-entry"><span class="update-date">2026-11-01—04</span><div><h3>公开类案检索与案件资料整理</h3><ul><li>新增不依赖专业法律数据库的公开互联网类案检索：按问题拆分事实路径、动态补检，分别核对必要事实与法院实质理由；部分相关案例说明证明缺口。</li><li>案件详情「联系与备忘」改为可编辑表格，支持搜索、置顶、拖动排序、单位候选与 AI 智能分列；材料识别到多个案号时逐行核对。</li><li>司法短信最多可设置三个收件手机号，法院要求核验时按后四位顺序尝试并提示结果；AI API 管理加入服务商接入指引。</li></ul></div></article><article class="update-entry"><span class="update-date">2026-10-31</span><div><h3>复制指令，让 AI 帮你安装</h3><ul><li>Mac 和 Windows 新增源码安装指引：复制对应指令，交给支持本机操作的 AI 助手检查环境、安装并打开客户端。</li><li>源码版可按指引获取 GitHub 主分支的更新，无需重新下载安装包；更新需由用户发起。</li></ul></div></article><article class="update-entry"><span class="update-date">2026-10-29—30</span><div><h3>AI 对话、文档辅助与源码客户端</h3><ul><li>复杂提问先做限时任务理解，针对明确要点补充检索并检查回答是否遗漏；进度窗口按实际事件展示检索、生成与检查。</li><li>文件报告按分类分别检索，单类失败不阻断其他类别；新增文书生成辅助与对话保存改进。</li><li>设置页增加关键词搜索与使用说明入口；Windows 源码客户端支持依赖检查、桌面入口与保留资料的更新。</li></ul></div></article><article class="update-entry"><span class="update-date">2026-10-28</span><div><h3>智能立案、AI 阅读与知识表格</h3><ul><li>新建案件可绑定文件夹并选择材料，由 AI 提出确认问题；识别结果可修改后再带入立案信息，并可结合工商信息完善当事人资料。修复新建对方当事人档案时报错的问题。</li><li>优化 AI 增强对文档和图像的读取、请求预算与对话可靠性；AI 接口管理新增智能立案配置。</li><li>知识文章支持电子表格与表格编辑；系列案件更新后刷新排序和活动时间。</li><li>完善待办与开庭提醒、文字识别设置和页面交互；Mac 匿名统计在同意后首次发送，之后每六小时最多发送一次。</li></ul></div></article><article class="update-entry"><span class="update-date">2026-10-25—27</span><div><h3>系列案件、待办与提醒更顺手</h3><ul><li>完善系列子案表格定位、内容保存和案号记录处理，保留编辑状态与未保存内容。</li><li>待办事项可独立创建，日历提醒规则可按需设置；支持从选中文字识别提醒草稿。</li><li>新增文字识别设置与识别测试，修复选中文字菜单和案件提醒筛选、排序问题。</li></ul></div></article><article class="update-entry"><span class="update-date">2026-10-23</span><div><h3>Windows 安装进度更清晰</h3><ul><li>分开展示下载、校验与启动，显示实际进度、下载速度及当前阶段预计剩余时间。</li><li>减少重复校验读盘，下载过慢时自动重连，支持经过签名验证的备用源机制。</li><li>修复法院附件保存失败的一个兼容性问题；新增可随时关闭的匿名统计，授权后每六小时最多上报一次。</li></ul></div></article><article class="update-entry"><span class="update-date">2026-10-21</span><div><h3>法答网恢复可用，补齐双平台体验</h3><ul><li>修复法答网打开空白，内置公开问答支持离线检索、个人笔记与 Word 导出。</li><li>修复邮箱附件和发票导出的保存问题，改善 PDF、旧版 Excel 和文字识别的可用性。</li><li>新增 Intel Mac 版本，并补充常用 Windows 10 的 64 位系统兼容支持。</li></ul></div></article><article class="update-entry"><span class="update-date">2026-10-20</span><div><h3>邮箱、开庭提醒与工作空间设置</h3><ul><li>邮箱配置集中管理，支持企业微信／腾讯企业邮箱、网易企业邮箱和 QQ 邮箱；切回邮箱时自动检查新邮件并保留滚动位置。</li><li>开庭提醒自动将案号及受理机构合并到关联案件，同一案号自动去重。</li><li>统一用户名、律所名称、Logo、文号和联系方式，文书预览与导出共用设置。</li><li>新增系统消息入口、自定义 AI 接口接入指引；Windows 支持司法短信文本和截图确认导入。</li><li>储存管理展示临时文件用途和清理影响，按选择并确认后清理。</li></ul></div></article><article class="update-entry"><span class="update-date">2026-10-19</span><div><h3>下载中心与存储管理升级</h3><ul><li>下载中心补齐各类导出与本地案卷产物，支持按文件大小排序，以及大小范围、下载或生成日期筛选。</li><li>一键检查失效记录，支持批量移除记录；勾选现有文件并确认后，可移到系统废纸篓。</li><li>新增分组侧栏、磨砂工具栏和按需展开的筛选区，优化深浅色界面；操作按钮直接写明目标页面和具体动作。</li><li>存储管理展示可搜索的导出文件明细、路径、用途和时间，支持导出完整清单及勾选确认清理。</li><li>修复直接导出漏记、筛选更新、历史记录导入和取消保存状态等问题。</li></ul></div></article><article class="update-entry"><span class="update-date">2026-10-18</span><div><h3>文书品牌与工作空间偏好</h3><ul><li>文书生成支持自己的律所名称与 Logo。</li><li>用户名可编辑、可隐藏；侧边栏问候语可按需开启。</li></ul></div></article><article class="update-entry"><span class="update-date">2026-10-16</span><div><h3>案件记录与 AI 对话继续衔接</h3><ul><li>备忘录和台账可添加多个附件，绑定本地文件或文件夹。</li><li>回答生成期间可切换或新建对话，各自保留草稿和进度。</li></ul></div></article><article class="update-entry"><span class="update-date">2026-10-14—15</span><div><h3>从材料到可复核的办案成果</h3><ul><li>新增事实核对、案件时间轴和证据编排，支持人工确认后导出。</li><li>案件关联知识展示论证用途、适用边界和两侧原文，支持研究报告与核验底稿。</li></ul></div></article><article class="update-entry"><span class="update-date">2026-10-12—13</span><div><h3>围绕案件安排工作、归集材料</h3><ul><li>案件 AI 支持案件聚焦与待办草稿；长期记忆可查看、编辑和停用。</li><li>下载中心集中展示进度、来源、案件与保存位置；事项可独立绑定本地材料。</li></ul></div></article><article class="update-entry"><span class="update-date">2026-10-08</span><div><h3>在线阅卷与卷宗下载</h3><ul><li>一张网新增在线阅卷与卷宗下载任务，集中查看材料获取进度，并衔接后续案件工作。</li></ul></div></article><article class="update-entry"><span class="update-date">2026-10-06</span><div><h3>知识文章按专业领域整理</h3><ul><li>引入专业分类体系，支持按文章内容整理专业领域，并保留人工修正入口。</li></ul></div></article><article class="update-entry"><span class="update-date">2026-10-01</span><div><h3>案卷归档与工作空间管理</h3><ul><li>案卷工作台衔接材料分类、清单保存与电子案卷生成，导出保留版本。</li><li>效率中心入口可移动和编辑；设置支持自动备份计划与备份文件管理。</li></ul></div></article><article class="update-entry"><span class="update-date">2026-09-17—24</span><div><h3>邮箱、系列案件与资料流转</h3><ul><li>接入网易企业邮箱，补充云附件与大附件处理。</li><li>系列案件支持 Excel 更新核对与回退；案件文件可管理 Finder 标签颜色。</li></ul></div></article><article class="update-entry"><span class="update-date">2026-09-11—12</span><div><h3>知识整理与复习工作流</h3><ul><li>标签编辑集中管理自定义库、专业领域与作者。</li><li>知识中心完善查询、复习和治理流程，衔接规则结论与原文依据。</li></ul></div></article><article class="update-entry"><span class="update-date">2026-08-27</span><div><h3>一张网工作台</h3><ul><li>集中查看法院账户的待办、消息、电子送达、我的案件与立案预约。</li><li>官网记录可关联本地案件，电子送达附件支持预览、下载和归档。</li></ul></div></article><article class="update-entry"><span class="update-date">2026-08-24</span><div><h3>邮箱与发票中心</h3><ul><li>QQ 邮箱、腾讯企业邮箱进入效率中心，支持收发邮件与附件处理。</li><li>发票中心支持票据扫描、筛选、批量下载及按月自动归集。</li></ul></div></article><article class="update-entry"><span class="update-date">2026-08-17</span><div><h3>录音转写与外部知识连接</h3><ul><li>录音工作台支持实时录音、音频上传与历史记录，转写和纪要可保存到知识库。</li><li>新增夸克网盘 MCP 来源与 Skill 管理入口。</li></ul></div></article></details></div></section>
 
 
-<section class="faq-section wrap" id="questions" aria-labelledby="faq-title"><div><p class="eyebrow section-number">06 / 你可能想了解</p><h2 id="faq-title">开始之前，<br>再了解一点。</h2></div><div class="faq-list"><details><summary>这是什么？我可以直接使用吗？<span aria-hidden="true">＋</span></summary><p>Stella 面向律师与法务人员，连接案件管理、法院通知、知识阅读与办公工具。下载后即可建立自己的案件和知识库，邮箱、法院与 AI 功能按需配置。律所内部审批、会议和设备接入可联系作者定制。</p></details><details><summary>支持哪些电脑？<span aria-hidden="true">＋</span></summary><p>Mac 版支持 Apple 芯片和 Intel 芯片，要求 macOS 12 或更新版本。Windows 版仍在开发中，现为测试版，存在组件下载慢、安装完成后部分功能组件无法正常使用等问题；适用于 Windows 10 1909+ / Windows 11 的 Intel、AMD 64 位电脑，暂不支持 ARM、32 位和 Windows Server。</p></details><details><summary>这是开放源代码的项目吗？<span aria-hidden="true">＋</span></summary><p>当前 1.1.8 的原创源码按 AGPL v3（仅第 3 版）提供，第三方材料遵循各自许可。<a href="https://github.com/liu-zongjin/apex-legal-os">查看应用源码与许可 ↗</a>。历史安装包请以包内随附许可为准；本分发仓库的旧许可不限制新 Windows 包所附 AGPL 已授予的权利。</p></details><details><summary>短信识别和法院同步如何开始？<span aria-hidden="true">＋</span></summary><p>Mac 版可使用已同步到「信息」中的司法短信，需开启相关同步、授予读取权限并配置识别服务；Windows 版支持粘贴文本、TXT 或截图，预览确认后导入。一张网功能需登录自己的人民法院在线服务账户。涉及登录、核验或最终提交的步骤，按应用提示由本人完成。</p></details><details><summary>AI 和其他联网功能需要另外配置吗？<span aria-hidden="true">＋</span></summary><p>需要。AI、邮箱、法院服务及 MCP 等功能使用你自己的账号或密钥。Windows 引导器会准备浏览器、文字识别和文档转换组件；Mac 的部分联网工具仍需按功能指引配置 Chrome 等外部应用。</p></details><details><summary>如何更新或反馈问题？<span aria-hidden="true">＋</span></summary><p>源码版更新需自行向 AI 助手发起。Windows 安装方式及测试版说明请查看<a href="#install">下载指引</a>。升级前请备份重要资料；旧 Mac 版若在应用包内保存过附件或导出文件，请额外复制旧 Stella.app 留存。如遇问题，请前往 <a href="https://github.com/liu-zongjin/stella-downloads/issues/new">GitHub Issues</a>，说明应用与系统版本，避免上传敏感资料。</p></details></div></section>
+<section class="faq-section wrap" id="questions" aria-labelledby="faq-title"><div><p class="eyebrow section-number">06 / 你可能想了解</p><h2 id="faq-title">开始之前，<br>再了解一点。</h2></div><div class="faq-list"><details><summary>这是什么？我可以直接使用吗？<span aria-hidden="true">＋</span></summary><p>Stella 面向律师与法务人员，连接案件管理、法院通知、知识阅读与办公工具。下载后即可建立自己的案件和知识库，邮箱、法院与 AI 功能按需配置。律所内部审批、会议和设备接入可联系作者定制。</p></details><details><summary>支持哪些电脑？<span aria-hidden="true">＋</span></summary><p>Mac 版支持 Apple 芯片和 Intel 芯片，要求 macOS 12 或更新版本。Windows 版仍在开发中，现为测试版，存在组件下载慢、安装完成后部分功能组件无法正常使用等问题；适用于 Windows 10 1909+ / Windows 11 的 Intel、AMD 64 位电脑，暂不支持 ARM、32 位和 Windows Server。</p></details><details><summary>这是开放源代码的项目吗？<span aria-hidden="true">＋</span></summary><p>当前 1.1.8 的原创源码按 AGPL v3（仅第 3 版）提供，第三方材料遵循各自许可。<a href="https://github.com/liu-zongjin/apex-legal-os">查看应用源码与许可 ↗</a>。历史安装包请以包内随附许可为准；本分发仓库的旧许可不限制新 Windows 包所附 AGPL 已授予的权利。</p></details><details><summary>短信识别和法院同步如何开始？<span aria-hidden="true">＋</span></summary><p>Mac 版可使用已同步到「信息」中的司法短信，需开启相关同步、授予读取权限并配置识别服务；Windows 版支持粘贴文本、TXT 或截图，预览确认后导入。一张网功能需登录自己的人民法院在线服务账户。涉及登录、核验或最终提交的步骤，按应用提示由本人完成。</p></details><details><summary>AI 和其他联网功能需要另外配置吗？<span aria-hidden="true">＋</span></summary><p>需要。AI、邮箱、法院服务及 MCP 等功能使用你自己的账号或密钥。Windows 引导器会准备浏览器、文字识别和文档转换组件；Mac 的部分联网工具仍需按功能指引配置 Chrome 等外部应用。</p></details><details><summary>如何更新或反馈问题？<span aria-hidden="true">＋</span></summary><p>源码版更新需自行向 AI 助手发起。Windows 安装方式及测试版说明请查看<a href="#install">下载指引</a>。升级前请备份重要资料；旧 Mac 版若在应用包内保存过附件或导出文件，请额外复制旧 Stella.app 留存。如遇问题，请前往 <a href="https://github.com/liu-zongjin/apex-legal-os/issues/new">GitHub Issues</a>，说明应用与系统版本，避免上传敏感资料。</p></details></div></section>
 <section class="download-section" id="download"><div class="wrap download-inner"><p class="eyebrow">STELLA / READY WHEN YOU ARE</p><h2>选择电脑，<br>开始你的工作空间。</h2><p class="download-requirement">复制安装指令，交给能操作本机的 AI 助手。</p><a class="button primary" href="#install">查看安装指引 ↗</a></div></section>
 </main>
-<footer class="site-footer wrap"><div><span class="footer-name">Stella</span><p>为日常法律工作，留一处清晰的空间。</p></div><div class="footer-links"><a href="#updates">更新日志</a><a href="https://github.com/liu-zongjin/apex-legal-os">GitHub 仓库 ↗</a><a href="https://github.com/liu-zongjin/stella-downloads/issues/new">联系作者 ↗</a><a href="https://github.com/liu-zongjin/stella-downloads/blob/main/LICENSE">使用许可 ↗</a><a href="https://github.com/liu-zongjin/stella-downloads/blob/main/THIRD_PARTY_NOTICES.md">第三方许可 ↗</a></div><p class="footer-small" id="analytics-note">本站使用匿名访问统计，不使用 Cookie，仅记录访问与安装指引、视频互动；可随时关闭。</p><button type="button" id="analytics-toggle" class="analytics-toggle" aria-pressed="false">关闭匿名访问统计</button><p class="footer-small">© 2026 Stella · 公开应用分发 · Windows 原创源码 AGPL v3</p></footer>
+<footer class="site-footer wrap"><div><span class="footer-name">Stella</span><p>为日常法律工作，留一处清晰的空间。</p></div><div class="footer-links"><a href="#updates">更新日志</a><a href="https://github.com/liu-zongjin/apex-legal-os">GitHub 仓库 ↗</a><a href="https://github.com/liu-zongjin/apex-legal-os/issues/new">联系作者 ↗</a><a href="https://github.com/liu-zongjin/stella-downloads/blob/main/LICENSE">使用许可 ↗</a><a href="https://github.com/liu-zongjin/stella-downloads/blob/main/THIRD_PARTY_NOTICES.md">第三方许可 ↗</a></div><p class="footer-small" id="analytics-note">本站使用匿名访问统计，不使用 Cookie，仅记录访问与安装指引、视频互动；可随时关闭。</p><button type="button" id="analytics-toggle" class="analytics-toggle" aria-pressed="false">关闭匿名访问统计</button><p class="footer-small">© 2026 Stella · 公开应用分发 · Windows 原创源码 AGPL v3</p></footer>
 </body>
 </html>

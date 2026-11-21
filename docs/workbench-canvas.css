@@ -1,0 +1,49 @@
+:root {
+  --tools-collapsed-width: 120px;
+  --tools-collapsed-height: 30px;
+  --tools-expanded-width: 1120px;
+  --tools-expanded-height: 691px;
+  --tools-menu-open-duration: 200ms;
+  --tools-menu-close-duration: 200ms;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  overflow: hidden;
+  color: #1b2230;
+  background: #f3f4f7;
+  font: 15px/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", sans-serif;
+}
+button { font: inherit; }
+.workbench-app { position: relative; transform-origin: top left; }
+.workbench-base { display: block; width: 100%; height: auto; }
+
+/* Leave the trigger in the screenshot until the real menu markup expands from it. */
+.workbench-toolbar {
+  position: absolute;
+  top: 4px;
+  right: 8.84%;
+  z-index: 2;
+  visibility: hidden;
+}
+
+.workbench-toolbar.has-menu { visibility: visible; }
+.workbench-toolbar .tab-bar-actions { display: flex; align-items: center; }
+.workbench-toolbar .assist-island-anchor { width: 120px; height: 30px; }
+.workbench-toolbar .assist-island-shell,
+.workbench-toolbar .assist-island-trigger,
+.workbench-toolbar .assist-island-shell .tools-popup { transition: none !important; }
+
+/* Only this rectangle changes. Every surrounding pixel comes from the redacted app screenshot. */
+.workbench-main {
+  position: absolute;
+  left: 18.09524%;
+  top: 12.35103%;
+  width: 53.80952%;
+  height: 18.63402%;
+  overflow: hidden;
+}
+.workbench-card,
+.workbench-card img { position: absolute; inset: 0; width: 100%; height: 100%; }
+.workbench-card[hidden] { display: none; }
+.workbench-card img[data-bg] { opacity: 0; }

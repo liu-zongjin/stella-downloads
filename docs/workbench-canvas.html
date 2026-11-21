@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stella 双工作台演示</title>
+<link rel="stylesheet" href="workbench-menu.css?v=1">
+<link rel="stylesheet" href="workbench-canvas.css?v=4">
+<script defer src="workbench-canvas.js?v=6"></script>
+</head>
+<body>
+  <main class="workbench-app" aria-label="Stella 首页演示">
+    <img class="workbench-base" src="assets/workbench-frames/full-knowledge-white.webp" width="1920" height="1206"
+         alt="Stella 实机首页。左侧是知识库导航，上方为搜索和效率中心，工作台旁是提醒中心，下方是知识条目。">
+    <div class="workbench-toolbar">
+    <div class="tab-bar-actions" aria-hidden="true" inert>
+<div class="assist-island-anchor">
+        <div class="assist-island-shell show-trigger" aria-expanded="false">
+          <button class="assist-island-trigger" type="button" aria-haspopup="menu" aria-expanded="true" aria-controls="tools-popup" tabindex="-1">
+            <span class="assist-island-icon" aria-hidden="true">
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
+                <rect x="2" y="2" width="5" height="5" rx="1.4" stroke="currentColor" stroke-width="1.35"></rect>
+                <rect x="9" y="2" width="5" height="5" rx="1.4" stroke="currentColor" stroke-width="1.35"></rect>
+                <rect x="2" y="9" width="5" height="5" rx="1.4" stroke="currentColor" stroke-width="1.35"></rect>
+                <path d="M11.5 9v5M9 11.5h5" stroke="currentColor" stroke-width="1.35" stroke-linecap="round"></path>
+              </svg>
+            </span>
+            <span>效率中心</span>
+            <svg class="assist-island-chevron" width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M3.2 4.2l2.3 2.3 2.3-2.3" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </button>
+          <div class="tools-popup" id="tools-popup" aria-hidden="true" role="menu" aria-label="效率中心">
+          <div class="workbench-menu-content">
+            <div class="tools-popup-mobile-head">
+              <div><strong>效率中心</strong><span>案件、文书、AI、工具与邮件</span></div>
+              <button type="button" aria-label="关闭效率中心" tabindex="-1">✕</button>
+            </div>
+            <div class="tools-popup-head">
+              <div class="tools-popup-heading"><strong>效率中心</strong><small>案件、文书、AI、工具与邮件</small></div>
+              <div class="tools-popup-edit-actions" id="tools-popup-edit-actions">
+    <button class="tools-popup-edit-btn" type="button" aria-label="编辑效率中心入口" title="编辑入口" tabindex="-1">
+      <svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.2 14.9l.7-3.1L13.7 3a1.6 1.6 0 012.3 2.3l-8.8 8.8-3 .8z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12.5 4.3l3.2 3.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg>
+    </button>
+  </div>
+              <button class="tools-popup-close-mobile" type="button" aria-label="关闭效率中心" tabindex="-1">✕</button>
+            </div>
+            <nav class="tools-popup-categories" id="tools-popup-categories" aria-label="工具分组"><button type="button" tabindex="-1">案件</button><button type="button" tabindex="-1">文书</button><button type="button" tabindex="-1">AI</button><button type="button" tabindex="-1">工具</button><button type="button" tabindex="-1">邮件</button></nav>
+            <div id="tools-popup-list"><div class="tools-popup-groups">
+      <section class="tools-popup-group" data-tools-group="case">
+        <div class="tools-popup-col-title">案件</div>
+        <div class="tools-popup-group-list">
+
+          <button class="tools-popup-item" data-tool-id="case_manager" type="button" role="menuitem" title="案件与提醒" tabindex="-1">
+
+            <span class="tools-popup-item-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 4h12v11H3z" stroke="currentColor" stroke-width="1.4"></path><path d="M6 2.5h6V5H6zM6 8h6M6 11h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path></svg></span>
+            <span class="tools-popup-item-body">
+              <strong>案件管理</strong>
+              <small>案件与提醒</small>
+            </span>
+          </button>
+
+          <button class="tools-popup-item" data-tool-id="court_directory" type="button" role="menuitem" title="法院、部门与承办人" tabindex="-1">
+
+            <span class="tools-popup-item-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 3.5h12v11H3zM6 3.5V2h6v1.5M5.5 8h7M5.5 11h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path><path d="M13 12.5l1.8 1.8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path></svg></span>
+            <span class="tools-popup-item-body">
+              <strong>法院通讯录</strong>
+              <small>法院、部门与承办人</small>
+            </span>
+          </button>
+
+          <button class="tools-popup-item" data-tool-id="court_online_service" type="button" role="menuitem" title="官网消息与电子送达" tabindex="-1">
+
+            <span class="tools-popup-item-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 3.5h12v11H3zM6 3.5V2h6v1.5M5.5 8h7M5.5 11h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path><path d="M13 12.5l1.8 1.8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path></svg></span>
+            <span class="tools-popup-item-body">
+              <strong>一张网</strong>
+              <small>官网消息与电子送达</small>
+            </span>
+          </button>
+
+          <button class="tools-popup-item" data-tool-id="automated_filing" type="button" role="menuitem" title="扫描材料并可视化填报" tabindex="-1">
+
+            <span class="tools-popup-item-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 4h12v10H3zM6 2.5h6V4H6zM5.5 8h7M5.5 11h4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path><path d="M13.6 12.4l1.5 1.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path></svg></span>
+            <span class="tools-popup-item-body">
+              <strong>自动化立案</strong>
+              <small>扫描材料并可视化填报</small>
+            </span>
+          </button>
+
+          <button class="tools-popup-item" data-tool-id="case_workflows" type="button" role="menuitem" title="证据 事实 时间轴" tabindex="-1">
+
+            <span class="tools-popup-item-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 4h12v11H3z" stroke="currentColor" stroke-width="1.4"></path><path d="M6 2.5h6V5H6zM6 8h6M6 11h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path></svg></span>
+            <span class="tools-popup-item-body">
+              <strong>办案工作台</strong>
+              <small>证据 事实 时间轴</small>
+            </span>
+          </button>
+
+          <button class="tools-popup-item" data-tool-id="case_archive" type="button" role="menuitem" title="整理材料、核对目录并生成电子案卷" tabindex="-1">
+
+            <span class="tools-popup-item-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 4h12v11H3z" stroke="currentColor" stroke-width="1.4"></path><path d="M6 2.5h6V5H6zM6 8h6M6 11h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path></svg></span>
+            <span class="tools-popup-item-body">
+              <strong>案卷归档工作台</strong>
+              <small>整理材料、核对目录并生成电子案卷</small>
+            </span>
+          </button>
+
+          <button class="tools-popup-item" data-tool-id="team_expenses" type="button" role="menuitem" title="团队收支与备用金" tabindex="-1">
+
+            <span class="tools-popup-item-icon"><svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M2.5 4.4h11v9.1h-11z" stroke="currentColor" stroke-width="1.4"></path><path d="M5.3 2.4h5.4v2h-5.4zM5.1 8h5.8M5.1 10.9h3.8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"></path></svg></span>
+            <span class="tools-popup-item-body">
+              <strong>团队费用管理</strong>
+              <small>团队收支与备用金</small>
+            </span>
+          </button>
+
+          <button class="tools-popup-item" data-tool-id="case_research" type="button" role="menuitem" title="台账与问答" tabindex="-1">
+
+            <span class="tools-popup-item-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M2.8 4.2h4l1.3 1.5h7.1v8.1H2.8z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"></path><path d="M6 9h4.2M6 11.6h2.7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path><circle cx="12.3" cy="10.3" r="1.9" stroke="currentColor" stroke-width="1.25"></circle><path d="M13.7 11.7l1.5 1.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"></path></svg></span>
+            <span class="tools-popup-item-body">
+              <strong>案件研究</strong>
+              <small>台账与问答</small>
+            </span>
+          </button>
+
+          <button class="tools-popup-item" data-tool-id="fada" type="button" role="menuitem" title="精选答问" tabindex="-1">
+
+            <span class="tools-popup-item-icon"><svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M9 3.5c0 1.5-1.5 2-2 2.5v.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path><path d="M8 6.5c3 0 5 1.5 5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path><circle cx="8" cy="12" r="1" fill="currentColor"></circle></svg></span>
+            <span class="tools-popup-item-body">
+              <strong>法答网</strong>
+              <small>精选答问</small>
+            </span>
+          </button>
+
+        </div>
+      </section>
+
+      <section class="tools-popup-group" data-tools-group="document">
+        <div class="tools-popup-col-title">文书</div>
+        <div class="tools-popup-group-list">
+
+          <button class="tools-popup-item" data-tool-id="suohan" type="button" role="menuitem" title="常用函件" tabindex="-1">
+
+            <span class="tools-popup-item-icon"><svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M3 2h7l3 3v9a1 1 0 01-1 1H3a1 1 0 01-1-1V3a1 1 0 011-1z" stroke="currentColor" stroke-width="1.4"></path><path d="M10 2v3h3M5 7h6M5 10h5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path></svg></span>
+            <span class="tools-popup-item-body">
+              <strong>所函</strong>
+              <small>常用函件</small>
+            </span>
+          </button>
+
+          <button class="tools-popup-item" data-tool-id="rep_identity" type="button" role="menuitem" title="主体材料" tabindex="-1">
+
+            <span class="tools-popup-item-icon"><svg width="18" height="18" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="6" r="3" stroke="currentColor" stroke-width="1.4"></circle><path d="M3 14c0-2.5 2-4 5-4s5 1.5 5 4" stroke="currentColor" stroke-width="1.4"></path></svg></span>
+            <span class="tools-popup-item-body">
+              <strong>法定代表人的证明书</strong>
+              <small>主体材料</small>
+            </span>
+          </button>
+
+          <button class="tools-popup-item" data-tool-id="power_attorney" type="button" role="menuitem" title="文书生成" tabindex="-1">
+
+            <span class="tools-popup-item-icon"><svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M3 2h7l3 3v9a1 1 0 01-1 1H3a1 1 0 01-1-1V3a1 1 0 011-1z" stroke="currentColor" stroke-width="1.4"></path><path d="M10 2v3h3M5 7h6M5 10h5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path></svg></span>
+            <span class="tools-popup-item-body">
+              <strong>授权委托书</strong>
+              <small>文书生成</small>
+            </span>
+          </button>
+
+          <button class="tools-popup-item" data-tool-id="document_bundle" type="button" role="menuitem" title="一键生成全套文书" tabindex="-1">
+
+            <span class="tools-popup-item-icon"><svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M3 2h7l3 3v9a1 1 0 01-1 1H3a1 1 0 01-1-1V3a1 1 0 011-1z" stroke="currentColor" stroke-width="1.4"></path><path d="M10 2v3h3M5 7h6M5 10h5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path></svg></span>
+            <span class="tools-popup-item-body">
+              <strong>文书合集</strong>
+              <small>一键生成全套文书</small>
+            </span>
+          </button>
+
+          <button class="tools-popup-item" data-tool-id="business_approval" type="button" role="menuitem" title="立项审批文书" tabindex="-1">
+
+            <span class="tools-popup-item-icon"><svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M3 2h7l3 3v9a1 1 0 01-1 1H3a1 1 0 01-1-1V3a1 1 0 011-1z" stroke="currentColor" stroke-width="1.4"></path><path d="M10 2v3h3M5 7h6M5 10h5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path></svg></span>
+            <span class="tools-popup-item-body">
+              <strong>业务审批表</strong>
+              <small>立项审批文书</small>
+            </span>
+          </button>
+
+          <button class="tools-popup-item" data-tool-id="quick_approval" type="button" role="menuitem" title="上传文书并自动审批" tabindex="-1">
+
+            <span class="tools-popup-item-icon"><svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M3 2h7l3 3v9a1 1 0 01-1 1H3a1 1 0 01-1-1V3a1 1 0 011-1z" stroke="currentColor" stroke-width="1.4"></path><path d="M10 2v3h3M5 7h6M5 10h5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path></svg></span>
+            <span class="tools-popup-item-body">
+              <strong>快速报批</strong>
+              <small>上传文书并自动审批</small>
+            </span>
+          </button>
+
+        </div>
+      </section>
+
+      <section class="tools-popup-group" data-tools-group="ai">
+        <div class="tools-popup-col-title">AI</div>
+        <div class="tools-popup-group-list">
+
+          <button class="tools-popup-item" data-tool-id="ai_ask" type="button" role="menuitem" title="全库检索" tabindex="-1">
+
+            <span class="tools-popup-item-icon"><span class="ai-wordmark" aria-hidden="true">AI</span></span>
+            <span class="tools-popup-item-body">
+              <strong>AI增强</strong>
+              <small>全库检索</small>
+            </span>
+          </button>
+
+          <button class="tools-popup-item" data-tool-id="case_ai" type="button" role="menuitem" title="全部案件与一张网资料" tabindex="-1">
+
+            <span class="tools-popup-item-icon"><span class="ai-wordmark" aria-hidden="true">AI</span></span>
+            <span class="tools-popup-item-body">
+              <strong>案件 AI 管理</strong>
+              <small>全部案件与一张网资料</small>
+            </span>
+          </button>
+
+        </div>
+      </section>
+
+      <section class="tools-popup-group" data-tools-group="tool">
+        <div class="tools-popup-col-title">工具</div>
+        <div class="tools-popup-group-list">
+
+          <button class="tools-popup-item" data-tool-id="interest" type="button" role="menuitem" title="利息及费用计算" tabindex="-1">
+
+            <span class="tools-popup-item-icon"><svg width="18" height="18" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.4"></rect><path d="M5 8h6M8 5v6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path></svg></span>
+            <span class="tools-popup-item-body">
+              <strong>计算工具</strong>
+              <small>利息及费用计算</small>
+            </span>
+          </button>
+
+          <button class="tools-popup-item" data-tool-id="mingsi_meeting" type="button" role="menuitem" title="明思会议室申请" tabindex="-1">
+
+            <span class="tools-popup-item-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="4" width="12" height="11" rx="1.6" stroke="currentColor" stroke-width="1.4"></rect><path d="M6 2.5v3M12 2.5v3M3 7.5h12M6.2 10.5h2.2M6.2 12.8h5.5" stroke="currentColor" stroke-width="1.35" stroke-linecap="round"></path></svg></span>
+            <span class="tools-popup-item-body">
+              <strong>会议室预定</strong>
+              <small>明思会议室申请</small>
+            </span>
+          </button>
+
+          <button class="tools-popup-item" data-tool-id="scanner_inbox" type="button" role="menuitem" title="局域网扫描件取件" tabindex="-1">
+
+            <span class="tools-popup-item-icon"><svg width="18" height="18" viewBox="0 0 16 16" fill="none"><rect x="4" y="1.5" width="8" height="4" rx="1" stroke="currentColor" stroke-width="1.4"></rect><path d="M2 5.5h12v7.2H2zM5 10h6M5 12h3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+            <span class="tools-popup-item-body">
+              <strong>打印机扫描盘</strong>
+              <small>局域网扫描件取件</small>
+            </span>
+          </button>
+
+          <button class="tools-popup-item" data-tool-id="personal_center" type="button" role="menuitem" title="更多内容与服务" tabindex="-1">
+
+            <span class="tools-popup-item-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="6" r="2.9" stroke="currentColor" stroke-width="1.4"></circle><path d="M3.2 15.6c0-3.1 2.6-5.1 5.8-5.1s5.8 2 5.8 5.1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path></svg></span>
+            <span class="tools-popup-item-body">
+              <strong>个人中心</strong>
+              <small>更多内容与服务</small>
+            </span>
+          </button>
+
+        </div>
+      </section>
+
+      <section class="tools-popup-group" data-tools-group="mail">
+        <div class="tools-popup-col-title">邮件</div>
+        <div class="tools-popup-group-list">
+
+          <button class="tools-popup-item" data-tool-id="qq_mail" type="button" role="menuitem" title="邮件与发票" tabindex="-1">
+
+            <span class="tools-popup-item-icon"><svg width="18" height="18" viewBox="0 0 16 16" fill="none"><rect x="1.5" y="3" width="13" height="10" rx="1.6" stroke="currentColor" stroke-width="1.4"></rect><path d="M2 4.2L8 8.6 14 4.2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+            <span class="tools-popup-item-body">
+              <strong>QQ邮箱</strong>
+              <small>邮件与发票</small>
+            </span>
+          </button>
+
+          <button class="tools-popup-item" data-tool-id="qq_exmail" type="button" role="menuitem" title="企业邮件与发票" tabindex="-1">
+
+            <span class="tools-popup-item-icon"><svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M1.5 4.5h7.4M1.5 8h5M1.5 11.5h3.2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path><path d="M9 2.5h5.5v11H9z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"></path><path d="M10.5 6h2.6M10.5 8.5h2.6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"></path></svg></span>
+            <span class="tools-popup-item-body">
+              <strong>腾讯企业邮箱</strong>
+              <small>企业邮件与发票</small>
+            </span>
+          </button>
+
+          <button class="tools-popup-item" data-tool-id="netease_exmail" type="button" role="menuitem" title="企业邮件与发票" tabindex="-1">
+
+            <span class="tools-popup-item-icon"><svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M1.5 4.5h7.4M1.5 8h5M1.5 11.5h3.2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path><path d="M9 2.5h5.5v11H9z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"></path><path d="M10.5 6h2.6M10.5 8.5h2.6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"></path></svg></span>
+            <span class="tools-popup-item-body">
+              <strong>网易企业邮箱</strong>
+              <small>企业邮件与发票</small>
+            </span>
+          </button>
+
+          <button class="tools-popup-item" data-tool-id="invoice_center" type="button" role="menuitem" title="发票识别与预览" tabindex="-1">
+
+            <span class="tools-popup-item-icon"><svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M3 1.5h10v13H3z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"></path><path d="M5.5 5h5M5.5 8h5M5.5 11h3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"></path><path d="M6.5 4.5h1.6M7.3 3.8v1.4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"></path></svg></span>
+            <span class="tools-popup-item-body">
+              <strong>发票中心</strong>
+              <small>发票识别与预览</small>
+            </span>
+          </button>
+
+        </div>
+      </section>
+      </div></div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="workbench-main">
+      <section class="workbench-card" data-workbench-view="knowledge" aria-label="法律知识工作台">
+        <img data-bg="1" data-src="assets/workbench-frames/knowledge-crimson.webp" width="1582" height="344" alt="">
+        <img data-bg="2" data-src="assets/workbench-frames/knowledge-orbit.webp" width="1582" height="344" alt="">
+        <img data-bg="3" data-src="assets/workbench-frames/knowledge-coast.webp" width="1582" height="344" alt="">
+      </section>
+      <section class="workbench-card" data-workbench-view="case" aria-label="案件管理工作台" hidden>
+        <img class="workbench-default" src="assets/workbench-frames/case-white.webp" width="1582" height="344" alt="">
+        <img data-bg="1" data-src="assets/workbench-frames/case-snow.webp" width="1582" height="344" alt="">
+        <img data-bg="2" data-src="assets/workbench-frames/case-champagne.webp" width="1582" height="344" alt="">
+        <img data-bg="3" data-src="assets/workbench-frames/case-sunrise.webp" width="1582" height="344" alt="">
+      </section>
+    </div>
+  </main>
+</body>
+</html>
