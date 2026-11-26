@@ -7,7 +7,7 @@
 
 ### 观看功能介绍
 
-[在线观看 Stella 介绍片 · 3 分 24 秒](https://liu-zongjin.github.io/stella-downloads/watch.html)
+[在线观看 Stella 介绍片 · 1 分钟](https://liu-zongjin.github.io/stella-downloads/watch.html)
 
 ### 下载 Stella：Mac 1.1.5 / Windows 1.1.6
 

@@ -1,4 +1,5 @@
-Stella 法律操作系统功能介绍
-机械键盘录音：Mechvibes / CherryMX Blue ABS keycaps
-来源：https://github.com/hainguyents13/mechvibes/tree/main/src/audio/cherrymx-blue-abs
-许可及版权原文：mechvibes-license.txt
+Stella 法律操作系统一分钟介绍片
+配乐：Ramp It Up / Ahjay Stelino，Mixkit Stock Music Free License
+https://mixkit.co/free-stock-music/rhythmic-underscore/
+机械键盘录音：Thomas Lai / kbsim / Gateron Black Ink，MIT
+许可及版权原文：kbsim-license.txt
