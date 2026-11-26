@@ -18,12 +18,12 @@
 .hero-actions{width:min(356px,100%);min-width:0;display:flex;flex-direction:column;align-items:stretch;gap:0;padding:2px 0 0}.hero-actions .button{width:100%;justify-content:space-between;padding:15px 18px;font-size:13px}.hero-actions .button>span{margin-left:0;font-size:18px}.hero-ai-link{display:flex;width:100%;align-items:center;justify-content:space-between;gap:12px;margin-top:8px;padding:6px 18px;color:#9b1d27;font-size:12px;font-weight:500;text-decoration:none}.hero-ai-link:hover{color:#781920;text-decoration:underline;text-underline-offset:3px}.hero-ai-link:focus-visible{outline:2px solid #9b1d27;outline-offset:3px}.hero-actions .download-meta{margin:12px 18px 0;font-size:11px;line-height:1.7;color:var(--muted)}.hero-quiet-links{display:flex;justify-content:space-between;gap:14px;border-top:1px solid var(--line);padding:12px 18px 0;margin-top:15px}.hero-quiet-links .quiet-link{display:inline-flex;align-items:center;gap:6px;margin:0;font-size:11px}.hero-quiet-links .quiet-link span{margin-left:0}@media(max-width:900px){.hero-bottom{display:block}.hero-actions{width:100%;max-width:420px;margin-top:26px;padding:0}.desktop-break{display:none}}@media(max-width:720px){.hero-actions{margin-top:23px}.hero-quiet-links{flex-wrap:wrap;gap:8px 16px}}
 </style>
 <link rel="stylesheet" href="typography-20261104.css">
-<link rel="stylesheet" href="scroll-story.css?v=6">
+<link rel="stylesheet" href="scroll-story.css?v=20261126">
 <link rel="stylesheet" href="delivery-story.css?v=5">
-<script src="scroll-story.js?v=8" defer></script>
-<link rel="stylesheet" href="home-workbench-story.css?v=6">
+<script src="scroll-story.js?v=20261126" defer></script>
+<link rel="stylesheet" href="home-workbench-story.css?v=20261126">
 <script defer src="scroll-preview.js?v=2"></script>
-<script src="home-workbench-story.js?v=3" defer></script>
+<script src="home-workbench-story.js?v=20261126" defer></script>
 <link rel="stylesheet" href="inline-install.css?v=20261111">
 <script defer src="inline-install.js?v=20261111"></script>
 <link rel="stylesheet" href="install-walkthrough.css?v=1">
@@ -48,7 +48,7 @@
     <figure class="wb-pinned">
       <div class="wb-viewport">
         <div class="wb-window">
-          <iframe src="workbench-canvas.html?v=6" title="Stella 法律知识工作台与案件管理工作台" tabindex="-1"></iframe>
+          <iframe src="workbench-canvas.html?v=20261126" title="Stella 法律知识工作台与案件管理工作台" tabindex="-1"></iframe>
         </div>
       </div>
       <div class="wb-switch" role="group" aria-label="切换演示中的工作台" hidden>
@@ -268,9 +268,23 @@
               </details>
               <a class="story-image-link" href="assets/stella-case-detail-showcase.webp" target="_blank" rel="noopener" aria-label="查看原图：案件详情（新标签页）">查看原图</a>
             </div>
-            <figure class="story-figure" data-focus="43 39" data-zoom="1.16">
+            <figure class="story-figure">
               <div class="story-art"><img src="assets/stella-case-detail-showcase.webp" width="1216" height="1050" loading="lazy" decoding="async" alt="案件详情实机界面，显示待办事项、开庭提醒、财产保全和同步记录"></div>
+              <template data-story-detail data-note="同一案件的三组记录 · 庭前待办、开庭提醒和财产保全"><img src="assets/stella-story-case-tasks.webp" width="857" height="496" loading="lazy" decoding="async" alt="待办事项、开庭提醒和财产保全三个完整区块"></template>
               <figcaption>案件详情 <span>实机界面 · 演示资料</span><small class="story-figure-note">同一案件的待办、开庭和保全记录集中在详情页。</small></figcaption>
+            </figure>
+          </article>
+
+          <article class="story-scene" id="story-case-ai">
+            <div class="scene-copy">
+              <p class="story-kicker">案件 AI 管理</p>
+              <h3>把手上的工作，直接问出来。</h3>
+              <p>选择查询范围后，可以从开庭准备、立案补正、费用核对等常用问题开始，也可以自己输入问题。</p>
+              <a class="story-image-link" href="assets/stella-story-case-ai.webp" target="_blank" rel="noopener" aria-label="查看原图：案件 AI 管理（新标签页）">查看原图</a>
+            </div>
+            <figure class="story-figure">
+              <div class="story-art"><img src="assets/stella-story-case-ai.webp" width="1740" height="860" loading="lazy" decoding="async" alt="案件 AI 管理实机的九个常用问题和查询输入框"></div>
+              <figcaption>案件 AI 管理 <span>实机界面 · 演示资料</span><small class="story-figure-note">日程与期限、一张网跟进、案件管理，三组常用问题同屏。</small></figcaption>
             </figure>
           </article>
 
@@ -301,8 +315,9 @@
               </details>
               <a class="story-image-link" href="assets/stella-reading-showcase.webp" target="_blank" rel="noopener" aria-label="查看原图：文章阅读工作台（新标签页）">查看原图</a>
             </div>
-            <figure class="story-figure" data-focus="73 49" data-zoom="1.27">
+            <figure class="story-figure">
               <div class="story-art"><img src="assets/stella-reading-showcase.webp" width="1600" height="1050" loading="lazy" decoding="async" alt="文章阅读工作台实机界面，显示智能目录、摘要、正文和原文批注"></div>
+              <template data-story-detail data-note="正文里的标记 1 对应笔记 1，可以回到原文核对上下文。"><div class="story-reading-pair"><figure><figcaption>正文标记</figcaption><img src="assets/stella-story-reading-passage.webp" width="993" height="144" loading="lazy" decoding="async" alt="原文中的第一处批注标记及完整段落"></figure><figure><figcaption>对应批注</figcaption><img src="assets/stella-story-reading-note.webp" width="308" height="205" loading="lazy" decoding="async" alt="与正文标记对应的第一条完整笔记"></figure></div></template>
               <figcaption>文章阅读工作台 <span>实机界面 · 演示资料</span><small class="story-figure-note">右栏批注对应正文里的标记，可沿标记回看原文。</small></figcaption>
             </figure>
           </article>
@@ -356,13 +371,14 @@
           <article class="story-scene" id="story-research">
             <div class="scene-copy">
               <p class="story-kicker">法律研究</p>
-              <h3 id="tour-title">从一次检索，到持续跟进。</h3>
+              <h3 id="tour-title">先选检索来源，再核对依据。</h3>
+              <p>在 AI 增强中，可以按问题选择本地知识库、公开案例或已连接的资料来源。</p>
               <p>按时间、来源、领域和关键词检索，把需要跟进的议题设为长期监测。同一入口还提供企业尽调和每日法律情报简报。</p>
-              <a class="story-image-link" href="assets/stella-explore.webp" target="_blank" rel="noopener" aria-label="查看原图：探索与情报（新标签页）">查看原图</a>
+              <a class="story-image-link" href="assets/stella-story-research-sources.webp" target="_blank" rel="noopener" aria-label="查看原图：AI 增强的检索来源（新标签页）">查看原图</a>
             </div>
             <figure class="story-figure">
-              <div class="story-art"><img src="assets/stella-explore.webp" width="1600" height="900" loading="lazy" decoding="async" alt="探索与情报实机界面，显示法律检索任务、来源分布和持续监测入口"></div>
-              <figcaption>探索与情报 <span>实机界面 · 演示资料</span><small class="story-figure-note">法律检索、企业尽调和持续监测在同一页，各有入口。</small></figcaption>
+              <div class="story-art"><img src="assets/stella-story-research-sources.webp" width="1630" height="1080" loading="lazy" decoding="async" alt="AI 增强的检索来源及回答范围设置"></div>
+              <figcaption>AI 增强的检索来源 <span>实机界面 · 演示资料</span><small class="story-figure-note">法律法规、案例和企业信息按类别排列，可选择回答范围。</small></figcaption>
             </figure>
           </article>
 
@@ -373,8 +389,9 @@
               <p>支持固定利率、LPR 倍数和 BP 加点，按日期和利率变动分段计算。可粘贴判决文字来辅助识别本金和期限，并导出保留计算公式的 Excel。</p>
               <a class="story-image-link" href="assets/stella-interest.webp" target="_blank" rel="noopener" aria-label="查看原图：分段利息计算（新标签页）">查看原图</a>
             </div>
-            <figure class="story-figure" data-focus="51 63" data-zoom="1.20">
+            <figure class="story-figure">
               <div class="story-art"><img src="assets/stella-interest.webp" width="1600" height="900" loading="lazy" decoding="async" alt="计算工具实机界面，显示利率参数、文字识别填充和历史计算记录"></div>
+              <template data-story-detail data-note="一个利率区间的完整设置 · 本金、起止日、利率方式和加点"><img src="assets/stella-story-interest-period.webp" width="920" height="440" loading="lazy" decoding="async" alt="完整的利率区间表单和开始计算按钮"></template>
               <figcaption>分段利息计算 <span>实机界面 · 演示资料</span><small class="story-figure-note">按时间段设置利率依据，保留每段计算参数供复核。</small></figcaption>
             </figure>
           </article>
@@ -386,7 +403,7 @@
               <p>所函、授权委托书、法定代表人证明书、业务审批表与文书合集集中生成。填入法院、委托人、代理律师与案由即可预览所函，支持设置自己的律所名称与标识。</p>
               <a class="story-image-link" href="assets/stella-suohan.webp" target="_blank" rel="noopener" aria-label="查看原图：所函生成与预览（新标签页）">查看原图</a>
             </div>
-            <figure class="story-figure" data-focus="65 50" data-zoom="1.14">
+            <figure class="story-figure">
               <div class="story-art"><img src="assets/stella-suohan.webp" width="1600" height="900" loading="lazy" decoding="async" alt="所函生成实机界面，左侧填写案件与当事人信息，右侧实时预览所函"></div>
               <figcaption>所函生成与预览 <span>实机界面 · 演示资料</span><small class="story-figure-note">左侧填写案件信息，右侧查看实时生成的所函。</small></figcaption>
             </figure>
@@ -398,11 +415,11 @@
               <h3>把首页调成自己的工作台。</h3>
               <p>案件和知识两个工作台可以分别设置背景、蒙版、快捷按钮和展示内容，也能调整自动轮播与配色。设置保存在本机。</p>
               <p class="story-note">工作空间也提供录音转写、AI 与 MCP 接入和案卷归档。</p>
-              <a class="story-image-link" href="assets/stella-settings.webp" target="_blank" rel="noopener" aria-label="查看原图：外观与体验设置（新标签页）">查看原图</a>
+              <a class="story-image-link" href="assets/stella-story-workbench-backgrounds.webp" target="_blank" rel="noopener" aria-label="查看原图：案件工作台的两种背景（新标签页）">查看原图</a>
             </div>
             <figure class="story-figure">
-              <div class="story-art"><img src="assets/stella-settings.webp" width="1600" height="900" loading="lazy" decoding="async" alt="外观与体验设置实机界面，显示工作台内容、背景图库、蒙版透明度和轮播选项"></div>
-              <figcaption>外观与体验设置 <span>实机界面 · 演示资料</span><small class="story-figure-note">背景图库位于外观设置，案件和知识工作台可分别选择。</small></figcaption>
+              <div class="story-art"><img src="assets/stella-story-workbench-backgrounds.webp" width="1600" height="745" loading="lazy" decoding="async" alt="同一案件工作台采用行星和朱红两款背景"></div>
+              <figcaption>案件工作台的两种背景 <span>实机界面 · 演示资料</span><small class="story-figure-note">切换背景时，快捷操作和案件统计始终在同一位置。</small></figcaption>
             </figure>
           </article>
         </section>

@@ -15,7 +15,7 @@ body {
   font: 15px/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", sans-serif;
 }
 button { font: inherit; }
-.workbench-app { position: relative; transform-origin: top left; }
+.workbench-app { position: relative; }
 .workbench-base { display: block; width: 100%; height: auto; }
 
 /* Leave the trigger in the screenshot until the real menu markup expands from it. */
@@ -27,7 +27,31 @@ button { font: inherit; }
   visibility: hidden;
 }
 
-.workbench-toolbar.has-menu { visibility: visible; }
+.workbench-app::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: #35272b;
+  opacity: calc(.20 * var(--menu-reveal, 0));
+}
+
+.workbench-toolbar.has-menu {
+  visibility: visible;
+  opacity: var(--menu-reveal, 0);
+  transform: translateY(calc(-12px * (1 - var(--menu-reveal, 0))));
+}
+
+.workbench-toolbar .assist-island-shell.is-open {
+  --tools-expanded-width: 1260px;
+  --tools-expanded-height: 735px;
+  top: 44px !important;
+}
+
+.workbench-toolbar .tools-popup-heading > strong { font-size: 18px; }
+.workbench-toolbar .tools-popup-col-title { font-size: 15px; }
+.workbench-toolbar .tools-popup-item { font-size: 16px; }
 .workbench-toolbar .tab-bar-actions { display: flex; align-items: center; }
 .workbench-toolbar .assist-island-anchor { width: 120px; height: 30px; }
 .workbench-toolbar .assist-island-shell,

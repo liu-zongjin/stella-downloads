@@ -52,8 +52,8 @@
 .wb-switch button:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
 
 .is-scroll-workbench {
-  min-height: calc(100vh + clamp(1300px, 234vh, 2460px));
-  min-height: calc(100svh + clamp(1300px, 234svh, 2460px));
+  min-height: calc(100vh + clamp(1050px, 179vh, 2040px));
+  min-height: calc(100svh + clamp(1050px, 179svh, 2040px));
 }
 
 .is-scroll-workbench .wb-pinned {
@@ -73,32 +73,10 @@
   pointer-events: none;
 }
 
-.wb-pinned.is-handoff { z-index: 60; }
-.is-handoff .wb-viewport {
-  border-color: transparent;
-  background: transparent;
-  box-shadow: none;
+.is-scroll-workbench .wb-viewport {
+  opacity: calc(1 - .36 * var(--wb-exit, 0));
+  transform: translateY(calc(-8px * var(--wb-exit, 0)));
 }
-.is-handoff .wb-window {
-  position: fixed;
-  left: 50%;
-  top: var(--wb-window-top);
-  width: var(--wb-window-width);
-  height: var(--wb-window-height);
-  transform: translateX(-50%) scale(var(--wb-window-zoom));
-  border-radius: calc(12px * var(--wb-window-edge));
-  opacity: var(--wb-window-opacity);
-  pointer-events: none;
-}
-.is-handoff .wb-window::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at 67% 42%, #ece6df, var(--paper) 73%);
-  opacity: var(--wb-window-tint);
-}
-.is-handoff.is-handoff-done .wb-window { visibility: hidden; }
-.is-handoff :is(.wb-switch, .wb-story-meter) { opacity: var(--wb-controls-opacity); }
 
 .is-scroll-workbench .wb-story-meter { display: block; height: 2px; margin-top: 6px; background: #ddd2ca; }
 .wb-story-meter i { display: block; height: 100%; background: var(--red); transform: scaleX(var(--wb-story-progress, 0)); transform-origin: left; }

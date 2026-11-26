@@ -25,8 +25,6 @@
   let frame = 0;
   let inView = false;
   let fullImage = false;
-  let screenWidth = 0;
-  let screenHeight = 0;
   let directionY = window.scrollY;
   let scrollingDown = true;
 
@@ -39,9 +37,9 @@
       const art = figure.querySelector('.story-art').cloneNode(true);
       const image = art.querySelector('img');
       const url = image?.getAttribute('src');
-      const aspect = image ? image.width / image.height : 1;
       const viewport = image ? document.createElement('div') : null;
-      const focus = figure.dataset.focus?.split(' ').map(Number);
+      const blueprint = figure.querySelector('template[data-story-detail]');
+      const detail = blueprint ? document.createElement('div') : null;
       const delivery = section.hasAttribute('data-story-delivery') ? {
         beats: [...section.querySelectorAll('[data-delivery-step]')],
         models: [...art.querySelectorAll('.delivery-model')],
@@ -63,9 +61,21 @@
         art.append(viewport);
       }
 
+      if (detail) {
+        detail.className = 'story-detail-viewport';
+        detail.append(blueprint.content.cloneNode(true));
+        art.append(detail);
+      }
+      const assets = [...art.querySelectorAll('img')].map(img => {
+        const src = img === image ? url : img.getAttribute('src');
+        img.removeAttribute('src');
+        img.loading = 'eager';
+        return { img, src };
+      });
+
       return {
-        section, art, image, url, aspect, viewport, focus, delivery,
-        zoom: Number(figure.dataset.zoom || 1),
+        section, art, image, url, detail, assets, delivery,
+        detailNote: blueprint?.dataset.note,
         note: figure.querySelector('.story-figure-note')?.textContent,
         steps: [...art.querySelectorAll('.story-flow li')],
         step: -1,
@@ -78,14 +88,6 @@
 
     screen.append(...scenes.map(scene => scene.art));
     progress.append(...scenes.map(scene => scene.segment));
-  }
-
-  function measureFocus(scene) {
-    if (!scene.focus) return;
-    const width = Math.min(screenWidth, screenHeight * scene.aspect);
-    const [x, y] = scene.focus;
-    scene.focusX = width * (0.5 - x / 100);
-    scene.focusY = width / scene.aspect * (0.5 - y / 100);
   }
 
   function show(index) {
@@ -110,27 +112,28 @@
     caption.textContent = current.title;
     kind.textContent = current.kind;
     note.textContent = current.note || '继续滚动，查看流程的下一步。';
-    view.hidden = !current.focus;
+    current.art.classList.remove('is-detail');
+    view.hidden = !current.detail;
     original.hidden = !current.image;
     if (current.url) original.href = current.url;
-    measureFocus(current);
 
     // Only the current screenshot and its immediate neighbors are needed.
-    scenes.slice(Math.max(0, index - 1), index + 2).forEach(({ image, url }) => {
-      if (image && !image.hasAttribute('src')) image.src = url;
+    scenes.slice(Math.max(0, index - 1), index + 2).forEach(({ assets }) => {
+      assets.forEach(({ img, src }) => {
+        if (!src || img.hasAttribute('src')) return;
+        img.addEventListener('load', queueUpdate, { once: true });
+        img.src = src;
+      });
     });
   }
 
-  function renderFocus(scene, progress) {
-    const { viewport, zoom, focusX, focusY } = scene;
-    const ramp = fullImage ? 0 : clamp((progress - 0.18) / 0.5, 0, 1);
-    const scale = 1 + (zoom - 1) * ramp * ramp * (3 - 2 * ramp);
-    const marginX = screenWidth * (scale - 1) / 2;
-    const marginY = screenHeight * (scale - 1) / 2;
-    const panX = clamp(focusX * scale, -marginX, marginX);
-    const panY = clamp(focusY * scale, -marginY, marginY);
-
-    viewport.style.transform = `translate(${panX}px, ${panY}px) scale(${scale})`;
+  function renderDetail(scene, progress) {
+    const ready = [...scene.detail.querySelectorAll('img')].every(image => image.naturalWidth > 0);
+    const showing = scene.art.classList.contains('is-detail');
+    const showDetail = ready && !fullImage && progress >= (showing ? .44 : .56);
+    if (showDetail === showing) return;
+    scene.art.classList.toggle('is-detail', showDetail);
+    note.textContent = showDetail ? scene.detailNote : scene.note;
   }
 
   function renderFlow(scene, progress) {
@@ -241,7 +244,7 @@
     scene.section.classList.add('is-current');
     const progress = clamp((line - bounds.top) / bounds.height, 0, 1);
     scene.segment.style.setProperty('--scene-progress', progress);
-    if (scene.focus) renderFocus(scene, progress);
+    if (scene.detail) renderDetail(scene, progress);
     if (scene.delivery) renderDelivery(scene, line);
     if (scene.steps.length) renderFlow(scene, progress);
   }
@@ -250,18 +253,22 @@
     if (!frame) frame = requestAnimationFrame(update);
   }
 
-  function measureScreen() {
-    if (!canPin.matches) return;
-    screenWidth = screen.clientWidth;
-    screenHeight = screen.clientHeight;
-    measureFocus(scenes[active]);
-    queueUpdate();
-  }
-
   const visibility = new IntersectionObserver(([entry]) => {
     inView = entry.isIntersecting;
     queueUpdate();
   }, { rootMargin: '120px 0px' });
+
+  function addInlineDetails() {
+    layout.querySelectorAll('template[data-story-detail]').forEach(template => {
+      if (template.parentElement.querySelector('.story-inline-detail')) return;
+      const details = document.createElement('details');
+      details.className = 'story-details story-inline-detail';
+      const summary = document.createElement('summary');
+      summary.textContent = '查看特写';
+      details.append(summary, template.content.cloneNode(true));
+      template.parentElement.append(details);
+    });
+  }
 
   function syncLayout() {
     layout.classList.toggle('is-pinned', canPin.matches);
@@ -269,6 +276,7 @@
 
     if (!canPin.matches) {
       visibility.disconnect();
+      addInlineDetails();
       inView = false;
       links.forEach(link => link.removeAttribute('aria-current'));
       return;
@@ -277,7 +285,6 @@
     if (!scenes) prepareScenes();
     active = -1;
     show(0);
-    measureScreen();
     visibility.observe(layout);
   }
 
@@ -287,11 +294,9 @@
     queueUpdate();
   });
   window.addEventListener('scroll', queueUpdate, { passive: true });
-  window.addEventListener('resize', measureScreen);
   window.addEventListener('resize', measureNavigation);
   window.addEventListener('pageshow', queueUpdate);
   if ('ResizeObserver' in window) {
-    new ResizeObserver(measureScreen).observe(screen);
     new ResizeObserver(measureNavigation).observe(intro);
   }
   canPin.addEventListener('change', syncLayout);
