@@ -1,0 +1,169 @@
+.hero-lead {
+  position: relative;
+  isolation: isolate;
+}
+
+.hero-atmosphere {
+  position: absolute;
+  z-index: -1;
+  inset: -54px -16px -24px;
+  pointer-events: none;
+  overflow: clip;
+  background:
+    radial-gradient(ellipse at 85% 48%, #d9b47313, transparent 48%),
+    radial-gradient(ellipse at 65% 84%, #e7cc9612, transparent 53%);
+  mask-image:
+    linear-gradient(to bottom, transparent, #000 19%, #000 75%, transparent),
+    linear-gradient(to right, transparent, #000 16%, #000 88%, transparent);
+  mask-composite: intersect;
+}
+
+.hero-atmosphere canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  mask-image: linear-gradient(95deg, transparent 11%, #000 39%, #000 89%, transparent 100%);
+}
+
+.hero-actions {
+  width: min(356px, 100%);
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding-top: 2px;
+}
+
+.hero-actions .button {
+  width: 100%;
+  min-height: 48px;
+  justify-content: space-between;
+  padding: 13px 17px;
+  font-size: 13px;
+}
+
+.hero-actions .button > span {
+  margin-left: 0;
+  font-size: 18px;
+}
+
+.hero-film {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 9px;
+  min-height: 44px;
+  margin: 7px 0 0;
+  padding: 3px 10px 3px 3px;
+  border-radius: 4px;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.hero-film:focus-visible,
+.hero-ai-link:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 3px;
+}
+
+.hero-film-play {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ae8076;
+  border-radius: 50%;
+  color: var(--red);
+  transition: background-color .2s ease, border-color .2s ease, color .2s ease;
+}
+
+.hero-film-play::after {
+  content: "";
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  border-block: 4px solid transparent;
+  border-left: 7px solid currentColor;
+}
+
+.hero-film-label {
+  color: var(--red);
+  font-size: .875rem;
+  font-weight: 600;
+  text-underline-offset: .26em;
+}
+
+.hero-film-duration {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: .75rem;
+  white-space: nowrap;
+}
+
+.hero-film-duration::before {
+  content: "";
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.hero-film:hover .hero-film-label { text-decoration: underline; }
+.hero-film:is(:hover, :focus-visible) .hero-film-play {
+  border-color: var(--red);
+  background: var(--red);
+  color: white;
+}
+
+.hero-ai-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 5px;
+  padding: 6px 17px;
+  color: var(--red);
+  font-size: 12px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.hero-ai-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+.hero-actions .download-meta {
+  margin: 7px 17px 0;
+  font-size: 11px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.hero-quiet-links {
+  display: flex;
+  gap: 18px;
+  border-top: 1px solid var(--line);
+  padding: 9px 17px 0;
+  margin-top: 8px;
+}
+
+.hero-actions .hero-quiet-links .quiet-link {
+  margin: 0;
+  font-size: 11px;
+}
+
+@media (max-width: 900px) {
+  .hero-bottom { display: block; }
+  .hero-actions { width: min(420px, 100%); margin-top: 26px; padding-top: 0; }
+  .desktop-break { display: none; }
+}
+
+@media (max-width: 720px) {
+  .hero-actions { margin-top: 23px; }
+  .hero-atmosphere { inset: -28px -12px -12px; opacity: .72; }
+  .hero-quiet-links { flex-wrap: wrap; gap: 8px 16px; }
+}
+
+@media print {
+  .hero-atmosphere, .hero .hero-actions { display: none; }
+}
